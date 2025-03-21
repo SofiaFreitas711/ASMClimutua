@@ -6,6 +6,136 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Sobre nos</h1>
+    <header>
+        <a href="#main">Ir para o conteúdo</a>
+        <nav>
+            <img src="" alt="">
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li>
+                    <a href="servicos.html">Serviços</a>
+                    <ul>
+                        <li><a href="#" onclick="servicos(lalla[0].name)">Apoio jurídico periciais medico-legais</a></li>
+                        <li><a href="#" onclick="servicos(lalla[1].name)">Especialidades e serviços</a></li>
+                        <li><a href="#" onclick="servicos(lalla[2].name)">Medicina Dentária</a></li></li>
+                        <li><a href="#" onclick="servicos(lalla[3].name)">Domicílios</a></li></li>
+                        <li><a href="#" onclick="servicos(lalla[4].name)">Exames</a></li></li>
+                    </ul>
+                </li>
+                <li><a href="associados.html">Associados</a>
+                    <ul>
+                        <li><a href="#" onclick="associados(lalla[0].name)">Benefícios</a></li>
+                        <li><a href="#" onclick="associados(lalla[1].name)">Estatutos</a></li>
+                        <li><a href="#" onclick="associados(lalla[2].name)">Protocolos</a></li></li>
+                        <li><a href="#" onclick="associados(lalla[3].name)">Documentos Oficiais</a></li></li>
+                        <li><a href="#" onclick="associados(lalla[4].name)">Torne-se Associado</a></li></li>
+                    </ul>
+                </li>
+                <li><a href="atualidade.html">Atualidade</a></li>
+                <li><a href="sobreNos.html">Sobre Nós</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+            <button aria-label="Alterar para modo escuro">Modo</button>
+            <button aria-label="Alterar para tamanho de letra pequeno">a-</button>
+            <button aria-label="Alterar para tamanho de letra médio">a</button>
+            <button aria-label="Alterar para tamanho de letra grande">a+</button>
+        </nav>        
+    </header>
+    <main id="main">
+        <h1>Sobre Nós</h1>
+        <h2>Perguntas Frequentes</h2>
+        <h3>
+            <button aria-expanded="false" aria-controls="resposta1" id="pergunta1" class="">O que é a Associação de Socorros Mútuos S. Mamede de Infesta?</button>
+        </h3>
+        <div role="region" aria-labelledby="pergunta1" id="resposta1" class="">
+            <p></p>
+        </div>
+        <h3>
+            <button aria-expanded="false" aria-controls="resposta2" id="pergunta2" class="">Quem pode tornar-se associado?</button>
+        </h3>
+        <div role="region" aria-labelledby="pergunta2" id="resposta2" class="">
+            <p></p>
+        </div>
+        <h3>
+            <button aria-expanded="false" aria-controls="resposta3" id="pergunta3" class="">Como funciona o mutualismo?</button>
+        </h3>
+        <div role="region" aria-labelledby="pergunta3" id="resposta3" class="">
+            <p></p>
+        </div>
+        <h3>
+            <button aria-expanded="false" aria-controls="resposta4" id="pergunta4" class="">A Associação trabalha com que seguros, ADSE ou outros sistemas de saúde?</button>
+        </h3>
+        <div role="region" aria-labelledby="pergunta4" id="resposta4" class="">
+            <p></p>
+        </div>
+        <h3>
+            <button aria-expanded="false" aria-controls="resposta5" id="pergunta5" class="">Que tipo de benefícios a Associação oferece?</button>
+        </h3>
+        <div role="region" aria-labelledby="pergunta5" id="resposta5" class="">
+            <p></p>
+        </div>
+        <h3>
+            <button aria-expanded="false" aria-controls="resposta6" id="pergunta6" class="">A Associação tem fins lucrativos</button>
+        </h3>
+        <div role="region" aria-labelledby="pergunta6" id="resposta6" class="">
+            <p></p>
+        </div>
+        <h3>
+            <button aria-expanded="false" aria-controls="resposta7" id="pergunta7" class="">Como posso saber mais sobre a gestão financeira da Associação</button>
+        </h3>
+        <div role="region" aria-labelledby="pergunta7" id="resposta7" class="">
+            <p></p>
+        </div>
+        <h3>
+            <button aria-expanded="false" aria-controls="resposta8" id="pergunta8" class="">Onde fica a sede da Associação?</button>
+        </h3>
+        <div role="region" aria-labelledby="pergunta8" id="resposta8" class="">
+            <p></p>
+        </div>
+        <h3>
+            <button aria-expanded="false" aria-controls="resposta9" id="pergunta9" class="">Como posso entrar em contacto com a Associação?</button>
+        </h3>
+        <div role="region" aria-labelledby="pergunta9" id="resposta9" class="">
+            <p></p>
+        </div>
+        <p>Tem mais alguma questão? <a href="contactos.html">Fale connosco!</a></p>
+        
+        <h2>Orgãos Sociais</h2>
+        <h3>Conselho de Administração</h3>
+        <h3>Conselho Fiscal</h3>
+        <h3>Assembleia Geral</h3>
+    </main>
+    <footer>
+        <a href="#main">Ir para o topo</a>
+        <div>
+            <ul>
+                <li><a href="Tel:229 010 549">(+351) 229 010 549</a></li>
+                <li><a href="mailto: geral@asmmamede.com">geral@asmmamede.com</a></li>
+                <li> <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta">R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a></li>
+            </ul>  
+        </div>
+        <div>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="associados.html">Associados</a></li>
+                <li><a href="atualidade.html">Atualidade</a></li>
+                <li><a href="sobreNos.html">Sobre Nós</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+                <li><a href="mapa.html">Mapa do site</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!-- <script>
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const panel = document.getElementById(button.getAttribute('aria-controls'));
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+
+                button.setAttribute('aria-expanded', !isExpanded);
+                panel.setAttribute('aria-hidden', isExpanded);
+            });
+        });
+    </script> -->
 </body>
 </html>

@@ -42,13 +42,47 @@
         </nav>        
     </header>
     <main id="main">
-        <h1>Atualidade</h1>
-        <input type="radio" name="atualidade" id="todos" value="todos">
-        <label for="todos">Todos</label>
-        <input type="radio" name="atualidade" id="noticias" value="noticias">
-        <label for="noticias">Notícias</label>
-        <input type="radio" name="atualidade" id="eventos" value="eventos">
-        <label for="eventos">Eventos</label>
+        <h1>Torne-se Associado</h1>
+        <div>
+            <h2>Pedido de Associado</h2>
+            <form>
+                <label for="nome">Nome (Completo)</label>
+                <br>
+                <input type="text" name="nome(completo)" id="nome">
+                <br>
+                <label for="email">Email</label>
+                <br>
+                <input type="email" name="email" id="email">
+                <br>
+                <label for="telemovel">Telemóvel</label>
+                <br>
+                <input type="tel" name="telemovel" id="telemovel">
+                <br>
+                <label for="nascimento">Data de Nascimento</label>
+                <br>
+                <input type="date" name="data de nascimento" id="nascimento">
+                <br>
+                <label for="cc">Número do CC ou BI</label>
+                <br>
+                <input type="number" name="número do cc ou bi" id="cc">
+                <br>
+                <label for="morada">Morada</label>
+                <br>
+                <input type="text" name="morada" id="morada">
+                <br>
+                <label for="codPostal">Código Postal</label>
+                <br>
+                <input type="text" name="código postal" id="codPostal">
+                <br>
+                <label for="modalidade">Modalidade Pretendida</label>
+                <br>
+                <select name="modalidade pretendida" id="modalidade">
+                    <option value=""></option>
+                    <!-- adicionar as modalidades -->
+                </select>
+                <input type="submit" value="Enviar pedido de associado" id="submit">
+            </form>
+        </div>
     </main>
     <footer>
         <a href="#main">Ir para o topo</a>
