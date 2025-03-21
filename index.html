@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASM Climútua</title>
+</head>
+<body>
+    <header>
+        <a href="#main">Ir para o conteúdo</a>
+        <nav>
+            <img src="" alt="">
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li>
+                    <a href="servicos.html">Serviços</a>
+                    <ul>
+                        <li><a href="#" onclick="servicos(lalla[0].name)">Apoio jurídico periciais medico-legais</a></li>
+                        <li><a href="#" onclick="servicos(lalla[1].name)">Especialidades e serviços</a></li>
+                        <li><a href="#" onclick="servicos(lalla[2].name)">Medicina Dentária</a></li></li>
+                        <li><a href="#" onclick="servicos(lalla[3].name)">Domicílios</a></li></li>
+                        <li><a href="#" onclick="servicos(lalla[4].name)">Exames</a></li></li>
+                    </ul>
+                </li>
+                <li><a href="associados.html">Associados</a>
+                    <ul>
+                        <li><a href="#" onclick="associados(lalla[0].name)">Benefícios</a></li>
+                        <li><a href="#" onclick="associados(lalla[1].name)">Estatutos</a></li>
+                        <li><a href="#" onclick="associados(lalla[2].name)">Protocolos</a></li></li>
+                        <li><a href="#" onclick="associados(lalla[3].name)">Documentos Oficiais</a></li></li>
+                        <li><a href="#" onclick="associados(lalla[4].name)">Torne-se Associado</a></li></li>
+                    </ul>
+                </li>
+                <li><a href="atualidade.html">Atualidade</a></li>
+                <li><a href="sobreNos.html">Sobre Nós</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+            <button aria-label="Alterar para modo escuro">Modo</button>
+            <button aria-label="Alterar para tamanho de letra pequeno">a-</button>
+            <button aria-label="Alterar para tamanho de letra médio">a</button>
+            <button aria-label="Alterar para tamanho de letra grande">a+</button>
+        </nav>        
+    </header>
+    <main id="main">
+        <div>
+            <h1>ASM Climútua</h1>
+            <h2>Horários</h2>
+            <p>Seg a Sex: 8:00h - 20:00h</p>
+            <p>Sáb: 9:00h - 12:00h</p>
+            <a href="servicos.html">Conheça os nossos serviços</a>
+        </div>
+        <div>
+            <h2>Ainda não é associado?</h2>
+            <p>Na ASM Climútua, cuidamos da sua saúde com os melhores benefícios e protocolos exclusivos para associados. Junte-se a nós e tenha acesso a cuidados de saúde eficazes e adaptados às suas necessidades.</p>
+            <a href="associados.html">Torne-se associado</a>
+        </div>
+        <div>
+            <h2>Sobre a ASM Climútua</h2>
+            <p>Com mais de um século de história, crescemos com base no compromisso e dedicação à nossa comunidade.  Trabalhamos diariamente para garantir acesso a cuidados de saúde de qualidade, proporcionando bem-estar aos nossos associados.</p>
+            <a href="sobreNos.html">Descubra mais sobre nós</a>
+        </div>
+        <div>
+            <h2>Atualidade</h2>
+            <!-- Aqui devo adicionar através de dom as 3 notícias mais recentes -->
+        </div>
+        
+    </main>
+    <footer>
+        <a href="#main">Ir para o topo</a>
+        <div>
+            <ul>
+                <li><a href="Tel:229 010 549">(+351) 229 010 549</a></li>
+                <li><a href="mailto: geral@asmmamede.com">geral@asmmamede.com</a></li>
+                <li> <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta">R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a></li>
+            </ul>  
+        </div>
+        <div>
+            <ul>
+                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="associados.html">Associados</a></li>
+                <li><a href="atualidade.html">Atualidade</a></li>
+                <li><a href="sobreNos.html">Sobre Nós</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+                <li><a href="mapa.html">Mapa do site</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        let lalla = [{name:"serviços", conteudo:"lalalal"}, {name:"outro", conteudo:"outro"}]
+        function servicos(params) {
+            let name = params
+            console.log(params);
+            
+            localStorage.setItem("detalhe", `${name}`)
+            window.location.href = 'detalhe.html'
+            
+        }
+
+        function associados(params) {
+            let name = params
+            console.log(params);
+            
+            localStorage.setItem("detalhe", `${name}`)
+            window.location.href = 'detalhe.html'
+            
+        }
+    </script>
+</body>
+</html>

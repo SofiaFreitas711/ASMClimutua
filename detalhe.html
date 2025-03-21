@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Detalhe</h1>
+    <script>
+        let lalla = [{name:"serviços", conteudo:"lalalal"}, {name:"outro", conteudo:"outro"}]
+        let pagina = localStorage.getItem("detalhe")
+        console.log(pagina);
+        
+        for(let i=0; i<lalla.length;i++){
+            console.log("entrei");
+            console.log(lalla[i].name);
+            console.log(pagina);
+            
+            
+            if(pagina == lalla[i].name){
+                
+                document.querySelector("body").innerHTML += `<p>${lalla[i].conteudo}</p>`
+            }
+        }
+    </script>
+</body>
+</html>
