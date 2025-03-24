@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ASM Climútua</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="geral.css">
+
 </head>
 <body>
     <header>
-        <a href="#main">Ir para o conteúdo</a>
+        <div id="linkConteudo">
+            <a href="#main">Ir para o conteúdo</a>
+        </div>
         <nav>
-            <img src="" alt="">
-            <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li>
-                    <a href="servicos.html">Serviços</a>
-                    <ul>
+            <img src="Group 18.svg" alt="">
+            <ul class="listaNav">
+                <li  class="listaDetalhe"><a href="index.html">Página Inicial</a></li>
+                <li  class="listaDetalhe"><a href="servicos.html">Serviços</a>
+                    <ul class="listaSubcategorias">
                         <li><a href="#" onclick="servicos(lalla[0].name)">Apoio jurídico periciais medico-legais</a></li>
                         <li><a href="#" onclick="servicos(lalla[1].name)">Especialidades e serviços</a></li>
                         <li><a href="#" onclick="servicos(lalla[2].name)">Medicina Dentária</a></li></li>
@@ -22,8 +26,8 @@
                         <li><a href="#" onclick="servicos(lalla[4].name)">Exames</a></li></li>
                     </ul>
                 </li>
-                <li><a href="associados.html">Associados</a>
-                    <ul>
+                <li  class="listaDetalhe"><a href="associados.html">Associados</a>
+                    <ul class="listaSubcategorias">
                         <li><a href="#" onclick="associados(lalla[0].name)">Benefícios</a></li>
                         <li><a href="#" onclick="associados(lalla[1].name)">Estatutos</a></li>
                         <li><a href="#" onclick="associados(lalla[2].name)">Protocolos</a></li></li>
@@ -31,18 +35,20 @@
                         <li><a href="#" onclick="associados(lalla[4].name)">Torne-se Associado</a></li></li>
                     </ul>
                 </li>
-                <li><a href="atualidade.html">Atualidade</a></li>
-                <li><a href="sobreNos.html">Sobre Nós</a></li>
-                <li><a href="contactos.html">Contactos</a></li>
+                <li  class="listaDetalhe"><a href="atualidade.html">Atualidade</a></li>
+                <li  class="listaDetalhe"><a href="sobreNos.html">Sobre Nós</a></li>
+                <li  class="listaDetalhe"><a href="contactos.html">Contactos</a></li>
             </ul>
-            <button aria-label="Alterar para modo escuro">Modo</button>
-            <button aria-label="Alterar para tamanho de letra pequeno">a-</button>
-            <button aria-label="Alterar para tamanho de letra médio">a</button>
-            <button aria-label="Alterar para tamanho de letra grande">a+</button>
+            <div>
+                <button aria-label="Alterar para modo escuro">Modo</button>
+                <button aria-label="Alterar para tamanho de letra pequeno">a-</button>
+                <button aria-label="Alterar para tamanho de letra médio">a</button>
+                <button aria-label="Alterar para tamanho de letra grande">a+</button>
+            </div>
         </nav>        
     </header>
     <main id="main">
-        <div>
+        <div id="primeiraSeccao">
             <h1>ASM Climútua</h1>
             <h2>Horários</h2>
             <p>Seg a Sex: 8:00h - 20:00h</p>
@@ -66,25 +72,29 @@
         
     </main>
     <footer>
-        <a href="#main">Ir para o topo</a>
-        <div>
-            <ul>
-                <li><a href="Tel:229 010 549">(+351) 229 010 549</a></li>
-                <li><a href="mailto: geral@asmmamede.com">geral@asmmamede.com</a></li>
-                <li> <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta">R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a></li>
-            </ul>  
+        <a href="#main" id="topo">Ir para o topo</a>
+        <div class="linksFooter"> 
+            <div>
+                <ul>
+                    <li><a href="Tel:229 010 549" style="text-decoration: none;">(+351) 229 010 549</a></li>
+                    <li><a href="mailto: geral@asmmamede.com" style="text-decoration: none;">geral@asmmamede.com</a></li>
+                    <li> <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta" style="text-decoration: none;">R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a></li>
+                </ul>  
+            </div>
+            <div>
+                <ul>
+                    <li><p>ASM Climútua</p></li>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="associados.html">Associados</a></li>
+                    <li><a href="atualidade.html">Atualidade</a></li>
+                    <li><a href="sobreNos.html">Sobre Nós</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
+                    <li><a href="mapa.html">Mapa do site</a></li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="associados.html">Associados</a></li>
-                <li><a href="atualidade.html">Atualidade</a></li>
-                <li><a href="sobreNos.html">Sobre Nós</a></li>
-                <li><a href="contactos.html">Contactos</a></li>
-                <li><a href="mapa.html">Mapa do site</a></li>
-            </ul>
-        </div>
+        
     </footer>
     <script>
         let lalla = [{name:"serviços", conteudo:"lalalal"}, {name:"outro", conteudo:"outro"}]
