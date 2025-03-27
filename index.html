@@ -17,7 +17,7 @@
             <img src="Group 18.svg" alt="">
             <ul class="listaNav">
                 <li  class="listaDetalhe"><a href="index.html">Página Inicial</a></li>
-                <li  class="listaDetalhe"><a href="servicos.html">Serviços</a>
+                <li  class="listaDetalhe"><a href="servicos.html" aria-expanded="true">Serviços</a>
                     <ul class="listaSubcategorias">
                         <li><a href="#" onclick="servicos(lalla[0].name)">Apoio jurídico periciais medico-legais</a></li>
                         <li><a href="#" onclick="servicos(lalla[1].name)">Especialidades e serviços</a></li>
@@ -96,7 +96,10 @@
         </div>
         
     </footer>
+    <script src="bd.js"></script>
     <script>
+        console.log(window.env.servicos);
+        
         let lalla = [{name:"serviços", conteudo:"lalalal"}, {name:"outro", conteudo:"outro"}]
         function servicos(params) {
             let name = params
@@ -116,5 +119,6 @@
             
         }
     </script>
+    
 </body>
 </html>
