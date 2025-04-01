@@ -110,21 +110,16 @@
             </ul>
         </div>
     </footer>
-
+    <script src="bd.js"></script>
     <script>
-        let lalla = [{name:"serviços", conteudo:"lalalal"}, {name:"outro", conteudo:"outro"}]
+        // let lalla = [{name:"serviços", conteudo:"lalalal"}, {name:"outro", conteudo:"outro"}]
         let pagina = localStorage.getItem("detalhe")
-        console.log(pagina);
+        let info = window.env.servicos
         
-        for(let i=0; i<lalla.length;i++){
-            console.log("entrei");
-            console.log(lalla[i].name);
-            console.log(pagina);
-            
-            
-            if(pagina == lalla[i].name){
-                
-                document.querySelector("body").innerHTML += `<p>${lalla[i].conteudo}</p>`
+        for(let i=0; i<info.length;i++){ 
+            if(pagina == info[i].nome){
+                console.log(info[i].especialidade); //confirmado que entra
+                // alimentar com dom
             }
         }
     </script>

@@ -11,6 +11,8 @@
     --cor-detalhe2: #003A61;
     --cor-regiao: #003A61;
     --cor-link-conteudo: #001A2C;
+    --botao-seccao-clara: #001A2C;
+    --botao-seccao-escura: #FF9C00;
 }
 
 .modoEscuro{
@@ -20,6 +22,30 @@
     --cor-detallhe1: #EB8F00;
     --cor-detalhe2: #C4E5F0;
     --cor-regiao: #003152;
+    --botao-seccao-clara: #EB8F00;
+    --botao-seccao-escura: #EB8F00;
+}
+
+/* adicionar media para isto */
+#normal{
+    --tamanho-titulo:
+    --tamanho-subtitulo:
+    --tamanho-texto:
+    --tamanho-notas: 
+}
+
+#grande{
+    --tamanho-titulo:
+    --tamanho-subtitulo:
+    --tamanho-texto:
+    --tamanho-notas: 
+}
+
+#pequeno{
+    --tamanho-titulo:
+    --tamanho-subtitulo:
+    --tamanho-texto:
+    --tamanho-notas: 
 }
 
 body{
@@ -37,13 +63,10 @@ nav{
 
 #linkConteudo{
     background-color: var(--cor-link-conteudo);
-    width: 100%;
+    /* width: 100%; */
+    padding: 10px;
+    padding-left: 30px;
 
-}
-
-#linkConteudo{
-    /* padding-left: 20px; */
-    
 }
 
 .listaNav{
@@ -60,25 +83,26 @@ nav{
     position: absolute;
     padding: 20px 5px;
     background-color: var(--cor-regiao);
-    margin-top: 10px;
     list-style-type: none;
     padding: 20px;
-    
+    transition: all 0.5s ease;
     
 }
 
 .listaDetalhe:hover .listaSubcategorias,
-.listaDetalhe:focus-within .listaSubcategorias
-{
+.listaDetalhe:focus-within .listaSubcategorias,
+.listaSubcategorias:hover .listaSubcategorias,
+.listaSubcategorias:focus-within .listaSubcategorias{
     display: block;
+    
 }
 
 header a{
     color: var(--cor-letra2);
 }
 
-/* #main{
-    padding: 20px;
+/* main{
+    padding: 10px;
 } */
 
 footer{
@@ -102,8 +126,9 @@ footer p{
 }
 
 .linksFooter{
-    /* margin: 0px 0px 50px 50px; */
     display: flex;
     justify-content: flex-start;
-    column-count: 2;
+    justify-content: center;
+    gap: 5vh;
 }
+

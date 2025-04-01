@@ -1,3 +1,97 @@
 #primeiraSeccao{
-    /* background-image: url("https://images.unsplash.com/photo-1612537786199-1c202c6dcfd2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"); */
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(137,194,217,1)),
+                      url("https://images.unsplash.com/photo-1612537786199-1c202c6dcfd2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: 80px;
+    height: 60vh;
+    display:flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: flex-end;
 }
+
+:root{
+    --cor-fundo: #FFFCF2;
+    --cor-letra: #001A2C;
+    --cor-letra2: #FFFCF2;
+    --cor-detalhe1: #FF9C00;
+    --cor-detalhe2: #003A61;
+    --cor-regiao: #003A61;
+    --cor-link-conteudo: #001A2C;
+    --seccao-url: url("./images/seccoes/Group 8 - v2.png");
+    --botao-inicial: #001A2C;
+    --botao-seccao-clara: #001A2C;
+    --botao-seccao-escura: #FF9C00;
+}
+
+.modoEscuro{
+    --cor-fundo: #001A2C;
+    --cor-letra: #FFFCF2;
+    --cor-letra2: #FFFCF2;
+    --cor-detallhe1: #EB8F00;
+    --cor-detalhe2: #C4E5F0;
+    --cor-regiao: #003152;
+    --seccao-url: url("./images/seccoes/Group 8 - Dark mode.png");
+    --botao-seccao-clara: #EB8F00;
+    --botao-seccao-escura: #EB8F00;
+
+}
+
+.seccao{
+    padding: 30px;
+    min-height: 30vh;
+    display: block;
+    align-content: space-around;
+}
+
+.botaoInicio{
+    background-color: var(--botao-inicial);
+    border-radius: 2px;
+    color: var(--cor-letra2);
+    text-decoration: none;
+    padding: 5px;
+    width: 35%;
+    text-align: center;
+}
+
+.botaoClaro{
+    background-color: var(--botao-seccao-clara);
+    border-radius: 2px;
+    color: var(--cor-letra2);
+    text-decoration: none;
+    padding: 5px;
+    width: 35%;
+    text-align: center;
+    display: block;
+}
+
+.botaoEscuro{
+    background-color: var(--botao-seccao-escura);
+    border-radius: 2px;
+    color: #001A2C;
+    text-decoration: none;
+    padding: 5px;
+    width: 35%;
+    text-align: center;
+    display: block;
+}
+
+#terceiraSeccao{
+    background-image: var(--seccao-url);
+    color: var(--cor-letra2);
+}
+
+.atualidade{
+    display: flex;
+    justify-content: left;
+}
+
+.atualidade img{
+    width: 5%;
+    margin: 15px;
+}
+
+/* .atualidade div{
+    display: flex;
+    flex-direction: column;
+} */
