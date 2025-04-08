@@ -1,0 +1,94 @@
+@font-face {
+    font-family: Hubot Sans;
+    src: url(static/HubotSans-Regular.ttf);
+}
+
+:root{
+    --cor-fundo: #FFFCF2;
+    --cor-letra: #001A2C;
+    --cor-letra2: #FFFCF2;
+    --cor-detalhe1: #FF9C00;
+    --cor-detalhe2: #003A61;
+    --cor-regiao: #003A61;
+    --seccao-url: url("./images/seccoes/Group 8 - v2.png");
+    --botao-seccao: #FF9C00;
+}
+
+.modoEscuro{
+    --cor-fundo: #001A2C;
+    --cor-letra: #FFFCF2;
+    --cor-letra2: #FFFCF2;
+    --cor-detallhe1: #EB8F00;
+    --cor-detalhe2: #C4E5F0;
+    --cor-regiao: #003152;
+    --seccao-url: url("./images/seccoes/Group 8 - Dark mode.png");
+    --botao-seccao: #EB8F00;
+}
+
+#form{
+    background-image: var(--seccao-url);
+    padding: 40px;
+    color: var(--cor-letra2);
+
+}
+
+#form input:focus,
+#form select:focus{
+    border: solid 4px #001A2C ;
+}
+
+#form input,
+#form select{
+    width: 50%;
+    min-height: 25px;
+    font-family: Hubot Sans;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#enviarEmail{
+    width: 50%;
+    min-height: 25px;
+    font-family: Hubot Sans;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    background-color: var(--cor-detalhe1);
+    color: #001A2C;
+    border-style: none;
+}
+
+.corpoClinico{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    line-height: 1;
+    border-style: solid;
+    border-radius: 2px;
+    border-color: var(--cor-detalhe2);
+    border-radius: 2px;
+    /* width: 30%; */
+    margin: 10px;
+    padding: 5px;
+
+}
+
+.corpoClinico img{
+    width: 5vw;
+    height: 8vh;
+    margin-right: 10px;
+}
+
+#informacoes{
+    display: flex;
+}
+
+#divCorpoClinico{
+    margin-left: 10vw;
+}
+
+.seccao{
+    padding: 30px;
+    min-height: 30vh;
+    display: block;
+    align-content: space-around;
+}

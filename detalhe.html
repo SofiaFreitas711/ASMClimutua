@@ -5,57 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="geral.css">
+    <link rel="stylesheet" href="detalhe.css">
 </head>
 <body>
     <header>
-        <a href="#main">Ir para o conteúdo</a>
+        <div id="linkConteudo">
+            <a href="#main">Ir para o conteúdo</a>
+        </div>
         <nav>
-            <img src="" alt="">
-            <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li>
-                    <a href="servicos.html">Serviços</a>
-                    <ul>
-                        <li><a href="#" onclick="servicos(lalla[0].name)">Apoio jurídico periciais medico-legais</a></li>
-                        <li><a href="#" onclick="servicos(lalla[1].name)">Especialidades e serviços</a></li>
-                        <li><a href="#" onclick="servicos(lalla[2].name)">Medicina Dentária</a></li></li>
-                        <li><a href="#" onclick="servicos(lalla[3].name)">Domicílios</a></li></li>
-                        <li><a href="#" onclick="servicos(lalla[4].name)">Exames</a></li></li>
+            <img src="./images/seccoes/Group 18.svg" alt="">
+            <ul class="listaNav">
+                <li  class="listaDetalhe"><a href="index.html">Página Inicial</a></li>
+                <li  class="listaDetalhe"><a href="servicos.html" aria-expanded="true">Serviços</a> 
+                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    
+                    <ul class="listaSubcategorias">
+                        <li><a href="#" onclick="servicos(info.servicos[0].nome)">Apoio Jurídico Periciais Médico-Legais</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[1].nome)">Especialidades</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[2].nome)">Medicina Dentária</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[3].nome)">Domicílios</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[4].nome)">Exames</a></li></li>
                     </ul>
                 </li>
-                <li><a href="associados.html">Associados</a>
-                    <ul>
-                        <li><a href="#" onclick="associados(lalla[0].name)">Benefícios</a></li>
-                        <li><a href="#" onclick="associados(lalla[1].name)">Estatutos</a></li>
-                        <li><a href="#" onclick="associados(lalla[2].name)">Protocolos</a></li></li>
-                        <li><a href="#" onclick="associados(lalla[3].name)">Documentos Oficiais</a></li></li>
-                        <li><a href="#" onclick="associados(lalla[4].name)">Torne-se Associado</a></li></li>
+                <li  class="listaDetalhe"><a href="associados.html">Associados</a>
+                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    <ul class="listaSubcategorias">
+                        <li><a href="#" onclick="associados(info.associados[0].nome)">Benefícios</a></li>
+                        <li><a href="#" onclick="associados(info.associados[1].nome)">Estatutos</a></li>
+                        <li><a href="#" onclick="associados(info.associados[2].nome)">Protocolos</a></li></li>
+                        <li><a href="#" onclick="associados(info.associados[3].nome)">Documentos Oficiais</a></li></li>
+                        <li><a href="#" onclick="associados(info.associados[4].nome)">Torne-se Associado</a></li></li>
                     </ul>
                 </li>
-                <li><a href="atualidade.html">Atualidade</a></li>
-                <li><a href="sobreNos.html">Sobre Nós</a></li>
-                <li><a href="contactos.html">Contactos</a></li>
+                <li  class="listaDetalhe"><a href="atualidade.html">Atualidade</a></li>
+                <li  class="listaDetalhe"><a href="sobreNos.html">Sobre Nós</a></li>
+                <li  class="listaDetalhe"><a href="contactos.html">Contactos</a></li>
+                <li class="listaDetalhe" style="color: #FFFCF2;">|</li>
             </ul>
-            <button aria-label="Alterar para modo escuro">Modo</button>
-            <button aria-label="Alterar para tamanho de letra pequeno">a-</button>
-            <button aria-label="Alterar para tamanho de letra médio">a</button>
-            <button aria-label="Alterar para tamanho de letra grande">a+</button>
+            <div>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo">☀️</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" id="selected">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav">A+</button>
+            </div>
         </nav>        
     </header>
     <main id="main">
-        <h1>Serviço</h1>
-        <div>
-            <h2>Especialidades</h2>
+        <div class="seccao">
+            <h1 id="servicoNome">Serviço</h1>
+            <div id="informacoes">
+                <div>
+                    <h2>Especialidades</h2>
+                    <ul id="ulEspecialidade">
+
+                    </ul>
+                </div>
+                <div id="divCorpoClinico">
+                    <h2>Corpo Clínico</h2>
+                    <ul id="ulCorpoClinico">
+
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div>
-            <h2>Corpo Clínico</h2>
-        </div>
-        <div>
+        <div id="form">
             <h2>Pedir agendamento de serviço</h2>
-            <form>
+            <div>
                 <label for="nome">Nome (Primeiro e Último)</label>
                 <br>
-                <input type="text" name="nome(primeiro e último)" id="nome">
+                <input type="text" name="nome (primeiro e último)" id="nome">
                 <br>
                 <label for="email">Email</label>
                 <br>
@@ -67,9 +93,9 @@
                 <br>
                 <label for="servico">Serviço</label>
                 <br>
-                <select name="serviço" id="servico">
-                    <option value="Apoio Jurídico Perícias Médico-Legais">Apoio Jurídico Perícias Médico-Legais</option>
-                    <option value="Especialidades e Serviços">Especialidades e Serviços</option>
+                <select name="serviço" id="servico" onchange="adicionarEspecialidades()">
+                    <option value="Apoio Jurídico Períciais Médico-Legais">Apoio Jurídico Perícias Médico-Legais</option>
+                    <option value="Especialidades">Especialidades</option>
                     <option value="Medicina Dentária">Medicina Dentária</option>
                     <option value="Exames">Exames</option>
                     <option value="Domicílios">Domicílos</option>
@@ -85,42 +111,132 @@
                 <br>
                 <input type="text" name="obs" id="obs">
                 <br>
-                <input type="submit" value="Enviar pedido de marcação" id="submit">
-            </form>
+                <button onclick="sendMail()" id="enviarEmail">Enviar pedido de marcação →</button>
+            </div>
         </div>
     </main>
     <footer>
-        <a href="#main">Ir para o topo</a>
-        <div>
-            <ul>
-                <li><a href="Tel:229 010 549">(+351) 229 010 549</a></li>
-                <li><a href="mailto: geral@asmmamede.com">geral@asmmamede.com</a></li>
-                <li> <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta">R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a></li>
-            </ul>  
+        <a href="#main" id="topo">Ir para o topo</a>
+        <div class="linksFooter"> 
+            <div>
+                <ul>
+                    <li><a href="Tel:229 010 549" style="text-decoration: none;">(+351) 229 010 549</a></li>
+                    <li><a href="mailto: geral@asmmamede.com" style="text-decoration: none;">geral@asmmamede.com</a></li>
+                    <li> <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta" style="text-decoration: none;">R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a></li>
+                </ul>  
+            </div>
+            <div>
+                <ul>
+                    <li><p>ASM Climútua</p></li>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="associados.html">Associados</a></li>
+                    <li><a href="atualidade.html">Atualidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><br></li>
+                    <li><a href="sobreNos.html">Sobre Nós</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
+                    <li><a href="mapa.html">Mapa do site</a></li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="associados.html">Associados</a></li>
-                <li><a href="atualidade.html">Atualidade</a></li>
-                <li><a href="sobreNos.html">Sobre Nós</a></li>
-                <li><a href="contactos.html">Contactos</a></li>
-                <li><a href="mapa.html">Mapa do site</a></li>
-            </ul>
-        </div>
+        
     </footer>
     <script src="bd.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "TVJLsJ1X37GkiTHV_",
+            });
+        })();
+    </script>
     <script>
-        // let lalla = [{name:"serviços", conteudo:"lalalal"}, {name:"outro", conteudo:"outro"}]
         let pagina = localStorage.getItem("detalhe")
         let info = window.env.servicos
         
         for(let i=0; i<info.length;i++){ 
             if(pagina == info[i].nome){
                 console.log(info[i].especialidade); //confirmado que entra
+                document.querySelector("#servicoNome").innerHTML = `${info[i].nome}`
+                for(let j=0; j<info[i].especialidade.length;j++){
+                    document.querySelector("#ulEspecialidade").innerHTML += `<li>${info[i].especialidade[j]}</li>`
+                }
+
+                for(let k=0;k<info[i].equipa.length;k++){
+                    console.log(info[i].equipa.length);
+                    
+                    document.querySelector("#ulCorpoClinico").innerHTML += `<li class="corpoClinico">
+                                                                                <img src="${info[i].equipa[k].url}">
+                                                                                <div>
+                                                                                    <p>${info[i].equipa[k].nome}</p>
+                                                                                    <p>${info[i].equipa[k].especialidade}</p>
+                                                                                    <p>${info[i].equipa[k].horario}</p>
+                                                                                </div>
+                                                                             </li>`
+                }
                 // alimentar com dom
+                
             }
+        }
+
+        let servicoSelecionado = document.querySelector("#servico").value
+        let servicos = window.env.servicos     
+
+        function adicionarEspecialidades(){
+            document.querySelector("#especialidade").innerHTML = ""
+            servicoSelecionado = document.querySelector("#servico").value
+            especialidades()
+        }
+
+        function especialidades(){
+            console.log(servicoSelecionado);
+            
+            for(let i=0;i < servicos.length; i++){
+                    if(servicoSelecionado == servicos[i].nome){
+                        let escolhido = i
+                        
+                        for(let i=0;i<servicos[escolhido].especialidade.length;i++){
+                            document.querySelector("#especialidade").innerHTML += `<option value="${servicos[escolhido].especialidade[i]}">${servicos[escolhido].especialidade[i]}</option>`
+                        }
+                    }
+                }
+        }
+
+        especialidades()
+
+        function sendMail(){
+            console.log("aqui");
+            
+            let params = {
+                nome:document.querySelector("#nome").value,
+                email:document.querySelector("#email").value,
+                numeroAssociado: document.querySelector("#socio").value,
+                servico: document.querySelector("#servico").value,
+                especialidade: document.querySelector("#especialidade").value,
+                obs: document.querySelector("#obs").value
+            }
+
+            const serviceID = "service_rvk89m9"
+            const templateID = "template_orcdeol"
+
+            emailjs
+             .send(serviceID,templateID,params)
+             .then((res)=>{
+                document.querySelector("#nome").value = ""
+                document.querySelector("#email").value = ""
+                document.querySelector("#socio").value = ""
+                document.querySelector("#servico").value = ""
+                document.querySelector("#especialidade").value = ""
+                document.querySelector("#obs").value = ""
+
+                document.querySelector("#form").innerHTML += `<p style="color:white">Pedido enviado com sucesso</p>`
+             })
+             .catch((err)=>console.log(err));
+             
         }
     </script>
 </body>

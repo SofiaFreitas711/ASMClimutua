@@ -1,0 +1,53 @@
+@font-face {
+    font-family: Hubot Sans;
+    src: url(static/HubotSans-Regular.ttf);
+}
+
+:root{
+    --cor-fundo: #FFFCF2;
+    --cor-letra: #001A2C;
+    --cor-letra2: #FFFCF2;
+    --cor-detalhe1: #FF9C00;
+    --cor-detalhe2: #003A61;
+    --cor-regiao: #003A61;
+    --seccao-url: url("./images/seccoes/Group 8 - v2.png");
+    --botao-seccao: #FF9C00;
+}
+
+.modoEscuro{
+    --cor-fundo: #001A2C;
+    --cor-letra: #FFFCF2;
+    --cor-letra2: #FFFCF2;
+    --cor-detallhe1: #EB8F00;
+    --cor-detalhe2: #C4E5F0;
+    --cor-regiao: #003152;
+    --seccao-url: url("./images/seccoes/Group 8 - Dark mode.png");
+    --botao-seccao: #EB8F00;
+}
+
+.seccao{
+    padding: 30px;
+    min-height: 30vh;
+    display: block;
+    align-content: space-around;
+}
+
+.associados{
+    display:inline-table;
+    justify-content: space-between;
+    width: 40%;
+    background-image: var(--seccao-url);
+    margin: 10px;
+    padding: 10px;
+    /* align-items: stretch; */
+    height: 130px;
+    /* min-height: fit-content; */
+}
+
+.associados a{
+    color: var(--cor-detalhe1);
+}
+
+.associados p{
+    color: var(--cor-letra2);
+}

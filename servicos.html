@@ -66,23 +66,23 @@
             <p>Quer agendar um serviço?<a href="#form" aria-label="Preencha o formulário para agendar serviço">Preencha o formulário</a></p>
             <h2>Os nossos serviços</h2>
             <div class="servicos">
-                <a href="#" onclick="" aria-label="Consulte o Apoio Jurídico Perícias Médico-Legais">Apoio Jurídico Perícias Médico-Legais</a>
+                <a href="#" onclick="servico(servicos[0].nome)" aria-label="Consulte o Apoio Jurídico Perícias Médico-Legais">Apoio Jurídico Perícias Médico-Legais</a>
                 <p>Apoio jurídico e perícias médico-legais para esclarecer questões de saúde em processos judiciais, seguros e conflitos laborais.</p>
             </div>
             <div class="servicos">
-                <a href="#" onclick="" aria-label="Consulte as Especialidades e Serviços">Especialidades e Serviços</a>
+                <a href="#" onclick="servico(servicos[1].nome)" aria-label="Consulte as Especialidades e Serviços">Especialidades e Serviços</a>
                 <p>Especialidades médicas para prevenção, diagnóstico e tratamento, garantindo cuidados completos para a sua saúde.</p>
             </div>
             <div class="servicos">
-                <a href="#" onclick="" aria-label="Consulte Medicina Dentária">Medicina Dentária</a>
+                <a href="#" onclick="servico(servicos[2].nome)" aria-label="Consulte Medicina Dentária">Medicina Dentária</a>
                 <p>Medicina dentária com diversas especialidades para a prevenção, diagnóstico e tratamento da saúde oral.</p>
             </div>
             <div class="servicos">
-                <a href="#" onclick="" aria-label="Consulte os Exames">Exames</a>
+                <a href="#" onclick="servico(servicos[3].nome)" aria-label="Consulte os Exames">Exames</a>
                 <p>Exames médicos para diagnóstico e monitorização da saúde, incluindo ecografias, eletrocardiogramas, análises clínicas e mais.</p>
             </div>
             <div class="servicos">
-                <a href="#" onclick="" aria-label="Consulte os Domicílios">Domicílios</a>
+                <a href="#" onclick="servico(servicos[4].nome)" aria-label="Consulte os Domicílios">Domicílios</a>
                 <p>Cuidados de saúde ao domicílio, com serviços de enfermagem, eletrocardiograma, fisioterapia e medicina geral e familiar.</p>
             </div>
         </div>
@@ -166,7 +166,7 @@
             });
         })();
     </script>
-    <script>
+    <script>      
         let servicoSelecionado = document.querySelector("#servico").value
         let servicos = window.env.servicos     
 
@@ -221,6 +221,15 @@
              })
              .catch((err)=>console.log(err));
              
+        }
+
+        function servico(params) {
+            let name = params
+            console.log(params);
+            
+            localStorage.setItem("detalhe", `${name}`)
+            window.location.href = 'detalhe.html'
+            
         }
     </script>
 </body>
