@@ -59,6 +59,8 @@ nav{
     display: flex;
     justify-content: space-evenly;
     background-color: var(--cor-regiao);
+    align-items: center;
+    
 }
 
 #linkConteudo{
@@ -67,6 +69,35 @@ nav{
     padding: 10px;
     padding-left: 30px;
 
+}
+
+.botaoNav{
+    background-color: var(--cor-regiao);
+    color: #FFFCF2;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #FFFCF2;
+    border-radius: 2px;
+    height: 5vh;
+    width: 2.5vw;
+    margin-right: 0%;
+    font-weight: bold;
+    align-self: center;
+    justify-content: center;
+    line-height: 1;
+    margin-right: 0.5vw;
+}
+
+#selected{
+    background-color: #FFFCF2;
+    color: #001A2C;
+    border-style: none;
+    border-radius: 2px;
+    height: 5vh;
+    width: 2.5vw;
+    margin-right: 0%;
+    font-weight: bold;
+    margin-right: 0.5vw;
 }
 
 .listaNav{

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Estou na pagina de detaljhe</p>
+    <script src="bd.js"></script>
+    <script>
+        let noticia = localStorage.getItem("noticia")
+        let atualidade = window.env.atualidade
+
+        for(let i=0; i<atualidade.length;i++){  
+            if(atualidade[i].titulo==noticia){
+                console.log(noticia);
+                document.querySelector("body").innerHTML += `${atualidade[i].titulo}` 
+            }
+        }
+    </script>
+</body>
+</html>

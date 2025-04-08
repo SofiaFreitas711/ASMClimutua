@@ -17,7 +17,13 @@
             <img src="./images/seccoes/Group 18.svg" alt="">
             <ul class="listaNav">
                 <li  class="listaDetalhe"><a href="index.html">Página Inicial</a></li>
-                <li  class="listaDetalhe"><a href="servicos.html" aria-expanded="true">Serviços</a>
+                <li  class="listaDetalhe"><a href="servicos.html" aria-expanded="true">Serviços</a> 
+                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    
                     <ul class="listaSubcategorias">
                         <li><a href="#" onclick="servicos(info.servicos[0].nome)">Apoio Jurídico Periciais Médico-Legais</a></li>
                         <li><a href="#" onclick="servicos(info.servicos[1].nome)">Especialidades</a></li>
@@ -27,6 +33,11 @@
                     </ul>
                 </li>
                 <li  class="listaDetalhe"><a href="associados.html">Associados</a>
+                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
                     <ul class="listaSubcategorias">
                         <li><a href="#" onclick="associados(info.associados[0].nome)">Benefícios</a></li>
                         <li><a href="#" onclick="associados(info.associados[1].nome)">Estatutos</a></li>
@@ -38,12 +49,13 @@
                 <li  class="listaDetalhe"><a href="atualidade.html">Atualidade</a></li>
                 <li  class="listaDetalhe"><a href="sobreNos.html">Sobre Nós</a></li>
                 <li  class="listaDetalhe"><a href="contactos.html">Contactos</a></li>
+                <li class="listaDetalhe" style="color: #FFFCF2;">|</li>
             </ul>
             <div>
-                <button aria-label="Alterar para modo escuro">Modo</button>
-                <button aria-label="Alterar para tamanho de letra pequeno">a-</button>
-                <button aria-label="Alterar para tamanho de letra médio">a</button>
-                <button aria-label="Alterar para tamanho de letra grande">a+</button>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo">☀️</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" id="selected">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav">A+</button>
             </div>
         </nav>        
     </header>
@@ -53,17 +65,17 @@
             <h2>Horários</h2>
             <p>Seg a Sex: 8:00h - 20:00h</p>
             <p>Sáb: 9:00h - 12:00h</p>
-            <a href="servicos.html" class="botaoInicio">Conheça os nossos serviços</a>
+            <a href="servicos.html" class="botaoInicio">Conheça os nossos serviços →</a>
         </div>
         <div class="seccao">
             <h2>Ainda não é associado?</h2>
             <p>Na ASM Climútua, cuidamos da sua saúde com os melhores benefícios e protocolos exclusivos para associados. Junte-se a nós e tenha acesso a cuidados de saúde eficazes e adaptados às suas necessidades.</p>
-            <a href="associados.html" class="botaoClaro">Torne-se associado</a>
+            <a href="associados.html" class="botaoClaro">Torne-se associado →</a>
         </div>
         <div id="terceiraSeccao" class="seccao">
             <h2>Sobre a ASM Climútua</h2>
             <p>Com mais de um século de história, crescemos com base no compromisso e dedicação à nossa comunidade.  Trabalhamos diariamente para garantir acesso a cuidados de saúde de qualidade, proporcionando bem-estar aos nossos associados.</p>
-            <a href="sobreNos.html" class="botaoEscuro">Descubra mais sobre nós</a>
+            <a href="sobreNos.html" class="botaoEscuro">Descubra mais sobre nós →</a>
         </div>
         <div class="seccao">
             <h2>Atualidade</h2>
@@ -95,7 +107,7 @@
             </div>
             <div>
                 <ul>
-                    <br>
+                    <li><br></li>
                     <li><a href="sobreNos.html">Sobre Nós</a></li>
                     <li><a href="contactos.html">Contactos</a></li>
                     <li><a href="mapa.html">Mapa do site</a></li>
@@ -131,17 +143,27 @@
                 document.querySelector("#atualidade").innerHTML += `<div class="atualidade">
                                                                             <img src="${atualidade[i].img}"></img>
                                                                         <div>
-                                                                            <a href="#" onclick="teste()"><p>${atualidade[i].titulo}</p></a>
+                                                                            <a href="#" onclick="teste(${atualidade[i].titulo})"><p>${atualidade[i].titulo}</p></a>
                                                                             <p>${atualidade[i].resumo}</p>
                                                                         </div>
                                                                     </div>`
             }
         }
 
-        function teste(){
-            console.log("Aqui");
+        function teste(params){
+            let noticia = params
+            localStorage.setItem("noticia", `${noticia}`)
+            console.log(noticia);
+
+            window.location.href = 'detalheAtualidade.html'
             
         }
+
+        let modo = document.querySelector("#modo")
+        modo.addEventListener("click",function(){
+            console.log("cliquei");
+            
+        })
         // function associados(params) {
         //     let name = params
         //     console.log(params);

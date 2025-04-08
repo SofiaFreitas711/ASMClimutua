@@ -1,6 +1,6 @@
 window.env = {
     servicos:[
-        {nome:"Apoio Jurídico Periciais Médico-Legais", 
+        {nome:"Apoio Jurídico Períciais Médico-Legais", 
          especialidade:["Medicina Legal", "Medicina Ortopédica Forense", "Advocacia", "Psicologia Forense"],
          equipa: [{nome:"Dra. Mariza Luz", especialidade: "Médica Ortopedia Forense" ,horario: "Seg, Qua, Sex: 9:00h - 15:00h", url: "./images/pessoas/image-35.png"},
                   {nome:"Dr. Alexandre Freitas", especialidade: "Advogado" ,horario: "Seg e Qui: 9:00h - 18:00h", url: "./images/pessoas/image-36.png"},
