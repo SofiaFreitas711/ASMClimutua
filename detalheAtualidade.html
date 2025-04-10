@@ -4,18 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="geral.css">
+    <link rel="stylesheet" href="detalheAtualidade.css">
 </head>
 <body>
-    <p>Estou na pagina de detaljhe</p>
+    <header>
+        <div id="linkConteudo">
+            <a href="#main">Ir para o conteúdo</a>
+        </div>
+        <nav>
+            <img src="./images/seccoes/Group 18.svg" alt="">
+            <ul class="listaNav">
+                <li  class="listaDetalhe"><a href="index.html">Página Inicial</a></li>
+                <li  class="listaDetalhe"><a href="servicos.html" aria-expanded="true">Serviços</a> 
+                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    
+                    <ul class="listaSubcategorias">
+                        <li><a href="#" onclick="servicos(info.servicos[0].nome)">Apoio Jurídico Periciais Médico-Legais</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[1].nome)">Especialidades</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[2].nome)">Medicina Dentária</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[3].nome)">Domicílios</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[4].nome)">Exames</a></li>
+                    </ul>
+                </li>
+                <li  class="listaDetalhe"><a href="associados.html">Associados</a>
+                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    <ul class="listaSubcategorias">
+                        <li><a href="#" onclick="associados(info.associados[0].nome)">Benefícios</a></li>
+                        <li><a href="#" onclick="associados(info.associados[1].nome)">Estatutos</a></li>
+                        <li><a href="#" onclick="associados(info.associados[2].nome)">Protocolos</a></li></li>
+                        <li><a href="#" onclick="associados(info.associados[3].nome)">Documentos Oficiais</a></li></li>
+                        <li><a href="#" onclick="associados(info.associados[4].nome)">Torne-se Associado</a></li></li>
+                    </ul>
+                </li>
+                <li  class="listaDetalhe"><a href="atualidade.html">Atualidade</a></li>
+                <li  class="listaDetalhe"><a href="sobreNos.html">Sobre Nós</a></li>
+                <li  class="listaDetalhe"><a href="contactos.html">Contactos</a></li>
+                <li class="listaDetalhe" style="color: #FFFCF2;">|</li>
+            </ul>
+            <div>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo">☀️</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" id="selected">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav">A+</button>
+            </div>
+        </nav>        
+    </header>
+    <main id="main">
+        <div id="primeiraSeccao">
+            <h1 id="atualidadeNome">Detalhe</h1>
+        </div>
+        <div class="seccao">
+            
+        </div>
+        <!-- informações adicionadas através de dom -->
+    </main>
+    <footer>
+        <a href="#main" id="topo">Ir para o topo</a>
+        <div class="linksFooter"> 
+            <div>
+                <ul>
+                    <li><a href="Tel:229 010 549" style="text-decoration: none;">(+351) 229 010 549</a></li>
+                    <li><a href="mailto: geral@asmmamede.com" style="text-decoration: none;">geral@asmmamede.com</a></li>
+                    <li> <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta" style="text-decoration: none;">R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a></li>
+                </ul>  
+            </div>
+            <div>
+                <ul>
+                    <li><p>ASM Climútua</p></li>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="associados.html">Associados</a></li>
+                    <li><a href="atualidade.html">Atualidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><br></li>
+                    <li><a href="sobreNos.html">Sobre Nós</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
+                    <li><a href="mapa.html">Mapa do site</a></li>
+                </ul>
+            </div>
+        </div>
     <script src="bd.js"></script>
     <script>
-        let noticia = localStorage.getItem("noticia")
+        let detalheAtualidade = localStorage.getItem("detalheAtualidade")
         let atualidade = window.env.atualidade
 
         for(let i=0; i<atualidade.length;i++){  
-            if(atualidade[i].titulo==noticia){
-                console.log(noticia);
-                document.querySelector("body").innerHTML += `${atualidade[i].titulo}` 
+            if(atualidade[i].titulo==detalheAtualidade){
+                console.log(detalheAtualidade);
+                document.querySelector("#atualidadeNome").innerHTML = `${atualidade[i].titulo}` 
+                document.querySelector(".seccao").innerHTML += `<p>${atualidade[i].texto}</p>`
+                
+                document.querySelector("#primeiraSeccao").style = `background-image: linear-gradient(rgba(0,0,0,0) 40%, rgba(137,194,217,1) 85%),
+                                                                                     url("${atualidade[i].img}");`
             }
         }
     </script>

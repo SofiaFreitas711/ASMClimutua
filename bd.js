@@ -91,9 +91,9 @@ window.env = {
         }
     ],
     atualidade:[
-        {img:"https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",titulo:"1",resumo:"lalalala",texto:"loorem,njkth", data:"", tipo:""},
-        {img:"https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",titulo:"2",resumo:"lalalala",texto:",kjhgke", data:"", tipo:""},
-        {img:"https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",titulo:"3",resumo:"lalalala",texto:"ekhrgukh", data:"", tipo:""}
+        {img:"https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",titulo:"1",resumo:"lalalala",texto:"loorem,njkth", data:"", tipo:"evento"},
+        {img:"https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",titulo:"2",resumo:"lalalala",texto:",kjhgke", data:"", tipo:"notícia"},
+        {img:"https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=",titulo:"3",resumo:"lalalala",texto:"ekhrgukh", data:"", tipo:"evento"}
     ]
 
 }
