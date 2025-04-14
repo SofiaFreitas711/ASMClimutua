@@ -5,51 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="geral.css">
+    <link rel="stylesheet" href="contactos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
 </head>
 <body>
     <header>
-        <a href="#main">Ir para o conteúdo</a>
+        <div id="linkConteudo">
+            <a href="#main">Ir para o conteúdo</a>
+        </div>
         <nav>
-            <img src="" alt="">
-            <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li>
-                    <a href="servicos.html">Serviços</a>
-                    <ul>
-                        <li><a href="#" onclick="servicos(lalla[0].name)">Apoio jurídico periciais medico-legais</a></li>
-                        <li><a href="#" onclick="servicos(lalla[1].name)">Especialidades e serviços</a></li>
-                        <li><a href="#" onclick="servicos(lalla[2].name)">Medicina Dentária</a></li></li>
-                        <li><a href="#" onclick="servicos(lalla[3].name)">Domicílios</a></li></li>
-                        <li><a href="#" onclick="servicos(lalla[4].name)">Exames</a></li></li>
+            <img src="./images/seccoes/Group 18.svg" alt="">
+            <ul class="listaNav">
+                <li  class="listaDetalhe"><a href="index.html">Página Inicial</a></li>
+                <li  class="listaDetalhe"><a href="servicos.html" aria-expanded="true">Serviços</a> 
+                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    
+                    <ul class="listaSubcategorias">
+                        <li><a href="#" onclick="servicos(info.servicos[0].nome)">Apoio Jurídico Periciais Médico-Legais</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[1].nome)">Especialidades</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[2].nome)">Medicina Dentária</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[3].nome)">Domicílios</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[4].nome)">Exames</a></li>
                     </ul>
                 </li>
-                <li><a href="associados.html">Associados</a>
-                    <ul>
-                        <li><a href="#" onclick="associados(lalla[0].name)">Benefícios</a></li>
-                        <li><a href="#" onclick="associados(lalla[1].name)">Estatutos</a></li>
-                        <li><a href="#" onclick="associados(lalla[2].name)">Protocolos</a></li></li>
-                        <li><a href="#" onclick="associados(lalla[3].name)">Documentos Oficiais</a></li></li>
-                        <li><a href="#" onclick="associados(lalla[4].name)">Torne-se Associado</a></li></li>
+                <li  class="listaDetalhe"><a href="associados.html">Associados</a>
+                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    <ul class="listaSubcategorias">
+                        <li><a href="#" onclick="associados(info.associados[0].nome)">Benefícios</a></li>
+                        <li><a href="#" onclick="associados(info.associados[1].nome)">Estatutos</a></li>
+                        <li><a href="#" onclick="associados(info.associados[2].nome)">Protocolos</a></li></li>
+                        <li><a href="#" onclick="associados(info.associados[3].nome)">Documentos Oficiais</a></li></li>
+                        <li><a href="#" onclick="associados(info.associados[4].nome)">Torne-se Associado</a></li></li>
                     </ul>
                 </li>
-                <li><a href="atualidade.html">Atualidade</a></li>
-                <li><a href="sobreNos.html">Sobre Nós</a></li>
-                <li><a href="contactos.html">Contactos</a></li>
+                <li  class="listaDetalhe"><a href="atualidade.html">Atualidade</a></li>
+                <li  class="listaDetalhe"><a href="sobreNos.html">Sobre Nós</a></li>
+                <li  class="listaDetalhe"><a href="contactos.html">Contactos</a></li>
+                <li class="listaDetalhe" style="color: #FFFCF2;">|</li>
             </ul>
-            <button aria-label="Alterar para modo escuro">Modo</button>
-            <button aria-label="Alterar para tamanho de letra pequeno">a-</button>
-            <button aria-label="Alterar para tamanho de letra médio">a</button>
-            <button aria-label="Alterar para tamanho de letra grande">a+</button>
+            <div>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo">☀️</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" id="selected">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav">A+</button>
+            </div>
         </nav>        
     </header>
     <main id="main">
-        <div>    
-            <a href="Tel:229 010 549">(+351) 229 010 549</a>
-            <a href="mailto: geral@asmmamede.com">geral@asmmamede.com</a>
-            <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta">R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a>
+        <div class="seccao">
+            <h1>Contactos</h1>
+            <div>    
+                <div id="contactos">
+                    <p class="contactoArea">Telefone: <a href="Tel:229 010 549">(+351) 229 010 549</a></p>
+                    <p class="contactoArea">Email: <a href="mailto: geral@asmmamede.com">geral@asmmamede.com</a></p>
+                </div>
+                <p class="contactoArea" id="total">Morada: <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta" >R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a></p>
+            </div>
         </div>
-        <div>
-            <form action="">
+        <div id="contactosForm">
+            <div id="form">
+                <h2>Tem alguma questão? Fale connosco</h2>
                 <label for="nome">Nome</label>
                 <br>
                 <input type="text" name="nome" id="nome">
@@ -66,35 +90,93 @@
                 <br>
                 <input type="text" name="mensagem" id="mensagem">
                 <br>
-                <input type="submit" value="Enviar mensagem">
-            </form>
+                <button onclick="sendMail()" id="enviarEmail">Enviar mensagem →</button>
+            </div>
+            <div id="map" style="width: 100%;" aria-roledescription="mapa">
+                <!-- maps -->
+            </div>
         </div>
-        <div>
-            <!-- maps -->
-        </div>
-
-
     </main>
     <footer>
-        <a href="#main">Ir para o topo</a>
-        <div>
-            <ul>
-                <li><a href="Tel:229 010 549">(+351) 229 010 549</a></li>
-                <li><a href="mailto: geral@asmmamede.com">geral@asmmamede.com</a></li>
-                <li> <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta">R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a></li>
-            </ul>  
+        <a href="#main" id="topo">Ir para o topo</a>
+        <div class="linksFooter"> 
+            <div>
+                <ul>
+                    <li><a href="Tel:229 010 549" style="text-decoration: none;">(+351) 229 010 549</a></li>
+                    <li><a href="mailto: geral@asmmamede.com" style="text-decoration: none;">geral@asmmamede.com</a></li>
+                    <li> <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta" style="text-decoration: none;">R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a></li>
+                </ul>  
+            </div>
+            <div>
+                <ul>
+                    <li><p>ASM Climútua</p></li>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="associados.html">Associados</a></li>
+                    <li><a href="atualidade.html">Atualidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><br></li>
+                    <li><a href="sobreNos.html">Sobre Nós</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
+                    <li><a href="mapa.html">Mapa do site</a></li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="associados.html">Associados</a></li>
-                <li><a href="atualidade.html">Atualidade</a></li>
-                <li><a href="sobreNos.html">Sobre Nós</a></li>
-                <li><a href="contactos.html">Contactos</a></li>
-                <li><a href="mapa.html">Mapa do site</a></li>
-            </ul>
-        </div>
+        
     </footer>
+    <script src="bd.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "TVJLsJ1X37GkiTHV_",
+            });
+        })();
+    </script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        // https://www.youtube.com/watch?v=wywYRQb3JCE&ab_channel=NargesMirzaaghaei
+        let mapOptions = {
+            center:[41.194309, -8.606839],
+            zoom:50
+        }
+
+        let map = new L.map('map' , mapOptions);
+
+        let layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+        map.addLayer(layer);
+
+        let marker = new L.Marker([41.194309, -8.606839]);
+        marker.addTo(map);
+
+        function sendMail(){
+            
+            let params = {
+                nome:document.querySelector("#nome").value,
+                email:document.querySelector("#email").value,
+                assunto: document.querySelector("#assunto").value,
+                mensagem:document.querySelector("#mensagem").value
+            }
+
+            const serviceID = "service_rvk89m9"
+            const templateID = "template_key9z4i"
+
+            emailjs
+             .send(serviceID,templateID,params)
+             .then((res)=>{
+                document.querySelector("#nome").value = "",
+                document.querySelector("#email").value = "",
+                document.querySelector("#assunto").value = "",
+                document.querySelector("#mensagem").value = ""
+
+                document.querySelector("#form").innerHTML += `<p style="color:white">Pedido enviado com sucesso</p>`
+             })
+             .catch((err)=>console.log(err));
+             
+        }
+    </script>
 </body>
 </html>

@@ -167,15 +167,15 @@
             emailjs
              .send(serviceID,templateID,params)
              .then((res)=>{
-                document.querySelector("#nome").value,
-                document.querySelector("#email").value,
-                document.querySelector("#telemovel").value,
-                document.querySelector("#nascimento").value,
-                document.querySelector("#cc").value,
-                document.querySelector("#nif").value,
-                document.querySelector("#morada").value,
-                document.querySelector("#codPostal").value,
-                document.querySelector("#modalidade").value
+                document.querySelector("#nome").value = "",
+                document.querySelector("#email").value = "",
+                document.querySelector("#telemovel").value = "",
+                document.querySelector("#nascimento").value = "",
+                document.querySelector("#cc").value = "",
+                document.querySelector("#nif").value = "",
+                document.querySelector("#morada").value = "",
+                document.querySelector("#codPostal").value = "",
+                document.querySelector("#modalidade").value = ""
 
                 document.querySelector("#form").innerHTML += `<p style="color:white">Pedido enviado com sucesso</p>`
              })

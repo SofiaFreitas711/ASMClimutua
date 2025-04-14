@@ -8,9 +8,58 @@
 </head>
 <body>
     <header>
-        <a href="#main">Ir para o conteúdo</a>
+        <div id="linkConteudo">
+            <a href="#main">Ir para o conteúdo</a>
+        </div>
         <nav>
-            <img src="" alt="">
+            <img src="./images/seccoes/Group 18.svg" alt="">
+            <ul class="listaNav">
+                <li  class="listaDetalhe"><a href="index.html">Página Inicial</a></li>
+                <li  class="listaDetalhe"><a href="servicos.html" aria-expanded="true">Serviços</a> 
+                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    
+                    <ul class="listaSubcategorias">
+                        <li><a href="#" onclick="servicos(info.servicos[0].nome)">Apoio Jurídico Periciais Médico-Legais</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[1].nome)">Especialidades</a></li>
+                        <li><a href="#" onclick="servicos(info.servicos[2].nome)">Medicina Dentária</a></li></li>
+                        <li><a href="#" onclick="servicos(info.servicos[3].nome)">Domicílios</a></li></li>
+                        <li><a href="#" onclick="servicos(info.servicos[4].nome)">Exames</a></li></li>
+                    </ul>
+                </li>
+                <li  class="listaDetalhe"><a href="associados.html">Associados</a>
+                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    <ul class="listaSubcategorias">
+                        <li><a href="#" onclick="associados(info.associados[0].nome)">Benefícios</a></li>
+                        <li><a href="#" onclick="associados(info.associados[1].nome)">Estatutos</a></li>
+                        <li><a href="#" onclick="associados(info.associados[2].nome)">Protocolos</a></li></li>
+                        <li><a href="#" onclick="associados(info.associados[3].nome)">Documentos Oficiais</a></li></li>
+                        <li><a href="#" onclick="associados(info.associados[4].nome)">Torne-se Associado</a></li></li>
+                    </ul>
+                </li>
+                <li  class="listaDetalhe"><a href="atualidade.html">Atualidade</a></li>
+                <li  class="listaDetalhe"><a href="sobreNos.html">Sobre Nós</a></li>
+                <li  class="listaDetalhe"><a href="contactos.html">Contactos</a></li>
+                <li class="listaDetalhe" style="color: #FFFCF2;">|</li>
+            </ul>
+            <div>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo">☀️</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" id="selected">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav">A+</button>
+            </div>
+        </nav>        
+    </header>
+    <main id="main">
+        <div class="seccao">
+            <h1>Mapa do site</h1>
             <ul>
                 <li><a href="index.html">Página Inicial</a></li>
                 <li>
@@ -36,61 +85,38 @@
                 <li><a href="sobreNos.html">Sobre Nós</a></li>
                 <li><a href="contactos.html">Contactos</a></li>
             </ul>
-            <button aria-label="Alterar para modo escuro">Modo</button>
-            <button aria-label="Alterar para tamanho de letra pequeno">a-</button>
-            <button aria-label="Alterar para tamanho de letra médio">a</button>
-            <button aria-label="Alterar para tamanho de letra grande">a+</button>
-        </nav>        
-    </header>
-    <main id="main">
-        <h1>Mapa do site</h1>
-        <ul>
-            <li><a href="index.html">Página Inicial</a></li>
-            <li>
-                <a href="servicos.html">Serviços</a>
-                <ul>
-                    <li><a href="#" onclick="servicos(lalla[0].name)">Apoio jurídico periciais medico-legais</a></li>
-                    <li><a href="#" onclick="servicos(lalla[1].name)">Especialidades e serviços</a></li>
-                    <li><a href="#" onclick="servicos(lalla[2].name)">Medicina Dentária</a></li></li>
-                    <li><a href="#" onclick="servicos(lalla[3].name)">Domicílios</a></li></li>
-                    <li><a href="#" onclick="servicos(lalla[4].name)">Exames</a></li></li>
-                </ul>
-            </li>
-            <li><a href="associados.html">Associados</a>
-                <ul>
-                    <li><a href="#" onclick="associados(lalla[0].name)">Benefícios</a></li>
-                    <li><a href="#" onclick="associados(lalla[1].name)">Estatutos</a></li>
-                    <li><a href="#" onclick="associados(lalla[2].name)">Protocolos</a></li></li>
-                    <li><a href="#" onclick="associados(lalla[3].name)">Documentos Oficiais</a></li></li>
-                    <li><a href="#" onclick="associados(lalla[4].name)">Torne-se Associado</a></li></li>
-                </ul>
-            </li>
-            <li><a href="atualidade.html">Atualidade</a></li>
-            <li><a href="sobreNos.html">Sobre Nós</a></li>
-            <li><a href="contactos.html">Contactos</a></li>
-        </ul>
+        </div>
         
     </main>
     <footer>
-        <a href="#main">Ir para o topo</a>
-        <div>
-            <ul>
-                <li><a href="Tel:229 010 549">(+351) 229 010 549</a></li>
-                <li><a href="mailto: geral@asmmamede.com">geral@asmmamede.com</a></li>
-                <li> <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta">R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a></li>
-            </ul>  
+        <a href="#main" id="topo">Ir para o topo</a>
+        <div class="linksFooter"> 
+            <div>
+                <ul>
+                    <li><a href="Tel:229 010 549" style="text-decoration: none;">(+351) 229 010 549</a></li>
+                    <li><a href="mailto: geral@asmmamede.com" style="text-decoration: none;">geral@asmmamede.com</a></li>
+                    <li> <a href="http://maps.google.com/?q=R.Henrique Bravo 6517, 4465-115 São Mamede de Infesta" style="text-decoration: none;">R. Henrique Bravo 6517, 4465-115 São Mamede de Infesta</a></li>
+                </ul>  
+            </div>
+            <div>
+                <ul>
+                    <li><p>ASM Climútua</p></li>
+                    <li><a href="index.html">Página Inicial</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="associados.html">Associados</a></li>
+                    <li><a href="atualidade.html">Atualidade</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><br></li>
+                    <li><a href="sobreNos.html">Sobre Nós</a></li>
+                    <li><a href="contactos.html">Contactos</a></li>
+                    <li><a href="mapa.html">Mapa do site</a></li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="associados.html">Associados</a></li>
-                <li><a href="atualidade.html">Atualidade</a></li>
-                <li><a href="sobreNos.html">Sobre Nós</a></li>
-                <li><a href="contactos.html">Contactos</a></li>
-                <li><a href="mapa.html">Mapa do site</a></li>
-            </ul>
-        </div>
+        
     </footer>
 </body>
 </html>

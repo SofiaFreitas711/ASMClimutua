@@ -110,7 +110,8 @@ nav{
 }
 
 .listaSubcategorias{
-    display: none;
+    /* display: none; */
+    visibility: hidden;
     position: absolute;
     padding: 20px 5px;
     background-color: var(--cor-regiao);
@@ -124,7 +125,8 @@ nav{
 .listaDetalhe:focus-within .listaSubcategorias,
 .listaSubcategorias:hover .listaSubcategorias,
 .listaSubcategorias:focus-within .listaSubcategorias{
-    display: block;
+    /* display: block; */
+    visibility: visible;
     
 }
 
