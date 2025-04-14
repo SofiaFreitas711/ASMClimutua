@@ -89,19 +89,19 @@
         <div id="form">
             <h2>Pedir agendamento de serviço</h2>
             <div>
-                <label for="nome">Nome (Primeiro e Último)</label>
+                <label for="nome">Nome (Primeiro e Último) (Obrigatório)</label>
                 <br>
                 <input type="text" name="nome (primeiro e último)" id="nome">
                 <br>
-                <label for="email">Email</label>
+                <label for="email">Email (Obrigatório)</label>
                 <br>
                 <input type="email" name="email" id="email">
                 <br>
-                <label for="socio">Número de Sócio:</label>
+                <label for="socio">Número de Sócio (Obrigatório)</label>
                 <br>
                 <input type="number" name="número de socio" id="socio">
                 <br>
-                <label for="servico">Serviço</label>
+                <label for="servico">Serviço (Obrigatório)</label>
                 <br>
                 <select name="serviço" id="servico" onchange="adicionarEspecialidades()">
                     <option value="Apoio Jurídico Períciais Médico-Legais">Apoio Jurídico Perícias Médico-Legais</option>
@@ -111,7 +111,7 @@
                     <option value="Domicílios">Domicílos</option>
                 </select>
                 <br>
-                <label for="especialidade">Especialidade</label>
+                <label for="especialidade">Especialidade (Obrigatório)</label>
                 <br>
                 <select name="especialidade" id="especialidade">
                     <!-- Adicionar especialidades após filter e meter com dom -->
@@ -193,34 +193,46 @@
         especialidades()
 
         function sendMail(){
-            console.log("aqui");
-            
-            let params = {
-                nome:document.querySelector("#nome").value,
-                email:document.querySelector("#email").value,
-                numeroAssociado: document.querySelector("#socio").value,
-                servico: document.querySelector("#servico").value,
-                especialidade: document.querySelector("#especialidade").value,
-                obs: document.querySelector("#obs").value
-            }
+            let nome = document.querySelector("#nome").value
+            let email = document.querySelector("#email").value
+            let numeroAssociado = document.querySelector("#socio").value
 
-            const serviceID = "service_rvk89m9"
-            const templateID = "template_orcdeol"
-
-            emailjs
-             .send(serviceID,templateID,params)
-             .then((res)=>{
-                document.querySelector("#nome").value = ""
-                document.querySelector("#email").value = ""
-                document.querySelector("#socio").value = ""
-                document.querySelector("#servico").value = ""
-                document.querySelector("#especialidade").value = ""
-                document.querySelector("#obs").value = ""
-
-                document.querySelector("#form").innerHTML += `<p style="color:white">Pedido enviado com sucesso</p>`
-             })
-             .catch((err)=>console.log(err));
-             
+            if(nome != "" && email != "" && numeroAssociado!=""){
+                let params = {
+                    nome:nome,
+                    email:email,
+                    numeroAssociado: numeroAssociado,
+                    servico: document.querySelector("#servico").value,
+                    especialidade: document.querySelector("#especialidade").value,
+                    obs: document.querySelector("#obs").value
+                }
+    
+                const serviceID = "service_rvk89m9"
+                const templateID = "template_orcdeol"
+    
+                emailjs
+                 .send(serviceID,templateID,params)
+                 .then((res)=>{
+                    document.querySelector("#nome").value = ""
+                    document.querySelector("#email").value = ""
+                    document.querySelector("#socio").value = ""
+                    document.querySelector("#servico").value = ""
+                    document.querySelector("#especialidade").value = ""
+                    document.querySelector("#obs").value = ""
+    
+                    document.querySelector("#form").innerHTML += `<p style="color:white" id="aviso">Pedido enviado com sucesso</p>`
+                    setInterval(function(){
+                        document.querySelector("#aviso").remove()
+                    },10000)
+                 })
+                 .catch((err)=>console.log(err));
+                 
+            }else{
+                document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive" id="aviso">Falta preencher um dos campos</p>`
+                setInterval(function(){
+                    document.querySelector("#aviso").remove()
+                },5000)
+            }   
         }
 
         function servico(params) {

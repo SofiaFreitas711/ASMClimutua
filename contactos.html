@@ -74,15 +74,15 @@
         <div id="contactosForm">
             <div id="form">
                 <h2>Tem alguma questão? Fale connosco</h2>
-                <label for="nome">Nome</label>
+                <label for="nome">Nome (Obrigatório)</label>
                 <br>
                 <input type="text" name="nome" id="nome">
                 <br>
-                <label for="email">Email</label>
+                <label for="email">Email (Obrigatório)</label>
                 <br>
                 <input type="email" name="email" id="email">
                 <br>
-                <label for="assunto">Assunto</label>
+                <label for="assunto">Assunto (Obrigatório)</label>
                 <br>
                 <input type="text" name="assunto" id="assunto">
                 <br>
@@ -153,28 +153,44 @@
         marker.addTo(map);
 
         function sendMail(){
-            
-            let params = {
-                nome:document.querySelector("#nome").value,
-                email:document.querySelector("#email").value,
-                assunto: document.querySelector("#assunto").value,
-                mensagem:document.querySelector("#mensagem").value
+            let nome = document.querySelector("#nome").value
+            let email = document.querySelector("#email").value
+            let assunto = document.querySelector("#assunto").value
+            let mensagem = document.querySelector("#mensagem").value
+
+            if(nome != "" && email!="" && assunto !=""){
+                let params = {
+                    nome:nome,
+                    email:email,
+                    assunto: assunto,
+                    mensagem:document.querySelector("#mensagem").value
+                }
+    
+                const serviceID = "service_rvk89m9"
+                const templateID = "template_key9z4i"
+    
+                emailjs
+                 .send(serviceID,templateID,params)
+                 .then((res)=>{
+                    document.querySelector("#nome").value = "",
+                    document.querySelector("#email").value = "",
+                    document.querySelector("#assunto").value = "",
+                    document.querySelector("#mensagem").value = ""
+    
+                    document.querySelector("#form").innerHTML += `<p style="color:white" id="aviso">Pedido enviado com sucesso</p>`
+                    setInterval(function(){
+                        document.querySelector("#aviso").remove()
+                    },5000)
+                 })
+                 .catch((err)=>console.log(err));
             }
-
-            const serviceID = "service_rvk89m9"
-            const templateID = "template_key9z4i"
-
-            emailjs
-             .send(serviceID,templateID,params)
-             .then((res)=>{
-                document.querySelector("#nome").value = "",
-                document.querySelector("#email").value = "",
-                document.querySelector("#assunto").value = "",
-                document.querySelector("#mensagem").value = ""
-
-                document.querySelector("#form").innerHTML += `<p style="color:white">Pedido enviado com sucesso</p>`
-             })
-             .catch((err)=>console.log(err));
+            else{
+                document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive" id="aviso">Falta preencher um dos campos</p>`
+                setInterval(function(){
+                    document.querySelector("#aviso").remove()
+                },10000)
+            }
+            
              
         }
     </script>

@@ -53,9 +53,9 @@
             </ul>
             <div>
                 <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo">☀️</button>
-                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav">A-</button>
-                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" id="selected">A</button>
-                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav">A+</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno')">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal')">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande')">A+</button>
             </div>
         </nav>        
     </header>
@@ -116,6 +116,7 @@
         </div>
         
     </footer>
+    <script src="teste.js"></script>
     <script src="bd.js"></script>
     <script>
         console.log(window.env.servicos);
@@ -159,11 +160,11 @@
             
         }
 
-        let modo = document.querySelector("#modo")
-        modo.addEventListener("click",function(){
-            console.log("cliquei");
+        // let modo = document.querySelector("#modo")
+        // modo.addEventListener("click",function(){
+        //     console.log("cliquei");
             
-        })
+        // })
         // function associados(params) {
         //     let name = params
         //     console.log(params);

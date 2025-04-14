@@ -28,24 +28,24 @@
 
 /* adicionar media para isto */
 #normal{
-    --tamanho-titulo:
-    --tamanho-subtitulo:
-    --tamanho-texto:
-    --tamanho-notas: 
+    --tamanho-titulo: 32px;
+    --tamanho-subtitulo: 30px;
+    --tamanho-texto: 24px;
+    --tamanho-notas: 22px;
 }
 
 #grande{
-    --tamanho-titulo:
-    --tamanho-subtitulo:
-    --tamanho-texto:
-    --tamanho-notas: 
+    --tamanho-titulo: 36px;
+    --tamanho-subtitulo: 34px;
+    --tamanho-texto: 28px;
+    --tamanho-notas: 26px;
 }
 
 #pequeno{
-    --tamanho-titulo:
-    --tamanho-subtitulo:
-    --tamanho-texto:
-    --tamanho-notas: 
+    --tamanho-titulo: 24px;
+    --tamanho-subtitulo: 22px;
+    --tamanho-texto: 20px;
+    --tamanho-notas: 18px;
 }
 
 body{
@@ -61,6 +61,18 @@ nav{
     background-color: var(--cor-regiao);
     align-items: center;
     
+}
+
+h1{
+    font-size: var(--tamanho-titulo);
+}
+
+h2{
+    font-size: var(--tamanho-subtitulo);
+}
+
+p,a{
+    font-size: var(--tamanho-texto);
 }
 
 #linkConteudo{

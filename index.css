@@ -8,12 +8,14 @@
     flex-direction: column;
     align-items:flex-start;
     justify-content: flex-end;
+    color: #001A2C;
 }
 
 :root{
     --cor-fundo: #FFFCF2;
     --cor-letra: #001A2C;
     --cor-letra2: #FFFCF2;
+    --cor-botao: #FFFCF2;
     --cor-detalhe1: #FF9C00;
     --cor-detalhe2: #003A61;
     --cor-regiao: #003A61;
@@ -28,6 +30,7 @@
     --cor-fundo: #001A2C;
     --cor-letra: #FFFCF2;
     --cor-letra2: #FFFCF2;
+    --cor-botao: #001A2C;
     --cor-detallhe1: #EB8F00;
     --cor-detalhe2: #C4E5F0;
     --cor-regiao: #003152;
@@ -57,7 +60,7 @@
 .botaoClaro{
     background-color: var(--botao-seccao-clara);
     border-radius: 2px;
-    color: var(--cor-letra2);
+    color: var(--cor-botao);
     text-decoration: none;
     padding: 5px;
     width: 35%;

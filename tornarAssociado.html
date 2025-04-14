@@ -65,39 +65,39 @@
         <div id="form">
             <h2>Pedido de Associado</h2>
             <div>
-                <label for="nome">Nome (Completo)</label>
+                <label for="nome">Nome Completo (Obrigatório)</label>
                 <br>
                 <input type="text" name="nome(completo)" id="nome">
                 <br>
-                <label for="email">Email</label>
+                <label for="email">Email (Obrigatório)</label>
                 <br>
                 <input type="email" name="email" id="email">
                 <br>
-                <label for="telemovel">Telemóvel</label>
+                <label for="telemovel">Telemóvel (Obrigatório)</label>
                 <br>
                 <input type="tel" name="telemovel" id="telemovel">
                 <br>
-                <label for="nascimento">Data de Nascimento</label>
+                <label for="nascimento">Data de Nascimento (Obrigatório)</label>
                 <br>
                 <input type="date" name="data de nascimento" id="nascimento">
                 <br>
-                <label for="cc">Número do CC ou BI</label>
+                <label for="cc">Número do CC ou BI (Obrigatório)</label>
                 <br>
                 <input type="number" name="número do cc ou bi" id="cc">
                 <br>
-                <label for="nif">NIF</label>
+                <label for="nif">NIF (Obrigatório)</label>
                 <br>
                 <input type="number" name="NIF" id="nif">
                 <br>
-                <label for="morada">Morada</label>
+                <label for="morada">Morada (Obrigatório)</label>
                 <br>
                 <input type="text" name="morada" id="morada">
                 <br>
-                <label for="codPostal">Código Postal</label>
+                <label for="codPostal">Código Postal (Obrigatório)</label>
                 <br>
                 <input type="text" name="código postal" id="codPostal">
                 <br>
-                <label for="modalidade">Modalidade Pretendida</label>
+                <label for="modalidade">Modalidade Pretendida (Obrigatório)</label>
                 <br>
                 <select name="modalidade pretendida" id="modalidade">
                     <option value=""></option>
@@ -148,38 +148,56 @@
     <script>
         function sendMail(){
             console.log("aqui");
-            
-            let params = {
-                nome:document.querySelector("#nome").value,
-                email:document.querySelector("#email").value,
-                telemovel: document.querySelector("#telemovel").value,
-                dataNascimento: document.querySelector("#nascimento").value,
-                identificacao: document.querySelector("#cc").value,
-                nif: document.querySelector("#nif").value,
-                morada: document.querySelector("#morada").value,
-                codPostal: document.querySelector("#codPostal").value,
-                modalidade: document.querySelector("#modalidade").value
+            let nome=document.querySelector("#nome").value
+            let email=document.querySelector("#email").value
+            let telemovel= document.querySelector("#telemovel").value
+            let dataNascimento = document.querySelector("#nascimento").value
+            let identificacao= document.querySelector("#cc").value
+            let nif= document.querySelector("#nif").value
+            let morada= document.querySelector("#morada").value
+            let codPostal= document.querySelector("#codPostal").value
+
+            if(nome != "" && email !="" && telemovel!="" && identificacao !="" && nif!="" && morada !="" && codPostal != "" && dataNascimento != ""){
+                let params = {
+                    nome:nome,
+                    email:email,
+                    telemovel: telemovel,
+                    dataNascimento: dataNascimento,
+                    identificacao: identificacao,
+                    nif: nif,
+                    morada: morada,
+                    codPostal: codPostal,
+                    modalidade: document.querySelector("#modalidade").value
+                }
+    
+                const serviceID = "service_w1ezoyi"
+                const templateID = "template_baxo6xh"
+    
+                emailjs
+                 .send(serviceID,templateID,params)
+                 .then((res)=>{
+                    document.querySelector("#nome").value = "",
+                    document.querySelector("#email").value = "",
+                    document.querySelector("#telemovel").value = "",
+                    document.querySelector("#nascimento").value = "",
+                    document.querySelector("#cc").value = "",
+                    document.querySelector("#nif").value = "",
+                    document.querySelector("#morada").value = "",
+                    document.querySelector("#codPostal").value = "",
+                    document.querySelector("#modalidade").value = ""
+    
+                    document.querySelector("#form").innerHTML += `<p style="color:white">Pedido enviado com sucesso</p>`
+                    setInterval(function(){
+                        document.querySelector("#aviso").remove()
+                    },10000)
+                 })
+                 .catch((err)=>console.log(err));
+            }else{
+                document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive" id="aviso">Falta preencher um dos campos</p>`
+                setInterval(function(){
+                    document.querySelector("#aviso").remove()
+                },5000)
             }
-
-            const serviceID = "service_w1ezoyi"
-            const templateID = "template_baxo6xh"
-
-            emailjs
-             .send(serviceID,templateID,params)
-             .then((res)=>{
-                document.querySelector("#nome").value = "",
-                document.querySelector("#email").value = "",
-                document.querySelector("#telemovel").value = "",
-                document.querySelector("#nascimento").value = "",
-                document.querySelector("#cc").value = "",
-                document.querySelector("#nif").value = "",
-                document.querySelector("#morada").value = "",
-                document.querySelector("#codPostal").value = "",
-                document.querySelector("#modalidade").value = ""
-
-                document.querySelector("#form").innerHTML += `<p style="color:white">Pedido enviado com sucesso</p>`
-             })
-             .catch((err)=>console.log(err));
              
         }
     </script>
