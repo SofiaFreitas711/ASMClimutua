@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="geral.css">
-    <link rel="stylesheet" href="detalheAtualidade.css">
+    <link rel="stylesheet" href="./styles/detalheAtualidade.css">
 </head>
 <body>
     <header>
@@ -15,46 +15,46 @@
         <nav>
             <img src="./images/seccoes/Group 18.svg" alt="">
             <ul class="listaNav">
-                <li  class="listaDetalhe"><a href="index.html">Página Inicial</a></li>
-                <li  class="listaDetalhe"><a href="servicos.html" aria-expanded="true">Serviços</a> 
-                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                <li  class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li>
+                <li  class="listaDetalhe"><a href="servicos.html" class="listaTexto"><img src="./images/icons/servicos.svg" class="icone" aria-hidden="true">Serviços</a> 
+                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
                     </button>
                     
                     <ul class="listaSubcategorias">
-                        <li><a href="#" onclick="servicos(info.servicos[0].nome)">Apoio Jurídico Periciais Médico-Legais</a></li>
-                        <li><a href="#" onclick="servicos(info.servicos[1].nome)">Especialidades</a></li>
-                        <li><a href="#" onclick="servicos(info.servicos[2].nome)">Medicina Dentária</a></li>
-                        <li><a href="#" onclick="servicos(info.servicos[3].nome)">Domicílios</a></li>
-                        <li><a href="#" onclick="servicos(info.servicos[4].nome)">Exames</a></li>
+                        <li><a href="#" onclick="irPagina('servicos',window.env.servicos[0].nome)">Apoio Jurídico Períciais Médico-Legais</a></li>
+                        <li><a href="#" onclick="irPagina('servicos',window.env.servicos[1].nome)">Especialidades</a></li>
+                        <li><a href="#" onclick="irPagina('servicos',window.env.servicos[2].nome)">Medicina Dentária</a></li>
+                        <li><a href="#" onclick="irPagina('servicos',window.env.servicos[3].nome)">Domicílios</a></li>
+                        <li><a href="#" onclick="irPagina('servicos',window.env.servicos[4].nome)">Exames</a></li>
                     </ul>
                 </li>
-                <li  class="listaDetalhe"><a href="associados.html">Associados</a>
+                <li  class="listaDetalhe"><a href="associados.html" class="listaTexto"><img src="./images/icons/associados.svg" class="icone" aria-hidden="true">Associados</a>
                     <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
                     </button>
                     <ul class="listaSubcategorias">
-                        <li><a href="#" onclick="associados(info.associados[0].nome)">Benefícios</a></li>
-                        <li><a href="#" onclick="associados(info.associados[1].nome)">Estatutos</a></li>
-                        <li><a href="#" onclick="associados(info.associados[2].nome)">Protocolos</a></li></li>
-                        <li><a href="#" onclick="associados(info.associados[3].nome)">Documentos Oficiais</a></li></li>
-                        <li><a href="#" onclick="associados(info.associados[4].nome)">Torne-se Associado</a></li></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Benefícios</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Estatutos</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Protocolos</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Documentos Oficiais</a></li>
+                        <li><a href="tornarAssociado.html">Torne-se Associado</a></li>
                     </ul>
                 </li>
-                <li  class="listaDetalhe"><a href="atualidade.html">Atualidade</a></li>
-                <li  class="listaDetalhe"><a href="sobreNos.html">Sobre Nós</a></li>
-                <li  class="listaDetalhe"><a href="contactos.html">Contactos</a></li>
+                <li  class="listaDetalhe"><a href="atualidade.html" class="listaTexto"><img src="./images/icons/atualidade.svg" class="icone" aria-hidden="true">Atualidade</a></li>
+                <li  class="listaDetalhe"><a href="sobreNos.html" class="listaTexto"><img src="./images/icons/sobreNos.svg" class="icone" id="sobreNos" aria-hidden="true">Sobre Nós</a></li>
+                <li  class="listaDetalhe"><a href="contactos.html" class="listaTexto"><img src="./images/icons/contactos.svg" class="icone" aria-hidden="true">Contactos</a></li>
                 <li class="listaDetalhe" style="color: #FFFCF2;">|</li>
             </ul>
             <div>
                 <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo">☀️</button>
-                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav">A-</button>
-                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" id="selected">A</button>
-                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav">A+</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno')">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal')">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande')">A+</button>
             </div>
         </nav>        
     </header>
@@ -96,6 +96,7 @@
             </div>
         </div>
     <script src="bd.js"></script>
+    <script src="teste.js"></script>
     <script>
         let detalheAtualidade = localStorage.getItem("detalheAtualidade")
         let atualidade = window.env.atualidade

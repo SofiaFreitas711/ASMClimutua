@@ -1,6 +1,6 @@
 @font-face {
     font-family: Hubot Sans;
-    src: url(static/HubotSans-Regular.ttf);
+    src: url(../static/HubotSans-Regular.ttf);
 }
 
 :root{
@@ -10,7 +10,7 @@
     --cor-detalhe1: #FF9C00;
     --cor-detalhe2: #003A61;
     --cor-regiao: #003A61;
-    --seccao-url: url("./images/seccoes/Group 8 - v2.png");
+    --seccao-url: url("../images/seccoes/Group 8 - v2.png");
     --botao-seccao: #FF9C00;
 }
 
@@ -21,32 +21,15 @@
     --cor-detallhe1: #EB8F00;
     --cor-detalhe2: #C4E5F0;
     --cor-regiao: #003152;
-    --seccao-url: url("./images/seccoes/Group 8 - Dark mode.png");
+    --seccao-url: url("../images/seccoes/Group 8 - Dark mode.png");
     --botao-seccao: #EB8F00;
 }
 
 .seccao{
     padding: 30px;
-    min-height: 30vh;
+    /* min-height: 30vh; */
     display: block;
-    align-content: space-around;
-}
-
-.servicos{
-    display: inline-block;
-    width: 45%;
-    background-image: var(--seccao-url);
-    margin: 10px;
-    padding: 10px;
-    min-height: fit-content;
-}
-
-.servicos a{
-    color: var(--cor-detalhe1);
-}
-
-.servicos p{
-    color: var(--cor-letra2);
+    /* align-content: space-around; */
 }
 
 #form{
@@ -80,4 +63,3 @@
     color: #001A2C;
     border-style: none;
 }
-

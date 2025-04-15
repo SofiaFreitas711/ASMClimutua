@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Hubot Sans;
+    src: url(../static/HubotSans-Regular.ttf);
+}
+
 :root{
     --cor-fundo: #FFFCF2;
     --cor-letra: #001A2C;
@@ -6,7 +11,7 @@
     --cor-detalhe2: #003A61;
     --cor-regiao: #003A61;
     --cor-link-conteudo: #001A2C;
-    --seccao-url: url("./images/seccoes/Group 8 - v2.png");
+    --seccao-url: url("../images/seccoes/Group 8 - v2.png");
     --botao-inicial: #001A2C;
     --botao-seccao-clara: #001A2C;
     --botao-seccao-escura: #FF9C00;
@@ -19,7 +24,7 @@
     --cor-detallhe1: #EB8F00;
     --cor-detalhe2: #C4E5F0;
     --cor-regiao: #003152;
-    --seccao-url: url("./images/seccoes/Group 8 - Dark mode.png");
+    --seccao-url: url("../images/seccoes/Group 8 - Dark mode.png");
     --botao-seccao-clara: #EB8F00;
     --botao-seccao-escura: #EB8F00;
 

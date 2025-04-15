@@ -1,6 +1,6 @@
 @font-face {
     font-family: Hubot Sans;
-    src: url(static/HubotSans-Regular.ttf);
+    src: url(../static/HubotSans-Regular.ttf);
 }
 
 :root{
@@ -10,8 +10,9 @@
     --cor-detalhe1: #FF9C00;
     --cor-detalhe2: #003A61;
     --cor-regiao: #003A61;
-    --seccao-url: url("./images/seccoes/Group 8 - v2.png");
+    --seccao-url: url("../images/seccoes/Group 8 - v2.png");
     --botao-seccao: #FF9C00;
+    --borda: #001A2C;
 }
 
 .modoEscuro{
@@ -21,14 +22,23 @@
     --cor-detallhe1: #EB8F00;
     --cor-detalhe2: #C4E5F0;
     --cor-regiao: #003152;
-    --seccao-url: url("./images/seccoes/Group 8 - Dark mode.png");
+    --seccao-url: url("../images/seccoes/Group 8 - Dark mode.png");
     --botao-seccao: #EB8F00;
+    --borda: #fffcf2;
+}
+
+.seccao{
+    padding: 30px;
+    min-height: 30vh;
+    display: block;
+    align-content: space-around;
 }
 
 #form{
     background-image: var(--seccao-url);
     padding: 40px;
     color: var(--cor-letra2);
+    width: 50%;
 
 }
 
@@ -39,7 +49,7 @@
 
 #form input,
 #form select{
-    width: 50%;
+    width: 90%;
     min-height: 25px;
     font-family: Hubot Sans;
     margin-top: 5px;
@@ -47,7 +57,7 @@
 }
 
 #enviarEmail{
-    width: 50%;
+    width: 90%;
     min-height: 25px;
     font-family: Hubot Sans;
     margin-top: 10px;
@@ -57,38 +67,28 @@
     border-style: none;
 }
 
-.corpoClinico{
+#contactosForm{
+    display:flex;
+    width: 100%;
+}
+
+#contactos{
     display: flex;
-    list-style-type: none;
-    align-items: center;
-    line-height: 1;
-    border-style: solid;
-    border-radius: 2px;
-    border-color: var(--cor-detalhe2);
-    border-radius: 2px;
-    /* width: 30%; */
-    margin: 10px;
+    gap: 15px;
+}
+
+.contactoArea{
+    width: 100%;
+    justify-content: center;
+    /* margin:10px; */
     padding: 5px;
-
+    border: solid 1px var(--borda);
+    border-radius: 2px;
 }
 
-.corpoClinico img{
-    width: 5vw;
-    height: 8vh;
-    margin-right: 10px;
-}
-
-#informacoes{
-    display: flex;
-}
-
-#divCorpoClinico{
-    margin-left: 10vw;
-}
-
-.seccao{
-    padding: 30px;
-    min-height: 30vh;
+#total{
     display: block;
-    align-content: space-around;
+    margin-top: 10px;
+    width: 100%;
+    
 }
