@@ -38,4 +38,13 @@
     border-style: none;
     font-size: 20px;
     margin-top: 10px;
+    cursor: pointer;
+}
+
+.resposta{
+    display: none;
+}
+
+.resposta.aberto{
+    display: block;
 }

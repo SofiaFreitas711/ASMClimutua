@@ -10,20 +10,20 @@
 <body>
     <header>
         <div id="linkConteudo">
-            <a href="#main">Ir para o conteúdo</a>
+            <a href="#main" tabindex="0">Ir para o conteúdo</a>
         </div>
         <nav>
             <img src="./images/seccoes/Group 18.svg" alt="">
             <ul class="listaNav">
                 <li  class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li>
                 <li  class="listaDetalhe"><a href="servicos.html" class="listaTexto"><img src="./images/icons/servicos.svg" class="icone" aria-hidden="true">Serviços</a> 
-                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px">
+                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
                     </button>
                     
-                    <ul class="listaSubcategorias">
+                    <ul class="listaSubcategorias" aria-hidden="true">
                         <li><a href="#" onclick="irPagina('servicos',window.env.servicos[0].nome)">Apoio Jurídico Períciais Médico-Legais</a></li>
                         <li><a href="#" onclick="irPagina('servicos',window.env.servicos[1].nome)">Especialidades</a></li>
                         <li><a href="#" onclick="irPagina('servicos',window.env.servicos[2].nome)">Medicina Dentária</a></li>
@@ -32,12 +32,12 @@
                     </ul>
                 </li>
                 <li  class="listaDetalhe"><a href="associados.html" class="listaTexto"><img src="./images/icons/associados.svg" class="icone" aria-hidden="true">Associados</a>
-                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px">
+                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
                     </button>
-                    <ul class="listaSubcategorias">
+                    <ul class="listaSubcategorias" aria-hidden="true">
                         <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Benefícios</a></li>
                         <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Estatutos</a></li>
                         <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Protocolos</a></li>
@@ -63,43 +63,43 @@
             <h1>Sobre Nós</h1>
             <h2>Perguntas Frequentes</h2>
             <h3>
-                <button aria-expanded="false" aria-controls="resposta1" id="pergunta1" class="btnExpandir">O que é a Associação de Socorros Mútuos S. Mamede de Infesta?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                <button aria-expanded="false" aria-controls="resposta1" id="pergunta1" class="btnExpandir" onclick="abrirResposta('resposta1', 'pergunta1')">O que é a Associação de Socorros Mútuos S. Mamede de Infesta?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
             </h3>
             <hr>
-            <div role="region" aria-labelledby="pergunta1" id="resposta1" class="">
+            <div role="region" aria-labelledby="pergunta1" id="resposta1" class="resposta">
                 <p>A Associação de Socorros Mútuos S. Mamede de Infesta é uma Instituição Particular de Solidariedade Social (IPSS), fundada em 1890, que promove benefícios de saúde e apoio social para os seus associados, com base no princípio do mutualismo.</p>
             </div>
             <h3>
-                <button aria-expanded="false" aria-controls="resposta2" id="pergunta2" class="btnExpandir">Quem pode tornar-se associado?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                <button aria-expanded="false" aria-controls="resposta2" id="pergunta2" class="btnExpandir" onclick="abrirResposta('resposta2', 'pergunta2')">Quem pode tornar-se associado?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
             </h3>
             <hr>
-            <div role="region" aria-labelledby="pergunta2" id="resposta2" class="">
+            <div role="region" aria-labelledby="pergunta2" id="resposta2" class="resposta">
                 <p>Qualquer pessoa pode aderir à Associação, independentemente da nacionalidade. Os menores podem inscrever-se com autorização dos pais ou representante legal.</p>
             </div>
             <h3>
-                <button aria-expanded="false" aria-controls="resposta3" id="pergunta3" class="btnExpandir">Como funciona o mutualismo?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                <button aria-expanded="false" aria-controls="resposta3" id="pergunta3" class="btnExpandir" onclick="abrirResposta('resposta3', 'pergunta3')">Como funciona o mutualismo?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
             </h3>
             <hr>
-            <div role="region" aria-labelledby="pergunta3" id="resposta3" class="">
+            <div role="region" aria-labelledby="pergunta3" id="resposta3" class="resposta">
                 <p>O mutualismo é um sistema de solidariedade onde os associados contribuem com uma quota mensal para criar um fundo comum, garantindo benefícios em momentos de necessidade, como apoio médico ou subsídio de funeral.</p>
             </div>
             <h3>
-                <button aria-expanded="false" aria-controls="resposta4" id="pergunta4" class="btnExpandir">A Associação trabalha com que seguros, ADSE ou outros sistemas de saúde?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                <button aria-expanded="false" aria-controls="resposta4" id="pergunta4" class="btnExpandir" onclick="abrirResposta('resposta4', 'pergunta4')">A Associação trabalha com que seguros, ADSE ou outros sistemas de saúde?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
             </h3>
             <hr>
-            <div role="region" aria-labelledby="pergunta4" id="resposta4" class="">
+            <div role="region" aria-labelledby="pergunta4" id="resposta4" class="resposta">
                 <p>Sim, a Associação tem protocolos e acordos com entidades como a ADSE e alguns seguros de saúde. Para saber mais sobre as parcerias ativas, consulte a secção "Protocolos".</p>
             </div>
             <h3>
-                <button aria-expanded="false" aria-controls="resposta5" id="pergunta5" class="btnExpandir">Que tipo de benefícios a Associação oferece?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                <button aria-expanded="false" aria-controls="resposta5" id="pergunta5" class="btnExpandir" onclick="abrirResposta('resposta5', 'pergunta5')">Que tipo de benefícios a Associação oferece?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
             </h3>
             <hr>
-            <div role="region" aria-labelledby="pergunta5" id="resposta5" class="">
+            <div role="region" aria-labelledby="pergunta5" id="resposta5" class="resposta">
                 <p>Os principais benefícios incluem:
                     <br>
                     - Assistência médica e enfermagem
@@ -109,35 +109,35 @@
                     - Ações de solidariedade e apoio social</p>
             </div>
             <h3>
-                <button aria-expanded="false" aria-controls="resposta6" id="pergunta6" class="btnExpandir">A Associação tem fins lucrativos?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                <button aria-expanded="false" aria-controls="resposta6" id="pergunta6" class="btnExpandir" onclick="abrirResposta('resposta6', 'pergunta6')">A Associação tem fins lucrativos?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
             </h3>
             <hr>
-            <div role="region" aria-labelledby="pergunta6" id="resposta6" class="">
+            <div role="region" aria-labelledby="pergunta6" id="resposta6" class="resposta">
                 <p>Não. Somos uma associação sem fins lucrativos, onde todas as receitas são reinvestidas em benefícios para os associados.</p>
             </div>
             <h3>
-                <button aria-expanded="false" aria-controls="resposta7" id="pergunta7" class="btnExpandir">Como posso saber mais sobre a gestão financeira da Associação?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                <button aria-expanded="false" aria-controls="resposta7" id="pergunta7" class="btnExpandir" onclick="abrirResposta('resposta7', 'pergunta7')">Como posso saber mais sobre a gestão financeira da Associação?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
             </h3>
             <hr>
-            <div role="region" aria-labelledby="pergunta7" id="resposta7" class="">
+            <div role="region" aria-labelledby="pergunta7" id="resposta7" class="resposta">
                 <p>Os relatórios de contas e orçamentos anuais estão disponíveis na secção "Benefícios", no espaço Associados.</p>
             </div>
             <h3>
-                <button aria-expanded="false" aria-controls="resposta8" id="pergunta8" class="btnExpandir">Onde fica a sede da Associação?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                <button aria-expanded="false" aria-controls="resposta8" id="pergunta8" class="btnExpandir" onclick="abrirResposta('resposta8', 'pergunta8')">Onde fica a sede da Associação?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
             </h3>
             <hr>
-            <div role="region" aria-labelledby="pergunta8" id="resposta8" class="">
+            <div role="region" aria-labelledby="pergunta8" id="resposta8" class="resposta">
                 <p>A nossa sede está localizada na Rua Henrique Bravo, n.º 6517, S. Mamede de Infesta, Matosinhos.</p>
             </div>
             <h3>
-                <button aria-expanded="false" aria-controls="resposta9" id="pergunta9" class="btnExpandir">Como posso entrar em contacto com a Associação?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                <button aria-expanded="false" aria-controls="resposta9" id="pergunta9" class="btnExpandir" onclick="abrirResposta('resposta9', 'pergunta9')">Como posso entrar em contacto com a Associação?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
             </h3>
             <hr>
-            <div role="region" aria-labelledby="pergunta9" id="resposta9" class="">
+            <div role="region" aria-labelledby="pergunta9" id="resposta9" class="resposta">
                 <p>Pode contactar-nos através de:
                     <br>
                     📞 Telefone: (+351) 229 010 549
@@ -270,15 +270,33 @@
     <script src="bd.js"></script>
     <script src="teste.js"></script>
     <script>
-        // document.querySelectorAll('.accordion-button').forEach(button => {
-        //     button.addEventListener('click', () => {
-        //         const panel = document.getElementById(button.getAttribute('aria-controls'));
-        //         const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        function abrirResposta(params1, params2){
+            let idResposta = params1
+            let idPergunta = params2
+            let resposta = document.querySelector(`#${idResposta}`)
+            let pergunta = document.querySelector(`#${idPergunta}`)
 
-        //         button.setAttribute('aria-expanded', !isExpanded);
-        //         panel.setAttribute('aria-hidden', isExpanded);
-        //     });
-        // });
+            let aberto = resposta.classList.toggle("aberto")
+
+            pergunta.setAttribute("ariaExpanded", aberto? true:false)
+            
+            
+
+            // if(resposta.style.display == "none"){
+            //     console.log("vai abrir");
+            //     document.querySelector(`#${idResposta}`).style.display = "block"
+            //     pergunta.setAttribute("ariaExpanded", "true")
+            //     console.log(pergunta.getAttribute("ariaExpanded"));
+                
+                
+            // }else{
+            //     console.log("vai fechar");
+            //     document.querySelector(`#${idResposta}`).style.display = "none"
+            //     pergunta.setAttribute("ariaExpanded", "false")
+            //     console.log(pergunta.getAttribute("ariaExpanded"));
+            // }
+            
+        }
     </script>
 </body>
 </html>

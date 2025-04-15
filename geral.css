@@ -146,8 +146,8 @@ p,a{
 }
 
 .listaSubcategorias{
-    /* display: none; */
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden; */
     position: absolute;
     /* top: 100px; */
     padding: 20px 5px;
@@ -158,14 +158,26 @@ p,a{
     
 }
 
-.listaDetalhe:hover .listaSubcategorias,
+.listaSubcategorias.aberto{
+    display: block;
+}
+
+.listaSubcategorias #listaAssociados{
+    display: none;
+}
+
+.listaSubcategorias #listaServicos{
+    display: none;
+}
+
+/* .listaDetalhe:hover .listaSubcategorias,
 .listaDetalhe:focus-within .listaSubcategorias,
 .listaSubcategorias:hover .listaSubcategorias,
 .listaSubcategorias:focus-within .listaSubcategorias{
     /* display: block; */
-    visibility: visible;
+    /* visibility: visible;
     
-}
+} */
 
 header a{
     color: var(--cor-letra2);

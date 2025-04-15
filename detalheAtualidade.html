@@ -10,20 +10,20 @@
 <body>
     <header>
         <div id="linkConteudo">
-            <a href="#main">Ir para o conteúdo</a>
+            <a href="#main" tabindex="0">Ir para o conteúdo</a>
         </div>
         <nav>
             <img src="./images/seccoes/Group 18.svg" alt="">
             <ul class="listaNav">
                 <li  class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li>
                 <li  class="listaDetalhe"><a href="servicos.html" class="listaTexto"><img src="./images/icons/servicos.svg" class="icone" aria-hidden="true">Serviços</a> 
-                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px">
+                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
                     </button>
                     
-                    <ul class="listaSubcategorias">
+                    <ul class="listaSubcategorias" aria-hidden="true">
                         <li><a href="#" onclick="irPagina('servicos',window.env.servicos[0].nome)">Apoio Jurídico Períciais Médico-Legais</a></li>
                         <li><a href="#" onclick="irPagina('servicos',window.env.servicos[1].nome)">Especialidades</a></li>
                         <li><a href="#" onclick="irPagina('servicos',window.env.servicos[2].nome)">Medicina Dentária</a></li>
@@ -32,12 +32,12 @@
                     </ul>
                 </li>
                 <li  class="listaDetalhe"><a href="associados.html" class="listaTexto"><img src="./images/icons/associados.svg" class="icone" aria-hidden="true">Associados</a>
-                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px">
+                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
                     </button>
-                    <ul class="listaSubcategorias">
+                    <ul class="listaSubcategorias" aria-hidden="true">
                         <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Benefícios</a></li>
                         <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Estatutos</a></li>
                         <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Protocolos</a></li>

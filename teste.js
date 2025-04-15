@@ -79,3 +79,19 @@ function irPagina(params1, params2){
     }
     
 }
+
+function abrirMenu(element){
+    console.log("cliquei");
+    
+    let botao = element
+    let li = botao.closest("li")
+    let submenu = li.querySelector(".listaSubcategorias")
+
+    let aberto = submenu.classList.toggle("aberto")
+    botao.setAttribute("aria-expanded", aberto? true: false)
+    submenu.setAttribute("aria-hidden", aberto?true:false)
+    botao.setAttribute("aria-label", aberto? "Fechar o menu expansível":"Abrir o menu espansível")
+    console.log(botao);
+    
+    
+}
