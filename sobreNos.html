@@ -64,7 +64,7 @@
             <h2>Perguntas Frequentes</h2>
             <h3>
                 <button aria-expanded="false" aria-controls="resposta1" id="pergunta1" class="btnExpandir" onclick="abrirResposta('resposta1', 'pergunta1')">O que é a Associação de Socorros Mútuos S. Mamede de Infesta?<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
+                    <path strokeLinecap="round" class="seta" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></button>
             </h3>
             <hr>
             <div role="region" aria-labelledby="pergunta1" id="resposta1" class="resposta">
@@ -275,10 +275,17 @@
             let idPergunta = params2
             let resposta = document.querySelector(`#${idResposta}`)
             let pergunta = document.querySelector(`#${idPergunta}`)
+            
 
             let aberto = resposta.classList.toggle("aberto")
 
-            pergunta.setAttribute("ariaExpanded", aberto? true:false)
+            pergunta.setAttribute("aria-expanded", aberto? true:false)
+            
+            let svg = pergunta.querySelector("svg")
+            let path = svg.querySelector("path")            
+
+            path.setAttribute("d", aberto? "M4.5 15.75l7.5-7.5 7.5 7.5":"M19.5 8.25l-7.5 7.5-7.5-7.5")
+
             
             
 
