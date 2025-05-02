@@ -79,7 +79,7 @@ a{
     color: var(--cor-letra);
 }
 
-@media only screen and (max-width:800px){
+@media only screen and (max-width:767px){
     .orgao{
         display: flex;
         width: 100%;
@@ -98,5 +98,28 @@ a{
 
     .orgao img{
         margin-right: 10px;
+        width: 78px;
+        height: auto;
     }
 }
+
+@media only screen and (min-width:768px) and (max-width:1100px){
+    .orgao{
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    .conselho{
+        display: block;
+        columns: 2;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .orgao img{
+        margin-right: 10px;
+        width: 78px;
+        height: auto;
+    }
+}
+
