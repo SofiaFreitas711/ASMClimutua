@@ -33,37 +33,6 @@
     align-content: space-around;
 }
 
-.associados{
-    display:inline-table;
-    justify-content: space-between;
-    width: 45%;
-    background-image: var(--seccao-url);
-    margin: 10px;
-    padding: 10px;
-    /* align-items: stretch; */
-    height: 130px;
-    min-height: fit-content;
-}
-
-.associados a{
-    color: var(--cor-detalhe1);
-}
-
-.associados p{
-    color: var(--cor-letra2);
-}
-
-@media only screen and (max-width:900px){
-    .associados{
-        display: inline-block;
-        width: 90%;
-    }
-    
-}
-
-@media only screen and (min-width: 901px) and (max-width: 1100px) {
-    .associados{
-        display: inline-block;
-        width: 45%;
-    }    
+a{
+    color: var(--cor-letra);
 }

@@ -42,6 +42,7 @@
 #form input:focus,
 #form select:focus{
     border: solid 4px #001A2C ;
+    border-radius: 2px;
 }
 
 #form input,
@@ -62,4 +63,36 @@
     background-color: var(--cor-detalhe1);
     color: #001A2C;
     border-style: none;
+}
+
+@media only screen and (max-width: 767px){
+    body{
+        width: 100%;
+    }
+
+    #form input,
+    #form select{
+        width: 100%;
+    }
+
+    #enviarEmail{
+        width: 100%;
+
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:1100px){
+    body{
+        width: 100%;
+    }
+
+    #form input,
+    #form select{
+        width: 75%;
+    }
+
+    #enviarEmail{
+        width: 75%;
+
+    }
 }

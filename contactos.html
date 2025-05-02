@@ -10,16 +10,74 @@
 
 </head>
 <body>
-    <header>
+    <header id="pc">
         <div id="linkConteudo">
             <a href="#main" tabindex="0">Ir para o conteúdo</a>
         </div>
-        <nav>
-            <img src="./images/seccoes/Group 18.svg" alt="">
+        <nav id="desktop">
+            <img src="./images/seccoes/Group 18.svg" alt="Logótipo da ASM Climútua">
             <ul class="listaNav">
                 <li  class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li>
-                <li  class="listaDetalhe"><a href="servicos.html" class="listaTexto"><img src="./images/icons/servicos.svg" class="icone" aria-hidden="true">Serviços</a> 
+                <li  class="listaDetalhe"><a href="servicos.html" class="listaTexto">Serviços</a> 
                     <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="15px" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    
+                    <ul class="listaSubcategorias" aria-hidden="true">
+                        <li><a href="#" onclick="irPagina('servicos',window.env.servicos[0].nome)">Apoio Jurídico Períciais Médico-Legais</a></li>
+                        <li><a href="#" onclick="irPagina('servicos',window.env.servicos[1].nome)">Especialidades</a></li>
+                        <li><a href="#" onclick="irPagina('servicos',window.env.servicos[2].nome)">Medicina Dentária</a></li>
+                        <li><a href="#" onclick="irPagina('servicos',window.env.servicos[3].nome)">Domicílios</a></li>
+                        <li><a href="#" onclick="irPagina('servicos',window.env.servicos[4].nome)">Exames</a></li>
+                    </ul>
+                </li>
+                <li  class="listaDetalhe"><a href="associados.html" class="listaTexto">Associados</a>
+                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="15px" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                        </svg>
+                    </button>
+                    <ul class="listaSubcategorias" aria-hidden="true">
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Benefícios</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Estatutos</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Protocolos</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Documentos Oficiais</a></li>
+                        <li><a href="tornarAssociado.html">Torne-se Associado</a></li>
+                    </ul>
+                </li>
+                <li  class="listaDetalhe"><a href="atualidade.html" class="listaTexto">Atualidade</a></li>
+                <li  class="listaDetalhe"><a href="sobreNos.html" class="listaTexto">Sobre Nós</a></li>
+                <li  class="listaDetalhe"><a href="contactos.html" class="listaTexto">Contactos</a></li>
+                <li class="listaDetalhe" style="color: #FFFCF2;">|</li>
+            </ul>
+            <div>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo" onclick="trocarModo()">☀️</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno')">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal')">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande')">A+</button>
+            </div>
+        </nav>
+        <nav id="mobile">
+            <img src="./images/seccoes/Group 18.svg" alt="">
+            <button onclick="menu()" style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite; float: right;padding:10px; cursor: pointer;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24px" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </nav> 
+        <div id="menu">
+            <button onclick="menu()" style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite; float: right;padding:10px; cursor: pointer;margin-top: 20px; margin-right: 20px;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-6" width="24px" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>     
+            </button>
+            
+            <ul class="listaNav">
+                <li  class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li>
+                <li  class="listaDetalhe"><a href="servicos.html" class="listaTexto">Serviços</a> 
+                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite; margin-left: 30px;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
@@ -33,8 +91,8 @@
                         <li><a href="#" onclick="irPagina('servicos',window.env.servicos[4].nome)">Exames</a></li>
                     </ul>
                 </li>
-                <li  class="listaDetalhe"><a href="associados.html" class="listaTexto"><img src="./images/icons/associados.svg" class="icone" aria-hidden="true">Associados</a>
-                    <button style="line-height: 1;background-color:#003A61;border-style: none;color: antiquewhite;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
+                <li  class="listaDetalhe"><a href="associados.html" class="listaTexto">Associados</a>
+                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite;margin-left: 35px;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
@@ -47,18 +105,17 @@
                         <li><a href="tornarAssociado.html">Torne-se Associado</a></li>
                     </ul>
                 </li>
-                <li  class="listaDetalhe"><a href="atualidade.html" class="listaTexto"><img src="./images/icons/atualidade.svg" class="icone" aria-hidden="true">Atualidade</a></li>
-                <li  class="listaDetalhe"><a href="sobreNos.html" class="listaTexto"><img src="./images/icons/sobreNos.svg" class="icone" id="sobreNos" aria-hidden="true">Sobre Nós</a></li>
-                <li  class="listaDetalhe"><a href="contactos.html" class="listaTexto"><img src="./images/icons/contactos.svg" class="icone" aria-hidden="true">Contactos</a></li>
-                <li class="listaDetalhe" style="color: #FFFCF2;">|</li>
+                <li  class="listaDetalhe"><a href="atualidade.html" class="listaTexto">Atualidade</a></li>
+                <li  class="listaDetalhe"><a href="sobreNos.html" class="listaTexto">Sobre Nós</a></li>
+                <li  class="listaDetalhe"><a href="contactos.html" class="listaTexto">Contactos</a></li>
             </ul>
             <div>
-                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo">☀️</button>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo" onclick="trocarModo()">☀️</button>
                 <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno')">A-</button>
                 <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal')">A</button>
                 <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande')">A+</button>
             </div>
-        </nav>        
+        </div>       
     </header>
     <main id="main">
         <div class="seccao">
@@ -143,7 +200,8 @@
         // https://www.youtube.com/watch?v=wywYRQb3JCE&ab_channel=NargesMirzaaghaei
         let mapOptions = {
             center:[41.194309, -8.606839],
-            zoom:50
+            zoom:50,
+            scrollWheelZoom: false
         }
 
         let map = new L.map('map' , mapOptions);

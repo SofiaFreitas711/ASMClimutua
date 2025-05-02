@@ -10,7 +10,9 @@ if(modo == null || modo == "claro"){
 }
 
 // mudar conforme clique
-document.querySelector("#modo").addEventListener("click", function(){
+function trocarModo(){
+    console.log("cliquei no modo");
+    
     let modo = localStorage.getItem("modo")
     
     if(modo == null || modo == "claro"){
@@ -20,7 +22,7 @@ document.querySelector("#modo").addEventListener("click", function(){
         document.querySelector("body").classList.remove("modoEscuro")
         localStorage.setItem("modo", "claro")
     }
-})
+}
 
 let tamanhoTexto = localStorage.getItem("tamanho")
 if(tamanhoTexto == null || tamanhoTexto == "normal"){
@@ -82,13 +84,15 @@ function irPagina(params1, params2){
 
 function abrirMenu(element){
     console.log("cliquei");
+    // console.log(element);
+    
     
     let botao = element    
     let li = botao.closest("li")
     let submenu = li.querySelector(".listaSubcategorias")
 
-    let todosBotoes = document.querySelectorAll("nav .listaDetalhe > button")
-    let todosSubmenus = document.querySelectorAll("nav .listaSubcategorias")
+    let todosBotoes = document.querySelectorAll(".listaDetalhe > button")
+    let todosSubmenus = document.querySelectorAll(".listaSubcategorias")
     // let todosSvg = document.querySelectorAll(".listaDetalhe > svg")
     // let todosPath = todosBotoes.querySelectorAll("path")
     let estavaAberto = submenu.classList.contains("aberto")
@@ -100,12 +104,14 @@ function abrirMenu(element){
         seta.setAttribute("d","M19.5 8.25l-7.5 7.5-7.5-7.5")
     }
 
-    for(let menu of todosSubmenus){
+    for(let menu of todosSubmenus){       
         menu.classList.remove("aberto")
         menu.setAttribute("aria-hidden", true)
     }
 
     if(!estavaAberto){
+        console.log("aberto");
+        
         let aberto = submenu.classList.toggle("aberto")
         botao.setAttribute("aria-expanded", aberto? true: false)
         submenu.setAttribute("aria-hidden", aberto?true:false)
@@ -123,10 +129,19 @@ function abrirMenu(element){
             botao.setAttribute("aria-label","Abrir o menu espansível")
             path.setAttribute("d","M19.5 8.25l-7.5 7.5-7.5-7.5")
         },20000)
+    }   
+}
+
+function menu(){
+    let menu = document.querySelector('#menu')
+    console.log(window.innerWidth);
+    
+    
+    if(menu.style.display == ""){
+        menu.style.display = "block"
+        
+    }else{
+        menu.style.display = ""
     }
-
-     
-
-
     
 }

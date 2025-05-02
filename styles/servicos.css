@@ -25,6 +25,10 @@
     --botao-seccao: #EB8F00;
 }
 
+a{
+    color: var(--cor-letra)
+}
+
 .seccao{
     padding: 30px;
     min-height: 30vh;
@@ -33,12 +37,13 @@
 }
 
 .servicos{
-    display: inline-block;
+    display: inline-table;
     width: 45%;
     background-image: var(--seccao-url);
     margin: 10px;
     padding: 10px;
     min-height: fit-content;
+    /* height: 100%; */
 }
 
 .servicos a{
@@ -58,7 +63,8 @@
 
 #form input:focus,
 #form select:focus{
-    border: solid 4px #001A2C ;
+    border: solid 3px #001A2C ;
+    border-radius: 2px;
 }
 
 #form input,
@@ -81,3 +87,40 @@
     border-style: none;
 }
 
+@media only screen and (max-width:900px){
+    .servicos{
+        display: inline-block;
+        width: 90%;
+    }
+
+    .servicos img{
+        height: 10%;
+    }
+
+    #form input,
+    #form select{
+        width: 90%;
+    }
+
+    #enviarEmail{
+        width: 90%;
+    }
+    
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1100px) {
+    .servicos{
+        display: inline-table;
+        width: 45%;
+    }    
+}
+
+/* @media only screen and (max-width: 1000px){
+    .servicos{
+        display: inline-block;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 50vh;
+    }
+} */

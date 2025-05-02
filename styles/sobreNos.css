@@ -64,6 +64,7 @@
     font-size: 20px;
     margin-top: 10px;
     cursor: pointer;
+    text-align: left;
 }
 
 .resposta{
@@ -72,4 +73,30 @@
 
 .resposta.aberto{
     display: block;
+}
+
+a{
+    color: var(--cor-letra);
+}
+
+@media only screen and (max-width:800px){
+    .orgao{
+        display: flex;
+        width: 100%;
+        border: solid 1px var(--cor-letra);
+        border-radius: 2px;
+        padding: 5px;
+        margin-top: 10px;
+    }
+
+    .conselho{
+        display: block;
+        columns: 1;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    .orgao img{
+        margin-right: 10px;
+    }
 }
