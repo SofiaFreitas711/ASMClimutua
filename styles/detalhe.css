@@ -70,13 +70,16 @@
     /* width: 30%; */
     margin: 10px;
     padding: 5px;
-
 }
 
 .corpoClinico img{
     width: 5vw;
     height: auto;
     margin-right: 10px;
+}
+
+.corpoClinico p{
+    line-height: 1.25;
 }
 
 #informacoes{

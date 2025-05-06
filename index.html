@@ -52,10 +52,10 @@
                 <li class="listaDetalhe" style="color: #FFFCF2;">|</li>
             </ul>
             <div>
-                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo" onclick="trocarModo()">☀️</button>
-                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno')">A-</button>
-                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal')">A</button>
-                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande')">A+</button>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" onclick="trocarModo(this)">💡</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno', this)">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal', this)">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande', this)">A+</button>
             </div>
         </nav>
         <nav id="mobile">
@@ -109,14 +109,15 @@
                 <li  class="listaDetalhe"><a href="contactos.html" class="listaTexto">Contactos</a></li>
             </ul>
             <div>
-                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo" onclick="trocarModo()">☀️</button>
-                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno')">A-</button>
-                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal')">A</button>
-                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande')">A+</button>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" onclick="trocarModo(this)">💡</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno', this)">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal', this)">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande', this)">A+</button>
             </div>
         </div>       
     </header>
     <main id="main">
+        <!-- <button onclick="aumentar()">Teste</button> -->
         <div id="primeiraSeccao" class="seccao">
             <h1>ASM Climútua</h1>
             <h2>Horários</h2>
@@ -178,12 +179,14 @@
     <script>
         
         let atualidade = window.env.atualidade
+        atualidade.sort((a,b)=>a.data - b.data)
+
         if(atualidade.length >0){
-            for(let i=0; i<atualidade.length; i++){
+            for(let i=0; i<3; i++){
                 document.querySelector("#atualidade").innerHTML += `<div class="atualidade">
                                                                             <img src="${atualidade[i].img}"></img>
                                                                         <div>
-                                                                            <a href="#" onclick="irPagina('atualidade',${atualidade[i].titulo})"><p>${atualidade[i].titulo}</p></a>
+                                                                            <a href="#" onclick="irPagina('atualidade','${atualidade[i].titulo}')"><p>${atualidade[i].titulo}</p></a>
                                                                             <p>${atualidade[i].resumo}</p>
                                                                         </div>
                                                                     </div>`

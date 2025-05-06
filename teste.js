@@ -3,41 +3,60 @@ let modo = localStorage.getItem("modo")
 
 if(modo == null || modo == "claro"){  
     document.querySelector("body").classList.remove("modoEscuro")
-
 }else{
     document.querySelector("body").classList.add("modoEscuro")
-
 }
 
-// mudar conforme clique
-function trocarModo(){
-    console.log("cliquei no modo");
+// mudar conforme clique e trocar aria-label
+
+function trocarModo(element){
+    let botaoModo = element
     
     let modo = localStorage.getItem("modo")
-    
+
     if(modo == null || modo == "claro"){
         document.querySelector("body").classList.add("modoEscuro")
-        localStorage.setItem("modo", "escuro")
+        localStorage.setItem("modo", "escuro")  
+        botaoModo.setAttribute("aria-label","Alterar para modo claro")
     }else{
         document.querySelector("body").classList.remove("modoEscuro")
-        localStorage.setItem("modo", "claro")
+        localStorage.setItem("modo", "claro")  
+        botaoModo.setAttribute("aria-label", "Alterar para modo escuro")
     }
+    
 }
 
 let tamanhoTexto = localStorage.getItem("tamanho")
+let botaoTamanho = document.querySelectorAll(".botaoNav")
 if(tamanhoTexto == null || tamanhoTexto == "normal"){
     document.querySelector("body").id = "normal"
+    botaoTamanho[2].classList.add("selecionado")
 }else if(tamanhoTexto == "pequeno"){
     document.querySelector("body").id = "pequeno"
+    botaoTamanho[1].classList.add("selecionado")
 }else{
     document.querySelector("body").id = "grande"
+    botaoTamanho[3].classList.add("selecionado")
 }
 
-function mudarTamanho(tamanho){
+function mudarTamanho(tamanho, element){
+
     let tamanhoTexto = tamanho
+    let botao = element
+    let todosBotoes = document.querySelectorAll(".botaoNav")
+    let estavaSelecionado = botao.classList.contains("selecionado")
+
+    for(let botao of todosBotoes){
+        botao.classList.remove("selecionado")
+    }
+    if(!estavaSelecionado){
+        let selecionado = botao.classList.toggle("selecionado")
+    }
 
     if(tamanhoTexto == "pequeno"){
         document.querySelector("body").id = "pequeno"
+
+
         localStorage.setItem("tamanho", "pequeno")
     }else if(tamanhoTexto == "normal"){
         document.querySelector("body").id = "normal"

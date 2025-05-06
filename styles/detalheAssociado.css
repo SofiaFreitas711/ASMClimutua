@@ -51,6 +51,10 @@
     display: block;
 }
 
+a{
+    color: var(--cor-letra);
+}
+
 @media only screen and (max-width: 1100px){
     body{
         width: 100%;

@@ -28,24 +28,34 @@
 
 /* adicionar media para isto */
 #normal{
-    --tamanho-titulo: 18px;
-    --tamanho-subtitulo: 18px;
-    --tamanho-texto: 16px;
-    --tamanho-notas: 18px;
+    --tamanho-h1: 1.5rem;
+    --tamanho-h2: 1.375rem;
+    --tamanho-texto: 1.125rem;
+    --tamanho-h3: 1.25rem;
 }
 
 #grande{
-    --tamanho-titulo: 36px;
-    --tamanho-subtitulo: 34px;
-    --tamanho-texto: 28px;
-    --tamanho-notas: 26px;
+    --tamanho-h1: 1.75rem;
+    --tamanho-h2: 1.625rem;
+    --tamanho-texto: 1.375rem;
+    --tamanho-h3: 1.5rem;
 }
 
 #pequeno{
-    --tamanho-titulo: 24px;
-    --tamanho-subtitulo: 22px;
-    --tamanho-texto: 20px;
-    --tamanho-notas: 18px;
+    --tamanho-h1: 1.375rem;
+    --tamanho-h2: 1.25rem;
+    --tamanho-texto: 1rem;
+    --tamanho-h3: 1.125rem;
+}
+
+button{
+    min-height: 24px;
+    min-width: 24px;
+}
+
+a{
+    min-height: 24px;
+    min-width: 24px;
 }
 
 body{
@@ -64,14 +74,22 @@ nav{
 }
 
 h1{
-    font-size: var(--tamanho-titulo);
+    font-size: var(--tamanho-h1);
 }
 
 h2{
-    font-size: var(--tamanho-subtitulo);
+    font-size: var(--tamanho-h2);
+}
+
+h3{
+    font-size: var(--tamanho-h3);
 }
 
 p,a{
+    font-size: var(--tamanho-texto);
+}
+
+main button{
     font-size: var(--tamanho-texto);
 }
 
@@ -101,7 +119,39 @@ p,a{
     /* font-size: var(--tamanho-texto); */
 }
 
-#selected{
+.botaoNav.selecionado{
+    background-color: #FFFCF2;
+    color: var(--cor-regiao);
+    border-style: solid;
+    border-width: 3px;
+    border-color: #FFFCF2;
+    border-radius: 2px;
+    height: 5vh;
+    width: 2.5vw;
+    margin-right: 0%;
+    align-self: center;
+    justify-content: center;
+    line-height: 1;
+    margin-right: 0.5vw;
+}
+
+/* .botaoNav.claro{
+    background-color: #FFFCF2;
+    color: var(--cor-regiao);
+    border-style: solid;
+    border-width: 3px;
+    border-color: #FFFCF2;
+    border-radius: 2px;
+    height: 5vh;
+    width: 2.5vw;
+    margin-right: 0%;
+    align-self: center;
+    justify-content: center;
+    line-height: 1;
+    margin-right: 0.5vw;
+} */
+
+/* #selected{
     background-color: #FFFCF2;
     color: #001A2C;
     border-style: none;
@@ -111,7 +161,7 @@ p,a{
     margin-right: 0%;
     font-weight: bold;
     margin-right: 0.5vw;
-}
+} */
 
 .listaNav{
     display: inline-flex;
@@ -169,6 +219,10 @@ p,a{
 .listaSubcategorias #listaServicos{
     display: none;
 }
+
+/* #botoes{
+    align-content: center;
+} */
 
 /* .listaDetalhe:hover .listaSubcategorias,
 .listaDetalhe:focus-within .listaSubcategorias,
@@ -303,6 +357,10 @@ footer p{
     }
 
     .botaoNav{
+        width: 40px;
+    }
+
+    .botaoNav.selecionado{
         width: 40px;
     }
 

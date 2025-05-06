@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./styles/detalheAssociado.css">
 </head>
 <body>
-    <header id="pc">
+    <header>
         <div id="linkConteudo">
             <a href="#main" tabindex="0">Ir para o conteúdo</a>
         </div>
@@ -51,10 +51,10 @@
                 <li class="listaDetalhe" style="color: #FFFCF2;">|</li>
             </ul>
             <div>
-                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo" onclick="trocarModo()">☀️</button>
-                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno')">A-</button>
-                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal')">A</button>
-                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande')">A+</button>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" onclick="trocarModo(this)">💡</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno', this)">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal', this)">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande', this)">A+</button>
             </div>
         </nav>
         <nav id="mobile">
@@ -108,10 +108,10 @@
                 <li  class="listaDetalhe"><a href="contactos.html" class="listaTexto">Contactos</a></li>
             </ul>
             <div>
-                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo" onclick="trocarModo()">☀️</button>
-                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno')">A-</button>
-                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal')">A</button>
-                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande')">A+</button>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" onclick="trocarModo(this)">💡</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno', this)">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal', this)">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande', this)">A+</button>
             </div>
         </div>       
     </header>
@@ -180,7 +180,7 @@
                                                                         <hr>
                                                                         <div role="region" aria-labelledby="pergunta${j}" id="resposta${j}" class="resposta">
                                                                             <p>${associados[i].condicoes[j].texto}</p>
-                                                                            <p>Para mais detalhes consulte o documento <a href="#">aqui</a></p>
+                                                                            <p>Para mais detalhes consulte o documento <a target="_blank" href="${associados[i].condicoes[j].doc} aria-label="Abrir documento detalhado sobre ${associados[i].condicoes[j].titulo}"">aqui</a></p>
                                                                         </div>`  
                         console.log("tem doc");
                         
@@ -188,7 +188,7 @@
                 }
                 
                 if(associados[i].doc != ""){
-                    document.querySelector(".seccao").innerHTML += `<p>Para mais detalhes consulte o documento <a href="#">aqui</a></p>`
+                    document.querySelector(".seccao").innerHTML += `<p>Para mais detalhes consulte o documento <a target="_blank" href="${associados[i].doc}" aria-label="Abrir documento detalhado sobre ${detalheAssociados}">aqui</a></p>`
                 }
             }
         }
@@ -203,7 +203,10 @@
 
             pergunta.setAttribute("ariaExpanded", aberto? true:false)
             
-            
+            let svg = pergunta.querySelector("svg")
+            let path = svg.querySelector("path")            
+
+            path.setAttribute("d", aberto? "M4.5 15.75l7.5-7.5 7.5 7.5":"M19.5 8.25l-7.5 7.5-7.5-7.5")
 
             // if(resposta.style.display == "none"){
             //     console.log("vai abrir");

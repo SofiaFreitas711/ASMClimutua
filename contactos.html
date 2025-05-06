@@ -10,7 +10,7 @@
 
 </head>
 <body>
-    <header id="pc">
+    <header>
         <div id="linkConteudo">
             <a href="#main" tabindex="0">Ir para o conteúdo</a>
         </div>
@@ -53,10 +53,10 @@
                 <li class="listaDetalhe" style="color: #FFFCF2;">|</li>
             </ul>
             <div>
-                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo" onclick="trocarModo()">☀️</button>
-                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno')">A-</button>
-                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal')">A</button>
-                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande')">A+</button>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" onclick="trocarModo(this)">💡</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno', this)">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal', this)">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande', this)">A+</button>
             </div>
         </nav>
         <nav id="mobile">
@@ -110,10 +110,10 @@
                 <li  class="listaDetalhe"><a href="contactos.html" class="listaTexto">Contactos</a></li>
             </ul>
             <div>
-                <button aria-label="Alterar para modo escuro" class="botaoNav" id="modo" onclick="trocarModo()">☀️</button>
-                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno')">A-</button>
-                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal')">A</button>
-                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande')">A+</button>
+                <button aria-label="Alterar para modo escuro" class="botaoNav" onclick="trocarModo(this)">💡</button>
+                <button aria-label="Alterar para tamanho de letra pequeno (A-)" class="botaoNav" onclick="mudarTamanho('pequeno', this)">A-</button>
+                <button aria-label="Alterar para tamanho de letra médio (A)" class="botaoNav" onclick="mudarTamanho('normal', this)">A</button>
+                <button aria-label="Alterar para tamanho de letra grande (A+)" class="botaoNav" onclick="mudarTamanho('grande', this)">A+</button>
             </div>
         </div>       
     </header>
@@ -149,7 +149,7 @@
                 <br>
                 <button onclick="sendMail()" id="enviarEmail">Enviar mensagem →</button>
             </div>
-            <div id="map" style="width: 100%;" aria-roledescription="mapa">
+            <div id="map" style="width: 100%;" role="mapa">
                 <!-- maps -->
             </div>
         </div>

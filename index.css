@@ -40,6 +40,11 @@
     color: #001A2C;
 }
 
+#primeiraSeccao p{
+    line-height: 5px;
+    
+}
+
 .seccao{
     padding: 30px;
     min-height: 30vh;
@@ -94,15 +99,14 @@
     margin: 15px;
 }
 
+.atualidade a{
+    color: var(--cor-letra);
+}
+
 @media only screen and (max-width:1000px){
     #primeiraSeccao{
         background-position: 20px;
         height: 40vh;
-    }
-
-    #primeiraSeccao p{
-        line-height: 5px;
-        
     }
 
     .botaoInicio{
