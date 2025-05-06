@@ -179,7 +179,7 @@
     <script>
         
         let atualidade = window.env.atualidade
-        atualidade.sort((a,b)=>a.data - b.data)
+        atualidade.sort((a,b)=>b.data - a.data)
 
         if(atualidade.length >0){
             for(let i=0; i<3; i++){

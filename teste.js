@@ -1,10 +1,13 @@
 // ver em que modo está a página quando inicia
+let todosBotoesNav = document.querySelectorAll(".botaoNav")
 let modo = localStorage.getItem("modo")
 
 if(modo == null || modo == "claro"){  
     document.querySelector("body").classList.remove("modoEscuro")
+    todosBotoesNav[0].classList.add("claro")
 }else{
     document.querySelector("body").classList.add("modoEscuro")
+    todosBotoesNav[0].classList.remove("claro")
 }
 
 // mudar conforme clique e trocar aria-label
@@ -18,10 +21,12 @@ function trocarModo(element){
         document.querySelector("body").classList.add("modoEscuro")
         localStorage.setItem("modo", "escuro")  
         botaoModo.setAttribute("aria-label","Alterar para modo claro")
+        todosBotoesNav[0].classList.remove("claro")
     }else{
         document.querySelector("body").classList.remove("modoEscuro")
         localStorage.setItem("modo", "claro")  
         botaoModo.setAttribute("aria-label", "Alterar para modo escuro")
+        todosBotoesNav[0].classList.add("claro")
     }
     
 }

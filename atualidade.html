@@ -164,7 +164,7 @@
 
     <script>
         let atualidade = window.env.atualidade
-        atualidade.sort((a,b)=>a.data - b.data)
+        atualidade.sort((a,b)=>b.data - a.data)
         for(let i=0;i<atualidade.length;i++){
             document.querySelector("#divAtualidade").innerHTML += `<div class="atualidade">
                                                                         <img src="${atualidade[i].img}">
