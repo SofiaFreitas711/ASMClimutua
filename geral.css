@@ -365,6 +365,10 @@ footer p{
         width: 40px;
     }
 
+    .botaoNav.claro{
+        width: 40px;
+    }
+
     .botaoMenu{
         background-color: #001a2ce5;
         color: rgba(250, 235, 215, 0);
