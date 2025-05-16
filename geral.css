@@ -1,6 +1,16 @@
 @font-face {
-    font-family: Hubot Sans;
+    font-family: Hubot Sans Regular;
     src: url(static/HubotSans-Regular.ttf);
+}
+
+@font-face{
+    font-family: Hubot Sans Bold;
+    src: url(static/HubotSans-Bold.ttf)
+}
+
+@font-face{
+    font-family: Hubot Sans Medium;
+    src: url(static/HubotSans-Medium.ttf)
 }
 
 :root{
@@ -62,7 +72,7 @@ body{
     background-color: var(--cor-fundo);
     color: var(--cor-letra);
     margin: 0px;
-    font-family: Hubot Sans;
+    font-family: Hubot Sans Regular;
 }
 
 nav{
@@ -75,17 +85,20 @@ nav{
 
 h1{
     font-size: var(--tamanho-h1);
+    font-family: Hubot Sans Bold;
 }
 
 h2{
     font-size: var(--tamanho-h2);
+    font-family: Hubot Sans Medium;
 }
 
 h3{
     font-size: var(--tamanho-h3);
+    font-family: Hubot Sans Medium;
 }
 
-p,a{
+p,a,li,label, button{
     font-size: var(--tamanho-texto);
 }
 
@@ -252,17 +265,29 @@ footer{
 
 footer li{
     list-style-type: none;
+    margin-top: 5px;
 }
 
 footer a,
 footer p{
     color: var(--cor-letra2);  
-    line-height: 1.5vh;
+    line-height: 3.5vh;
 }
 
 #topo {
     display: flex;
     justify-content: end;
+}
+
+#footerDesktop{
+    display: flex;
+    justify-content: flex-start;
+    justify-content: center;
+    gap: 5vh;
+}
+
+#footerMobile{
+    display: none;
 }
 
 .linksFooter{
@@ -324,7 +349,6 @@ footer p{
         padding-left: 20%;
         margin-top: 20%;
         line-height: 40px;
-    
     }
 
     #menu div{
@@ -382,11 +406,17 @@ footer p{
 }
 
 @media only screen and (max-width: 1000px){
-    .linksFooter{
+    #footerMobile{
         display: block;
         line-height: 30px;
-        /* justify-content: flex-start;
-        justify-content: center;
-        gap: 5vh; */
+        gap: 5px;
+    }
+
+    #footerDesktop{
+        display: none;
+    }
+
+    .linksFooter{
+        display: block;
     }
 }

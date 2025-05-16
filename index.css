@@ -40,9 +40,16 @@
     color: #001A2C;
 }
 
+#primeiraSeccao h1{
+    font-family: Hubot Sans Bold;
+}
+
 #primeiraSeccao p{
-    line-height: 5px;
-    
+    line-height: 5px;  
+}
+
+h2{
+    font-family: Hubot Sans Medium;
 }
 
 .seccao{
@@ -92,15 +99,37 @@
 .atualidade{
     display: flex;
     justify-content: left;
+    margin-top: 20px;
 }
 
 .atualidade img{
-    width: 5%;
-    margin: 15px;
+    width: 10vw;
+    height: 15vh;
+    object-fit: cover;
+    margin-right: 10px;
 }
 
 .atualidade a{
     color: var(--cor-letra);
+}
+
+footer p{
+    font-family: Hubot Sans Bold;
+}
+
+@media only screen and (max-width:700px){
+    .atualidade img{
+        width: 30vw;
+        height: 40vh;
+    }
+}
+
+@media only screen and (min-width:701px) and (max-width: 1100px){
+    .atualidade img{
+        width: 30vw;
+        height: 20vh;
+    }
+
 }
 
 @media only screen and (max-width:1000px){
@@ -125,10 +154,5 @@
         width: 98%;
         min-height: 24px;
 
-    }
-
-    .atualidade img{
-        width: 15%;
-        margin: 15px;
     }
 }

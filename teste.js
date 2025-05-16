@@ -40,12 +40,15 @@ let botaoTamanho = document.querySelectorAll(".botaoNav")
 if(tamanhoTexto == null || tamanhoTexto == "normal"){
     document.querySelector("body").id = "normal"
     botaoTamanho[2].classList.add("selecionado")
+    botaoTamanho[6].classList.add("selecionado")
 }else if(tamanhoTexto == "pequeno"){
     document.querySelector("body").id = "pequeno"
     botaoTamanho[1].classList.add("selecionado")
+    botaoTamanho[5].classList.add("selecionado")
 }else{
     document.querySelector("body").id = "grande"
     botaoTamanho[3].classList.add("selecionado")
+    botaoTamanho[7].classList.add("selecionado")
 }
 
 function mudarTamanho(tamanho, element){
@@ -55,17 +58,16 @@ function mudarTamanho(tamanho, element){
     let todosBotoes = document.querySelectorAll(".botaoNav")
     let estavaSelecionado = botao.classList.contains("selecionado")
 
-    for(let botao of todosBotoes){
-        botao.classList.remove("selecionado")
-    }
     if(!estavaSelecionado){
-        let selecionado = botao.classList.toggle("selecionado")
+        for(let botao of todosBotoes){
+            botao.classList.remove("selecionado")
+        }
+        botao.classList.add("selecionado")
+        
     }
 
     if(tamanhoTexto == "pequeno"){
         document.querySelector("body").id = "pequeno"
-
-
         localStorage.setItem("tamanho", "pequeno")
     }else if(tamanhoTexto == "normal"){
         document.querySelector("body").id = "normal"

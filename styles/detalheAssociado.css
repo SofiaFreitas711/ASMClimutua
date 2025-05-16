@@ -34,9 +34,9 @@
 
 .btnExpandir{
     background-color: rgba(0, 0, 0, 0);
-    font-family: Hubot Sans;
+    font-family: Hubot Sans Medium; 
     border-style: none;
-    font-size: 20px;
+    /* font-size: 20px; */
     margin-top: 10px;
     cursor: pointer;
     text-align: left;

@@ -76,6 +76,7 @@
     width: 5vw;
     height: auto;
     margin-right: 10px;
+    object-fit: cover;
 }
 
 .corpoClinico p{
@@ -95,6 +96,10 @@
     min-height: 30vh;
     display: block;
     align-content: space-around;
+}
+
+#nome{
+    font-family: Hubot Sans Bold;
 }
 
 @media only screen and (max-width: 767px){
