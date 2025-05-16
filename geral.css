@@ -290,6 +290,11 @@ footer p{
     display: none;
 }
 
+#footerMobile li p,
+#footerDesktop li p{
+    font-family: Hubot Sans Bold;
+}
+
 .linksFooter{
     display: flex;
     justify-content: flex-start;
@@ -312,7 +317,7 @@ footer p{
 
 }
 
-@media only screen and (max-width:1100px){
+@media only screen and (max-width:1300px){
     #mobile{
         display: inline-block;
         width: 100%;
