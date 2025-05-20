@@ -226,13 +226,13 @@
                 arrayNovo = atualidade.filter((element)=>element.tipo == "evento")
             }else{
                 arrayNovo = atualidade
-            }
+            }          
 
             for(let i=0; i<arrayNovo.length;i++){
                 document.querySelector("#divAtualidade").innerHTML += `<div class="atualidade">
                                                                                 <img src="${arrayNovo[i].img}" alt="${arrayNovo[i].txtAlternativo}">
                                                                                 <div>
-                                                                                    <a href="#" onclick="irAtualidade(${arrayNovo[i].titulo})">${arrayNovo[i].titulo}</a>
+                                                                                    <a href="#" onclick="irPagina('atualidade', '${arrayNovo[i].titulo}')">${arrayNovo[i].titulo}</a>
                                                                                     <p>${arrayNovo[i].resumo}</p>
                                                                                 </div>
 
