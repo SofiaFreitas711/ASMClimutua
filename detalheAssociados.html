@@ -18,7 +18,7 @@
             <ul class="listaNav">
                 <li  class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li>
                 <li  class="listaDetalhe"><a href="servicos.html" class="listaTexto">Serviços</a> 
-                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
+                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2; margin-left: 5px;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="15px" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
@@ -33,7 +33,7 @@
                     </ul>
                 </li>
                 <li  class="listaDetalhe"><a href="associados.html" class="listaTexto">Associados</a>
-                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
+                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2; margin-left: 5px;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="15px" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
@@ -60,14 +60,14 @@
         </nav>
         <nav id="mobile">
             <img src="./images/seccoes/Group 18.svg" alt="">
-            <button onclick="menu()" style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite; float: right;padding:10px; cursor: pointer;" aria-label="Abrir menu">
+            <button onclick="menu()" style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2; float: right;padding:10px; cursor: pointer;" aria-label="Abrir menu">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6" width="24px" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
             </button>
         </nav> 
         <div id="menu">
-            <button onclick="menu()" style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite; float: right;padding:10px; cursor: pointer;margin-top: 20px; margin-right: 20px;" aria-label="Fechar menu">
+            <button onclick="menu()" style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2; float: right;padding:10px; cursor: pointer;margin-top: 20px; margin-right: 20px;" aria-label="Fechar menu">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="size-6" width="24px" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>     
@@ -76,7 +76,7 @@
             <ul class="listaNav">
                 <li  class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li>
                 <li  class="listaDetalhe"><a href="servicos.html" class="listaTexto">Serviços</a> 
-                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite; margin-left: 30px;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
+                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2; margin-left: 30px;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
@@ -91,7 +91,7 @@
                     </ul>
                 </li>
                 <li  class="listaDetalhe"><a href="associados.html" class="listaTexto">Associados</a>
-                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: antiquewhite;margin-left: 35px;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
+                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2;margin-left: 35px;" aria-expanded="false" aria-label="Abrir o menu expansível" onclick="abrirMenu(this)">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
@@ -184,19 +184,16 @@
         
     </footer>
     <script src="bd.js"></script>
-    <script src="teste.js"></script>
+    <script src="index.js"></script>
     <script>
         let detalheAssociados = localStorage.getItem("detalheAssociados")
         let associados = window.env.associados
-
-        // console.log(detalheAssociados);
         
         for(let i = 0; i < associados.length;i++){
             if(associados[i].nome == detalheAssociados){
                 document.querySelector("#associadoNome").innerHTML = `${detalheAssociados}`
                 for(let j=0; j<associados[i].condicoes.length;j++){
                     if(associados[i].condicoes[j].doc == ""){
-                        console.log("Nao tem doc");
                         document.querySelector(".seccao").innerHTML += `<button aria-expanded="false" aria-controls="resposta${j}" id="pergunta${j}" class="btnExpandir" onclick="abrirResposta('resposta${j}','pergunta${j}')">${associados[i].condicoes[j].titulo} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
                                                                                 <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg> 
                                                                         </button>
@@ -214,7 +211,6 @@
                                                                             <p>${associados[i].condicoes[j].texto}</p>
                                                                             <p>Para mais detalhes consulte o documento <a target="_blank" href="${associados[i].condicoes[j].doc} aria-label="Abrir documento detalhado sobre ${associados[i].condicoes[j].titulo}"">aqui</a></p>
                                                                         </div>`  
-                        console.log("tem doc");
                         
                     }
                 }
@@ -239,20 +235,6 @@
             let path = svg.querySelector("path")            
 
             path.setAttribute("d", aberto? "M4.5 15.75l7.5-7.5 7.5 7.5":"M19.5 8.25l-7.5 7.5-7.5-7.5")
-
-            // if(resposta.style.display == "none"){
-            //     console.log("vai abrir");
-            //     document.querySelector(`#${idResposta}`).style.display = "block"
-            //     pergunta.setAttribute("ariaExpanded", "true")
-            //     console.log(pergunta.getAttribute("ariaExpanded"));
-                
-                
-            // }else{
-            //     console.log("vai fechar");
-            //     document.querySelector(`#${idResposta}`).style.display = "none"
-            //     pergunta.setAttribute("ariaExpanded", "false")
-            //     console.log(pergunta.getAttribute("ariaExpanded"));
-            // }
             
         }
 

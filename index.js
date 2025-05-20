@@ -78,21 +78,9 @@ function mudarTamanho(tamanho, element){
     }
 }
 
-// usar esta página para os redirecionamentos
-console.log(window.env);
-// function irPagina(tipo, detalhe){
-//     let tipo = tipo
-//     let detalhe = detalhe
-
-//     console.log(tipo, detalhe);
-    
-// }
-
 function irPagina(params1, params2){
-    // console.log(params1,params2);
     switch(params1){
         case "servicos":
-            // console.log("sou um servico");
             localStorage.setItem("detalhe", `${params2}`)
             window.location.href = 'detalhe.html'
             
@@ -113,18 +101,12 @@ function irPagina(params1, params2){
 }
 
 function abrirMenu(element){
-    console.log("cliquei");
-    // console.log(element);
-    
-    
     let botao = element    
     let li = botao.closest("li")
     let submenu = li.querySelector(".listaSubcategorias")
 
     let todosBotoes = document.querySelectorAll(".listaDetalhe > button")
     let todosSubmenus = document.querySelectorAll(".listaSubcategorias")
-    // let todosSvg = document.querySelectorAll(".listaDetalhe > svg")
-    // let todosPath = todosBotoes.querySelectorAll("path")
     let estavaAberto = submenu.classList.contains("aberto")
 
     for(let btn of todosBotoes){
@@ -140,7 +122,6 @@ function abrirMenu(element){
     }
 
     if(!estavaAberto){
-        console.log("aberto");
         
         let aberto = submenu.classList.toggle("aberto")
         botao.setAttribute("aria-expanded", aberto? true: false)
@@ -163,9 +144,7 @@ function abrirMenu(element){
 }
 
 function menu(){
-    let menu = document.querySelector('#menu')
-    console.log(window.innerWidth);
-    
+    let menu = document.querySelector('#menu')   
     
     if(menu.style.display == ""){
         menu.style.display = "block"

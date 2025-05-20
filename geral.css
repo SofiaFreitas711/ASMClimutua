@@ -36,7 +36,6 @@
     --botao-seccao-escura: #EB8F00;
 }
 
-/* adicionar media para isto */
 #normal{
     --tamanho-h1: 1.5rem;
     --tamanho-h2: 1.375rem;
@@ -108,7 +107,6 @@ main button{
 
 #linkConteudo{
     background-color: var(--cor-link-conteudo);
-    /* width: 100%; */
     padding: 10px;
     padding-left: 30px;
 
@@ -124,12 +122,10 @@ main button{
     height: 5vh;
     width: 2.5vw;
     margin-right: 0%;
-    /* font-weight: bold; */
     align-self: center;
     justify-content: center;
     line-height: 1;
     margin-right: 0.5vw;
-    /* font-size: var(--tamanho-texto); */
 }
 
 .botaoNav.selecionado{
@@ -165,30 +161,15 @@ main button{
     margin-right: 0.5vw;
 }
 
-/* #selected{
-    background-color: #FFFCF2;
-    color: #001A2C;
-    border-style: none;
-    border-radius: 2px;
-    height: 5vh;
-    width: 2.5vw;
-    margin-right: 0%;
-    font-weight: bold;
-    margin-right: 0.5vw;
-} */
-
 .listaNav{
     display: inline-flex;
     gap: 5px;
-    /* flex-direction: row; */
-    /* flex-wrap: nowrap; */
 
 }
 
 .listaDetalhe{
     margin-right: 10px;
     list-style-type: none;
-    /* display: flex; */
     padding-inline: 5px;
 }
 
@@ -211,9 +192,7 @@ main button{
 
 .listaSubcategorias{
     display: none;
-    /* visibility: hidden; */
     position: absolute;
-    /* top: 100px; */
     padding: 20px 5px;
     background-color: var(--cor-regiao);
     list-style-type: none;
@@ -234,33 +213,13 @@ main button{
     display: none;
 }
 
-/* #botoes{
-    align-content: center;
-} */
-
-/* .listaDetalhe:hover .listaSubcategorias,
-.listaDetalhe:focus-within .listaSubcategorias,
-.listaSubcategorias:hover .listaSubcategorias,
-.listaSubcategorias:focus-within .listaSubcategorias{
-    /* display: block; */
-    /* visibility: visible;
-    
-} */
-
 header a{
     color: var(--cor-letra2);
 }
 
-/* main{
-    padding: 10px;
-} */
-
 footer{
     background-color: var(--cor-regiao);
     padding: 20px;
-    /* position: absolute;
-    bottom: 0;
-    width: 97%; */
 }
 
 footer li{
@@ -321,7 +280,6 @@ footer p{
     #mobile{
         display: inline-block;
         width: 100%;
-        /* justify-content: space-between; */
     }
 
     #mobile button{
@@ -335,13 +293,11 @@ footer p{
     }
 
     body{
-        /* width: 100vw; */
         position: absolute;
         
     }
 
     #menu{
-        /* position: absolute; */
         overflow-y: hidden;
         background-color: var(--cor-regiao);    
         z-index: 9999;    
