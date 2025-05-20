@@ -98,9 +98,9 @@
                     </button>
                     <ul class="listaSubcategorias" aria-hidden="true">
                         <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Benefícios</a></li>
-                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Estatutos</a></li>
-                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Protocolos</a></li>
-                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Documentos Oficiais</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[1].nome)">Estatutos</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[2].nome)">Protocolos</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[3].nome)">Documentos Oficiais</a></li>
                         <li><a href="tornarAssociado.html">Torne-se Associado</a></li>
                     </ul>
                 </li>
@@ -137,7 +137,7 @@
                 <br>
                 <label for="nascimento">Data de Nascimento (Obrigatório)</label>
                 <br>
-                <input type="date" name="data de nascimento" id="nascimento">
+                <input type="date" name="data de nascimento" id="nascimento" onchange="inserirValores()">
                 <br>
                 <label for="cc">Número do CC ou BI (Obrigatório)</label>
                 <br>
@@ -157,11 +157,15 @@
                 <br>
                 <label for="modalidade">Modalidade Pretendida (Obrigatório)</label>
                 <br>
-                <select name="modalidade pretendida" id="modalidade">
-                    <option value=""></option>
-                    <!-- adicionar as modalidades -->
+                <select name="modalidade pretendida" id="modalidade" onchange="inserirValores()">
+                    <option value="Auxílio Funeral 500€">Auxílio funeral 500€</option>
+                    <option value="Auxílio Funeral 750€">Auxílio funeral 750€</option>
+                    <option value="Auxílio Funeral 1000€">Auxílio funeral 1000€</option>
+                    <option value="Assistência médica e de enfermagem">Assistência médica e de enfermagem</option>
                 </select>
+                <p id="valorCota"></p>
                 <button onclick="sendMail()" id="enviarEmail">Enviar pedido de novo associado →</button>
+                <p aria-live="assertive" id="aviso"></p>
             </div>
         </div>
     </main>
@@ -237,6 +241,61 @@
         })();
     </script>
     <script>
+        let idade
+        let modalidade = "Auxílio Funeral 500€"
+        let valorPagar = 0
+        trocarModalidade()        
+
+        function inserirValores(){
+
+            let dataNascimento = document.querySelector("#nascimento").value
+            
+            dataNascimento = +dataNascimento.slice(0,4)
+            if(dataNascimento >= 1900){
+                let a = new Date()
+                let ano = a.getFullYear()
+                idade = +ano - dataNascimento                
+            }
+
+            let modalidade = document.querySelector("#modalidade").value
+            
+            switch(modalidade){
+                case "Auxílio Funeral 500€":
+                    if(idade < 6){
+                        valorPagar = 29
+                    }else{
+                        valorPagar = 29 + 2*(idade-6)
+                    }
+                    break;
+                case "Auxílio Funeral 750€":
+                    if(idade < 6){
+                        valorPagar = 44
+                    }else{
+                        valorPagar = 44 + 2*(idade-6)
+                    }
+                    break;
+                case "Auxílio Funeral 1000€":
+                    if(idade < 6){
+                        valorPagar = 59
+                    }else{
+                        valorPagar = 59 + 2*(idade-6)
+                    }
+                    break;
+                case "Assistência médica e de enfermagem":
+                    valorPagar = 1
+                    break;                    
+            }
+
+            if(idade != undefined){
+                let p = document.querySelector("#valorCota")
+                if(valorPagar == 1){
+                    p.innerHTML = `Para a modalidade selecionada ${modalidade}, terá de pagar 10€ de inscrição e, mensalmente, 50 cêntimos para o fundo de solidariedade mais ${valorPagar}€ pela modalidade.`
+                }else{
+                    p.innerHTML = `Para a modalidade selecionada ${modalidade}, terá de pagar 10€ de inscrição e, mensalmente, 50 cêntimos para o fundo de solidariedade mais ${valorPagar} cêntimos pela modalidade.`
+                }
+            }
+        }
+
         function sendMail(){
             console.log("aqui");
             let nome=document.querySelector("#nome").value
@@ -247,6 +306,7 @@
             let nif= document.querySelector("#nif").value
             let morada= document.querySelector("#morada").value
             let codPostal= document.querySelector("#codPostal").value
+            let modalidade = document.querySelector("#modalidade").value
 
             if(nome != "" && email !="" && telemovel!="" && identificacao !="" && nif!="" && morada !="" && codPostal != "" && dataNascimento != ""){
                 let params = {
@@ -258,7 +318,7 @@
                     nif: nif,
                     morada: morada,
                     codPostal: codPostal,
-                    modalidade: document.querySelector("#modalidade").value
+                    modalidade: modalidade
                 }
     
                 const serviceID = "service_w1ezoyi"
@@ -277,16 +337,16 @@
                     document.querySelector("#codPostal").value = "",
                     document.querySelector("#modalidade").value = ""
     
-                    document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive">Pedido enviado com sucesso</p>`
+                    document.querySelector("#aviso").innerHTML = `Pedido enviado com sucesso. Após verificação dos dados por parte dos serviços administrativos, receberá um email a pedir o pagamento.`
                     setInterval(function(){
-                        document.querySelector("#aviso").remove()
+                        document.querySelector("#aviso").innerHTML = ""
                     },10000)
                  })
                  .catch((err)=>console.log(err));
             }else{
-                document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive" id="aviso">Falta preencher um dos campos</p>`
+                document.querySelector("#aviso").innerHTML = `Falta preencher um dos campos`
                 setInterval(function(){
-                    document.querySelector("#aviso").remove()
+                    document.querySelector("#aviso").innerHTML = ""
                 },5000)
             }
              

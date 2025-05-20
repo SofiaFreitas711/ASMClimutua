@@ -98,9 +98,9 @@
                     </button>
                     <ul class="listaSubcategorias" aria-hidden="true">
                         <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Benefícios</a></li>
-                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Estatutos</a></li>
-                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Protocolos</a></li>
-                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Documentos Oficiais</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[1].nome)">Estatutos</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[2].nome)">Protocolos</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[3].nome)">Documentos Oficiais</a></li>
                         <li><a href="tornarAssociado.html">Torne-se Associado</a></li>
                     </ul>
                 </li>
@@ -185,6 +185,7 @@
                 <input type="text" name="obs" id="obs">
                 <br>
                 <button onclick="sendMail()" id="enviarEmail">Enviar pedido de marcação →</button>
+                <p style="color:white" aria-live="assertive" id="aviso"></p>
             </div>
         </div>
     </main>
@@ -314,17 +315,19 @@
                     document.querySelector("#especialidade").value = ""
                     document.querySelector("#obs").value = ""
     
-                    document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive" id="aviso">Pedido enviado com sucesso</p>`
+                    // document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive" id="aviso">Pedido enviado com sucesso</p>`
+                    document.querySelector("#aviso").innerHTML = "Pedido enviado com sucesso"
                     setInterval(function(){
-                        document.querySelector("#aviso").remove()
+                        // document.querySelector("#aviso").remove()
+                        document.querySelector("#aviso").innerHTML = ""
                     },10000)
                  })
                  .catch((err)=>console.log(err));
                  
             }else{
-                document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive" id="aviso">Falta preencher um dos campos</p>`
+                document.querySelector("#aviso").innerHTML += `Falta preencher um dos campos`
                 setInterval(function(){
-                    document.querySelector("#aviso").remove()
+                    document.querySelector("#aviso").innerHTML = ""
                 },5000)
             }   
         }
