@@ -1,6 +1,6 @@
 @font-face {
-    font-family: Hubot Sans;
-    src: url(../static/HubotSans-Regular.ttf);
+    font-family: Atkinson Hyperlegible Next Regular;
+    src: url(../font/static/AtkinsonHyperlegibleNext-Regular.ttf);
 }
 
 :root{

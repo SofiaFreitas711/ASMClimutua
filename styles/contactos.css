@@ -1,6 +1,6 @@
 @font-face {
-    font-family: Hubot Sans;
-    src: url(../static/HubotSans-Regular.ttf);
+    font-family: Atkinson Hyperlegible Next Regular;
+    src: url(../font/static/AtkinsonHyperlegibleNext-Regular.ttf);
 }
 
 :root{
@@ -52,7 +52,7 @@
 #form select{
     width: 90%;
     min-height: 25px;
-    font-family: Hubot Sans;
+    font-family: Atkinson Hyperlegible Next Regular;
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -60,7 +60,7 @@
 #enviarEmail{
     width: 90%;
     min-height: 25px;
-    font-family: Hubot Sans;
+    font-family: Atkinson Hyperlegible Next Regular;
     margin-top: 10px;
     margin-bottom: 5px;
     background-color: var(--cor-detalhe1);

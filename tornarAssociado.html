@@ -244,7 +244,7 @@
         let idade
         let modalidade = "Auxílio Funeral 500€"
         let valorPagar = 0
-        trocarModalidade()        
+        inserirValores()        
 
         function inserirValores(){
 
@@ -282,13 +282,17 @@
                     }
                     break;
                 case "Assistência médica e de enfermagem":
-                    valorPagar = 1
+                    valorPagar = 100
                     break;                    
             }
 
             if(idade != undefined){
                 let p = document.querySelector("#valorCota")
-                if(valorPagar == 1){
+                if(valorPagar >= 100){
+                    valorPagar = valorPagar.toString()
+                    let valorEuro = valorPagar.slice(0,1)
+                    let valorCentimos = valorPagar.slice(1,3)
+                    valorPagar = valorEuro + "." + valorCentimos
                     p.innerHTML = `Para a modalidade selecionada ${modalidade}, terá de pagar 10€ de inscrição e, mensalmente, 50 cêntimos para o fundo de solidariedade mais ${valorPagar}€ pela modalidade.`
                 }else{
                     p.innerHTML = `Para a modalidade selecionada ${modalidade}, terá de pagar 10€ de inscrição e, mensalmente, 50 cêntimos para o fundo de solidariedade mais ${valorPagar} cêntimos pela modalidade.`

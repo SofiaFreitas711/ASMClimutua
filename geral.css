@@ -1,16 +1,16 @@
 @font-face {
-    font-family: Hubot Sans Regular;
-    src: url(static/HubotSans-Regular.ttf);
+    font-family: Atkinson Hyperlegible Next Regular;
+    src: url(font/static/AtkinsonHyperlegibleNext-Regular.ttf);
 }
 
 @font-face{
-    font-family: Hubot Sans Bold;
-    src: url(static/HubotSans-Bold.ttf)
+    font-family: Atkinson Hyperlegible Next Bold;
+    src: url(font/static/AtkinsonHyperlegibleNext-Bold.ttf)
 }
 
 @font-face{
-    font-family: Hubot Sans Medium;
-    src: url(static/HubotSans-Medium.ttf)
+    font-family: Atkinson Hyperlegible Next Medium;
+    src: url(font/static/AtkinsonHyperlegibleNext-Medium.ttf)
 }
 
 :root{
@@ -71,7 +71,7 @@ body{
     background-color: var(--cor-fundo);
     color: var(--cor-letra);
     margin: 0px;
-    font-family: Hubot Sans Regular;
+    font-family: Atkinson Hyperlegible Next Regular;
 }
 
 nav{
@@ -84,17 +84,17 @@ nav{
 
 h1{
     font-size: var(--tamanho-h1);
-    font-family: Hubot Sans Bold;
+    font-family: Atkinson Hyperlegible Next Bold;
 }
 
 h2{
     font-size: var(--tamanho-h2);
-    font-family: Hubot Sans Medium;
+    font-family: Atkinson Hyperlegible Next Medium;
 }
 
 h3{
     font-size: var(--tamanho-h3);
-    font-family: Hubot Sans Medium;
+    font-family: Atkinson Hyperlegible Next Medium;
 }
 
 p,a,li,label, button{
@@ -251,7 +251,7 @@ footer p{
 
 #footerMobile li p,
 #footerDesktop li p{
-    font-family: Hubot Sans Bold;
+    font-family: Atkinson Hyperlegible Next Bold;
 }
 
 .linksFooter{

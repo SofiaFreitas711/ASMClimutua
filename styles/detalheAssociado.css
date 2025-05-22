@@ -1,6 +1,6 @@
 @font-face {
-    font-family: Hubot Sans;
-    src: url(../static/HubotSans-Regular.ttf);
+    font-family: Atkinson Hyperlegible Next Regular;
+    src: url(../font/static/AtkinsonHyperlegibleNext-Regular.ttf);
 }
 
 :root{
@@ -34,7 +34,7 @@
 
 .btnExpandir{
     background-color: rgba(0, 0, 0, 0);
-    font-family: Hubot Sans Medium; 
+    font-family: Atkinson Hyperlegible Next Medium; 
     border-style: none;
     /* font-size: 20px; */
     margin-top: 10px;
