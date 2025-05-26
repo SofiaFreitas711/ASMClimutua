@@ -331,13 +331,13 @@
                 let emailVazio = (email == ""?arrayErros.push(" email"):false)
                 let numeroVazio = (numeroAssociado == "" || numeroAssociado.length <8 || numeroAssociado.length>8?arrayErros.push(" número de associado"):false)
                
-                document.querySelector("#aviso").innerHTML += `⚠️ Falta preencher o campo ${arrayErros}!`
+                document.querySelector("#aviso").innerHTML = `⚠️ Falta preencher o campo ${arrayErros}!`
                 document.querySelector("#aviso").style = "background-color: #FF7F7F; color: #001A2C; border-radius: 2px"
                                
-                setInterval(function(){
-                    document.querySelector("#aviso").innerHTML = ""
-                    document.querySelector("#aviso").style = "background-color: #FF7F7F00"
-                },10000)
+                // setInterval(function(){
+                //     document.querySelector("#aviso").innerHTML = ""
+                //     document.querySelector("#aviso").style = "background-color: #FF7F7F00"
+                // },10000)
             }   
         }
     </script>
