@@ -310,8 +310,11 @@
             let morada= document.querySelector("#morada").value
             let codPostal= document.querySelector("#codPostal").value
             let modalidade = document.querySelector("#modalidade").value
-
-            if(nome != "" && email !="" && telemovel!="" && identificacao !="" && nif!="" && morada !="" && codPostal != "" && dataNascimento != ""){
+            let telemovelTamanho = telemovel.toString()
+            telemovelTamanho= telemovelTamanho.length
+            // console.log(telemovelTamanho, telemovelTamanho.length);
+        
+            if(nome != "" && email !="" && telemovel!="" && telemovelTamanho != 9 && identificacao !="" && nif!="" && morada !="" && codPostal != "" && dataNascimento != ""){
                 let params = {
                     nome:nome,
                     email:email,
@@ -340,16 +343,31 @@
                     document.querySelector("#codPostal").value = "",
                     document.querySelector("#modalidade").value = ""
     
-                    document.querySelector("#aviso").innerHTML = `Pedido enviado com sucesso. Após verificação dos dados por parte dos serviços administrativos, receberá um email a pedir o pagamento.`
+                    document.querySelector("#aviso").innerHTML = `📬 Pedido enviado com sucesso. Após verificação dos dados por parte dos serviços administrativos, receberá um email a pedir o pagamento.`
+                    document.querySelector("#aviso").style = "background-color: #DBFAD3; color: #001A2C; border-radius: 2px"
                     setInterval(function(){
                         document.querySelector("#aviso").innerHTML = ""
+                        document.querySelector("#aviso").style = "background-color: #DBFAD300;"
                     },10000)
                  })
                  .catch((err)=>console.log(err));
             }else{
-                document.querySelector("#aviso").innerHTML = `Falta preencher um dos campos`
+                let arrayErros = []
+                let nomeVazio = (nome == ""?arrayErros.push("nome"):false)
+                let emailVazio = (email == ""?arrayErros.push(" email"):false)
+                let telemovelVazio = (telemovel == "" || telemovelTamanho != 9? arrayErros.push(" telemovel"):false)
+                let identificacaoVazio = (identificacao == ""?arrayErros.push(" número do CC ou BI"):false)
+                let nifVazio = (nif == ""?arrayErros.push(" NIF"):false)
+                let moradaVazio = (morada == ""? arrayErros.push(" morada"):false)
+                let codPostalVazio = (codPostal == ""? arrayErros.push(" código postal"):false)
+                let dataNascimentoVazio = (dataNascimento == ""? arrayErros.push(" data de nascimento"):false)
+                
+                document.querySelector("#aviso").innerHTML += `⚠️ Falta preencher o campo ${arrayErros}!`
+                document.querySelector("#aviso").style = "background-color: #FF7F7F; color: #001A2C; border-radius: 2px"
+
                 setInterval(function(){
                     document.querySelector("#aviso").innerHTML = ""
+                    document.querySelector("#aviso").style = "background-color: #FF7F7F00"
                 },5000)
             }
              

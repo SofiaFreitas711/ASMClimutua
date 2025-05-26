@@ -145,7 +145,7 @@
                 <br>
                 <input type="email" name="email" id="email">
                 <br>
-                <label for="socio">Número de Sócio (Obrigatório)</label>
+                <label for="socio">Número de Sócio (Obrigatório, 8 dígitos)</label>
                 <br>
                 <input type="number" name="número de socio" id="socio">
                 <br>
@@ -299,8 +299,11 @@
             let nome = document.querySelector("#nome").value
             let email = document.querySelector("#email").value
             let numeroAssociado = document.querySelector("#socio").value
+            numeroAssociado.toString()
+            console.log(numeroAssociado.length);
+            
 
-            if(nome != "" && email != "" && numeroAssociado!=""){
+            if(nome != "" && email != "" && numeroAssociado!="" && numeroAssociado.length == 8){
                 let params = {
                     nome:nome,
                     email:email,
@@ -323,17 +326,33 @@
                     document.querySelector("#especialidade").value = ""
                     document.querySelector("#obs").value = ""
     
-                    document.querySelector("#aviso").innerHTML = `Pedido enviado com sucesso`
+                    // document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive" id="aviso">Pedido enviado com sucesso</p>`
+                    document.querySelector("#aviso").innerHTML = "📬 Pedido enviado com sucesso"
+                    document.querySelector("#aviso").style = "background-color: #DBFAD3; color: #001A2C; border-radius: 2px"
+                    // document.querySelectorAll("input").style = "border-style:none"
                     setInterval(function(){
+                        // document.querySelector("#aviso").remove()
                         document.querySelector("#aviso").innerHTML = ""
-                    },5000)
+                        document.querySelector("#aviso").style = "background-color: #DBFAD300;"
+                    },10000)
                  })
                  .catch((err)=>console.log(err));
                  
-            }else{
-                document.querySelector("#aviso").innerHTML = `Falta preencher um dos campos`
+            }else{  
+                let arrayErros = []              
+                let nomeVazio = (nome == ""?arrayErros.push("nome"):false)
+                let emailVazio = (email == ""?arrayErros.push(" email"):false)
+                let numeroVazio = (numeroAssociado == "" || numeroAssociado.length <8 || numeroAssociado.length>8?arrayErros.push(" número de associado"):false)
+                
+
+                console.log(arrayErros);                
+
+                document.querySelector("#aviso").innerHTML += `⚠️ Falta preencher o campo ${arrayErros}!`
+                document.querySelector("#aviso").style = "background-color: #FF7F7F; color: #001A2C; border-radius: 2px"
+                               
                 setInterval(function(){
                     document.querySelector("#aviso").innerHTML = ""
+                    document.querySelector("#aviso").style = "background-color: #FF7F7F00"
                 },10000)
             }   
         }

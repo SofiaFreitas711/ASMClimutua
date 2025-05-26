@@ -102,6 +102,11 @@
     font-family: Atkinson Hyperlegible Next Bold;
 }
 
+#aviso{
+    width: 50%;
+    padding: 2px;
+}
+
 @media only screen and (max-width: 767px){
     body{
         width: 100%;
@@ -132,6 +137,10 @@
     }
 
     #enviarEmail{
+        width: 100%;
+    }
+
+    #aviso{
         width: 100%;
     }
 
@@ -167,6 +176,10 @@
     }
 
     #enviarEmail{
+        width: 50%;
+    }
+
+    #aviso{
         width: 50%;
     }
 }

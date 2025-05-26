@@ -69,6 +69,11 @@
     border-style: none;
 }
 
+#aviso{
+    width: 50%;
+    padding: 2px;
+}
+
 @media only screen and (max-width: 767px){
     body{
         width: 100%;
@@ -82,6 +87,10 @@
     #enviarEmail{
         width: 100%;
 
+    }
+
+    #aviso{
+        width: 100%;
     }
 }
 
@@ -98,5 +107,9 @@
     #enviarEmail{
         width: 75%;
 
+    }
+
+    #aviso{
+        width: 75%;
     }
 }
