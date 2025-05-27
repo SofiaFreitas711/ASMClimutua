@@ -307,13 +307,13 @@ footer p{
         display: block;
         gap: 5px;
         justify-content: center;
-        padding-left: 20%;
+        padding-left: 10%;
         margin-top: 20%;
         line-height: 40px;
     }
 
     #menu div{
-        padding-left: 20%;
+        padding-left: 10%;
     }
     
     .listaDetalhe{
