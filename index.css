@@ -113,6 +113,12 @@ h2{
     color: var(--cor-letra);
 }
 
+.listaSubcategorias{
+    position: relative;
+    top: 10%; 
+
+}
+
 footer p{
     font-family: Atkinson Hyperlegible Next Bold;
 }

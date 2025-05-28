@@ -74,6 +74,11 @@ label{
 
 }
 
+.listaSubcategorias{
+    position: relative;
+    top: 10%; 
+
+}
 
 input[type="radio"]:checked + label {
     background-color: var(--cor-detalhe2);

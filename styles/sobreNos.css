@@ -83,6 +83,12 @@ a{
     color: var(--cor-letra);
 }
 
+.listaSubcategorias{
+    position: relative;
+    top: 10%; 
+
+}
+
 @media only screen and (max-width:767px){
     .orgao{
         display: flex;

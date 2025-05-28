@@ -100,7 +100,7 @@ function irPagina(params1, params2){
     
 }
 
-function abrirMenu(element){
+function abrirMenuMobile(element){
     let botao = element    
     let li = botao.closest("li")
     let submenu = li.querySelector(".listaSubcategorias")
@@ -125,7 +125,7 @@ function abrirMenu(element){
         
         let aberto = submenu.classList.toggle("aberto")
         botao.setAttribute("aria-expanded", aberto? true: false)
-        submenu.setAttribute("aria-hidden", aberto?true:false)
+        submenu.setAttribute("aria-hidden", aberto?false:true)
         botao.setAttribute("aria-label", aberto? "Fechar o menu expansível":"Abrir o menu espansível")
 
         let svg = botao.querySelector("svg")
@@ -137,6 +137,52 @@ function abrirMenu(element){
             submenu.classList.remove("aberto")
             botao.setAttribute("aria-expanded", false)
             submenu.setAttribute("aria-hidden",true)
+            botao.setAttribute("aria-label","Abrir o menu espansível")
+            path.setAttribute("d","M19.5 8.25l-7.5 7.5-7.5-7.5")
+        },20000)
+    }   
+}
+
+function abrirMenuDesktop(params1, params2, params3){
+    let id = params1
+    let menu = document.querySelector(`#${id}`)
+    // menu.classList.toggle("aberto")
+    // menu.setAttribute("aria-hidden", false)
+    let botao = params2
+    let area = params3
+  
+    let todosBotoes = document.querySelectorAll(".listaNav > div > button")
+    let todosSubmenus = document.querySelectorAll(".listaSubcategorias")
+    let estavaAberto = menu.classList.contains("aberto")
+
+    for(let btn of todosBotoes){
+        btn.setAttribute("aria-expanded", false)
+        btn.setAttribute("aria-label", "Abrir o menu expansível")                
+        let seta = btn.querySelector("path")
+        seta.setAttribute("d","M19.5 8.25l-7.5 7.5-7.5-7.5")
+    }
+
+    for(let menu of todosSubmenus){       
+        menu.classList.remove("aberto")
+        menu.setAttribute("aria-hidden", true)
+    }
+
+    if(!estavaAberto){
+        
+        let aberto = menu.classList.toggle("aberto")
+        botao.setAttribute("aria-expanded", aberto? true: false)
+        menu.setAttribute("aria-hidden", aberto?false:true)
+        botao.setAttribute("aria-label", aberto? "Fechar o menu expansível":"Abrir o menu espansível")
+
+        let svg = botao.querySelector("svg")
+        let path = svg.querySelector("path")            
+
+        path.setAttribute("d", aberto? "M4.5 15.75l7.5-7.5 7.5 7.5":"M19.5 8.25l-7.5 7.5-7.5-7.5")  
+        
+        setTimeout(function(){
+            menu.classList.remove("aberto")
+            botao.setAttribute("aria-expanded", false)
+            menu.setAttribute("aria-hidden",true)
             botao.setAttribute("aria-label","Abrir o menu espansível")
             path.setAttribute("d","M19.5 8.25l-7.5 7.5-7.5-7.5")
         },20000)
