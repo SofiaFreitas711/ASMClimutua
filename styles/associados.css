@@ -55,7 +55,7 @@
 }
 
 .listaSubcategorias{
-    position: relative;
+    /* position: relative; */
     top: 95px; 
 
 }
@@ -66,6 +66,12 @@
         width: 80%;
         height: 25vh;
     }
+
+    .listaSubcategorias{
+        position: relative;
+        top: 0px; 
+    
+    }
     
 }
 
@@ -74,5 +80,11 @@
         display: inline-table;
         width: 35%;
         height: 15vh;
-    }    
+    }  
+    
+    .listaSubcategorias{
+        position: relative;
+        top: 0px; 
+    
+    }
 }

@@ -84,7 +84,7 @@ a{
 }
 
 .listaSubcategorias{
-    position: relative;
+    /* position: relative; */
     top: 95px; 
 
 }
@@ -111,6 +111,12 @@ a{
         width: 78px;
         height: auto;
     }
+
+    .listaSubcategorias{
+        position: relative;
+        top: 0px; 
+    
+    }
 }
 
 @media only screen and (min-width:768px) and (max-width:1100px){
@@ -130,6 +136,12 @@ a{
         margin-right: 10px;
         width: 78px;
         height: auto;
+    }
+
+    .listaSubcategorias{
+        position: relative;
+        top: 0px; 
+    
     }
 }
 

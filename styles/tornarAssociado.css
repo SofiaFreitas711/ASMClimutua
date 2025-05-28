@@ -75,7 +75,7 @@
 }
 
 .listaSubcategorias{
-    position: relative;
+    /* position: relative; */
     top: 95px; 
 
 }
@@ -98,6 +98,12 @@
     #aviso{
         width: 100%;
     }
+
+    .listaSubcategorias{
+        position: relative;
+        top: 0px; 
+    
+    }
 }
 
 @media only screen and (min-width:768px) and (max-width:1100px){
@@ -117,5 +123,17 @@
 
     #aviso{
         width: 75%;
+    }
+
+    @media only screen and (max-width: 1100px){
+        body{
+            width: 100%;
+        }
+    
+        .listaSubcategorias{
+            position: relative;
+            top: 0px; 
+        
+        }
     }
 }

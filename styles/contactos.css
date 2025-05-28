@@ -99,7 +99,7 @@ a{
 }
 
 .listaSubcategorias{
-    position: relative;
+    /* position: relative; */
     top: 95px; 
 
 }
@@ -130,6 +130,12 @@ a{
         width: 75%;
     }
 
+    .listaSubcategorias{
+        position: relative;
+        top: 0px; 
+    
+    }
+
 
 }
 
@@ -154,5 +160,11 @@ a{
     
     #enviarEmail{
         width: 90%;
+    }
+
+    .listaSubcategorias{
+        position: relative;
+        top: 0px; 
+    
     }
 }
