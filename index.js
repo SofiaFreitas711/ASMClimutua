@@ -200,9 +200,7 @@ function abrirMenuDesktop(params1, params2, params3){
                 }
             });
         }
-        
-        console.log(botao);
-        
+                
         menu.setAttribute("aria-hidden", aberto?false:true)
         botao.setAttribute("aria-label", aberto? `Fechar o menu expansível ${area}`:`Abrir o menu espansível ${area}`)
 
