@@ -151,12 +151,13 @@ function abrirMenuMobile(params1, element){
 function abrirMenuDesktop(params1, params2, params3){
     let id = params1
     let menu = document.querySelector(`#${id}`)
+    let items = menu.querySelectorAll("a")
     // menu.classList.toggle("aberto")
     // menu.setAttribute("aria-hidden", false)
     let botao = params2
     let area = params3
   
-    let todosBotoes = document.querySelectorAll(".listaNav > div > button")
+    let todosBotoes = document.querySelectorAll(".btnMenuExp")
     let todosSubmenus = document.querySelectorAll(".listaSubcategorias")
     let estavaAberto = menu.classList.contains("aberto")
 
@@ -187,6 +188,16 @@ function abrirMenuDesktop(params1, params2, params3){
         
         let aberto = menu.classList.toggle("aberto")
         botao.setAttribute("aria-expanded", aberto? true: false)
+        items[0].focus()
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowDown') {
+              e.preventDefault();
+              items[(i + 1) % items.length].focus();
+            } else if (e.key === 'ArrowUp') {
+              e.preventDefault();
+              items[(i - 1 + items.length) % items.length].focus();
+            }
+          });
         menu.setAttribute("aria-hidden", aberto?false:true)
         botao.setAttribute("aria-label", aberto? `Fechar o menu expansível ${area}`:`Abrir o menu espansível ${area}`)
 
