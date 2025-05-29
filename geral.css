@@ -238,11 +238,14 @@ footer p{
     justify-content: end;
 }
 
-#footerDesktop{
-    display: flex;
-    justify-content: flex-start;
-    justify-content: center;
-    gap: 5vh;
+#footerDesktop ul{
+    display: grid;
+    grid-template-columns: 75% 50%; 
+
+}
+
+#footerTitulo{
+    grid-column: 1 / span 2;
 }
 
 #footerMobile{
