@@ -189,15 +189,20 @@ function abrirMenuDesktop(params1, params2, params3){
         let aberto = menu.classList.toggle("aberto")
         botao.setAttribute("aria-expanded", aberto? true: false)
         items[0].focus()
-        item.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowDown') {
-              e.preventDefault();
-              items[(i + 1) % items.length].focus();
-            } else if (e.key === 'ArrowUp') {
-              e.preventDefault();
-              items[(i - 1 + items.length) % items.length].focus();
-            }
-          });
+        for(let item of items){
+            item.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                items[(i + 1) % items.length].focus();
+                } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                items[(i - 1 + items.length) % items.length].focus();
+                }
+            });
+        }
+        
+        console.log(botao);
+        
         menu.setAttribute("aria-hidden", aberto?false:true)
         botao.setAttribute("aria-label", aberto? `Fechar o menu expansível ${area}`:`Abrir o menu espansível ${area}`)
 
