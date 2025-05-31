@@ -230,3 +230,15 @@ function menu(){
     }
     
 }
+
+let w= window.innerWidth
+
+if(w>900 && w<1300){
+    console.log("trocar");
+    let logo = document.querySelector("#logo")
+    // logo.src= "./images/seccoes/logoAlternativo2.svg"
+    logo.src= "./images/seccoes/logoAlternativo.svg"
+    // logo.width = "100"
+    logo.width = "20"
+    
+}

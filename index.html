@@ -14,9 +14,9 @@
             <a href="#main" tabindex="0">Ir para o conteúdo</a>
         </div>
         <nav id="desktop">
-            <img src="./images/seccoes/Group 18.svg" alt="Logótipo da ASM Climútua">
+            <a href="index.html" aria-label="Ir para a página inicial"><img src="./images/seccoes/Group 18.svg" alt="Logótipo da ASM Climútua" id="logo"></a>
             <ul class="listaNav">
-                <li  class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li>
+                <!-- <li  class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li> -->
                 
                     <li  class="listaDetalhe"><a href="servicos.html" class="listaTexto">Serviços</a>
                         <ul class="listaSubcategorias" aria-hidden="true" id="menuServicosDesktop">
@@ -81,7 +81,8 @@
             
             <ul class="listaNav">
                 <li  class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li>
-                <li  class="listaDetalhe"><a href="servicos.html" class="listaTexto">Serviços</a> 
+                <li  class="listaDetalhe">
+                    <a href="servicos.html" class="listaTexto">Serviços</a> 
                     <button style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2; margin-left: 45px;" aria-expanded="false" aria-label="Abrir o menu expansível serviços" onclick="abrirMenuMobile('serviços',this)">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -104,9 +105,9 @@
                     </button>
                     <ul class="listaSubcategorias" aria-hidden="true" id="menuAssociados">
                         <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Benefícios</a></li>
-                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Estatutos</a></li>
-                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Protocolos</a></li>
-                        <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Documentos Oficiais</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[1].nome)">Estatutos</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[2].nome)">Protocolos</a></li>
+                        <li><a href="#" onclick="irPagina('associados',window.env.associados[3].nome)">Documentos Oficiais</a></li>
                         <li><a href="tornarAssociado.html">Torne-se Associado</a></li>
                     </ul>
                 </li>
@@ -133,7 +134,7 @@
         <div class="seccao">
             <h2>Ainda não é associado?</h2>
             <p>Na ASM Climútua, cuidamos da sua saúde com os melhores benefícios e protocolos exclusivos para associados. Junte-se a nós e tenha acesso a cuidados de saúde eficazes e adaptados às suas necessidades.</p>
-            <a href="associados.html" class="botaoClaro">Torne-se associado →</a>
+            <a href="tornarAssociado.html" class="botaoClaro">Torne-se associado →</a>
         </div>
         <div id="terceiraSeccao" class="seccao">
             <h2>Sobre a ASM Climútua</h2>

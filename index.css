@@ -32,7 +32,8 @@
                       url("https://images.unsplash.com/photo-1612537786199-1c202c6dcfd2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
     background-size: cover;
     background-position: 80px;
-    height: 60vh;
+    height: fit-content;
+    min-height: 60vh;
     display:flex;
     flex-direction: column;
     align-items:flex-start;
@@ -176,6 +177,15 @@ footer p{
     .listaSubcategorias{
         position: relative;
         top: 0px;
+        /* top: 0px;  */
+    
+    }
+}
+
+@media only screen and (min-width: 951px) and (max-width:1350px){
+    .listaSubcategorias{
+        position: relative;
+        top: 95px;
         /* top: 0px;  */
     
     }
