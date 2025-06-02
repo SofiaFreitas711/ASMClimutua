@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/contactos.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="icon" type="image/x-icon" href="/images/icons/icon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header>
@@ -232,6 +233,7 @@
         })();
     </script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="sweetalert2.all.min.js"></script>
     <script>
         // https://www.youtube.com/watch?v=wywYRQb3JCE&ab_channel=NargesMirzaaghaei
         let mapOptions = {
@@ -254,7 +256,7 @@
             let assunto = document.querySelector("#assunto").value
             let mensagem = document.querySelector("#mensagem").value
 
-            if(nome != "" && email!="" && assunto !=""){
+            if(nome != "" && email!="" && assunto !="" && mensagem != ""){
                 let params = {
                     nome:nome,
                     email:email,
@@ -264,6 +266,17 @@
     
                 const serviceID = "service_rvk89m9"
                 const templateID = "template_key9z4i"
+
+                Swal.fire({
+                    icon: "success",
+                    title: "Enviado!",
+                    text: ("O seu pedido foi enviado com sucesso."),
+                    customClass:{
+                        popup: "alerta"
+                    },
+                    returnFocus: false,
+                    iconColor: "#FF9C00",
+                })
     
                 emailjs
                  .send(serviceID,templateID,params)
@@ -273,18 +286,51 @@
                     document.querySelector("#assunto").value = "",
                     document.querySelector("#mensagem").value = ""
     
-                    document.querySelector("#form").innerHTML += `<p style="color:white" id="aviso">Pedido enviado com sucesso</p>`
-                    setInterval(function(){
-                        document.querySelector("#aviso").remove()
-                    },5000)
+                    // document.querySelector("#form").innerHTML += `<p style="color:white" id="aviso">Pedido enviado com sucesso</p>`
+                    // setInterval(function(){
+                    //     document.querySelector("#aviso").remove()
+                    // },5000)
                  })
                  .catch((err)=>console.log(err));
             }
             else{
-                document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive" id="aviso">Falta preencher um dos campos</p>`
-                setInterval(function(){
-                    document.querySelector("#aviso").remove()
-                },10000)
+                let todosErros = []
+                let arrayErros = []
+                let nomeVazio = (nome != ""?false:(arrayErros.push("nome"),todosErros.push("nome")))
+                let emailVazio = (email != ""?false:(arrayErros.push(" email"),todosErros.push(" email")))
+                let assuntoVazio = (assunto != ""? false: (arrayErros.push(" assunto"),todosErros.push(" assunto")))
+                let mensagemVazia = (mensagem != ""? false:(arrayErros.push(" mensagem"),todosErros.push(" mensagem")))
+                Swal.fire({
+                    icon: "warning",
+                    title: "Atenção!",
+                    text: (arrayErros.length>0?`Falta preencher o campo ${arrayErros}!`:""),
+                    customClass:{
+                        popup: "alerta"
+                    },
+                    returnFocus: false,
+                    iconColor: "#FF9C00",
+                }).then((result)=>{
+                    if(result.isConfirmed){
+                        switch(todosErros[0]){
+                            case "nome":
+                                document.querySelector("#nome").focus()
+                                break
+                            case " email":
+                                document.querySelector("#email").focus()
+                                break
+                            case " assunto":
+                                document.querySelector("#assunto").focus()
+                                break
+                            case " mensagem":
+                                document.querySelector("#mensagem").focus()
+                                break
+                        }
+                    }
+                })
+                // document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive" id="aviso">Falta preencher um dos campos</p>`
+                // setInterval(function(){
+                //     document.querySelector("#aviso").remove()
+                // },10000)
             }
             
              
