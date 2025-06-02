@@ -43,7 +43,7 @@ a{
     margin: 10px;
     padding: 25px;
     min-height: fit-content;
-    height: 15vh;
+    height: 21vh;
 }
 
 .servicos a{
@@ -126,7 +126,7 @@ a{
     .servicos{
         display: inline-table;
         width: 35%;
-        height: 15vh;
+        height: 20vh;
     }  
     
     .servicos img{
