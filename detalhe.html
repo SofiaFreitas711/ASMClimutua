@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="geral.css">
     <link rel="stylesheet" href="./styles/detalhe.css">
     <link rel="icon" type="image/x-icon" href="/images/icons/icon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header>
@@ -250,6 +251,7 @@
             });
         })();
     </script>
+    <script src="sweetalert2.all.min.js"></script>
     <script>
         let pagina = localStorage.getItem("detalhe")
         let info = window.env.servicos
@@ -301,14 +303,28 @@
         especialidades()
 
         function sendMail(){
-            let nome = document.querySelector("#nome").value
+            let form = document.querySelector("#form")
+            let div = form.querySelector("div")
+            let nome = div.querySelector("#nome").value
             let email = document.querySelector("#email").value
             let numeroAssociado = document.querySelector("#socio").value
-            numeroAssociado.toString()
+            numeroAssociado = numeroAssociado.toString()
             console.log(numeroAssociado.length);
+
+            if(numeroAssociado=="" || numeroAssociado.length != 8){
+                console.log("erro"); 
+            }
+
+            console.log(nome);
             
 
-            if(nome != "" && email != "" && numeroAssociado!="" && numeroAssociado.length == 8){
+            // if(nome != ""){
+            //     console.log("nome certo");
+                
+            // }
+            
+
+            if(nome != "" && email != "" && (numeroAssociado!="" && numeroAssociado.length ==8)){
                 let params = {
                     nome:nome,
                     email:email,
@@ -320,6 +336,21 @@
     
                 const serviceID = "service_rvk89m9"
                 const templateID = "template_orcdeol"
+
+                Swal.fire({
+                    icon: "success",
+                    title: "Enviado!",
+                    text: ("O seu pedido foi enviado com sucesso."),
+                    customClass:{
+                        popup: "alerta"
+                    },
+                    returnFocus: false,
+                    iconColor: "#FF9C00",
+                })
+
+
+                // console.log(params, "sucesso");
+                
     
                 emailjs
                  .send(serviceID,templateID,params)
@@ -327,39 +358,80 @@
                     document.querySelector("#nome").value = ""
                     document.querySelector("#email").value = ""
                     document.querySelector("#socio").value = ""
-                    document.querySelector("#servico").value = ""
-                    document.querySelector("#especialidade").value = ""
+                    document.querySelector("#servico").value = "Apoio Jurídico Períciais Médico-Legais"
+                    document.querySelector("#especialidade").value = "Medicina Legal"
                     document.querySelector("#obs").value = ""
     
                     // document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive" id="aviso">Pedido enviado com sucesso</p>`
-                    document.querySelector("#aviso").innerHTML = "📬 Pedido enviado com sucesso"
-                    document.querySelector("#aviso").style = "background-color: #DBFAD3; color: #001A2C; border-radius: 2px"
+                    // document.querySelector("#aviso").innerHTML = "📬 Pedido enviado com sucesso"
+                    // alert("Pedido enviado com sucesso")
+                    // document.querySelector("#aviso").style = "background-color: #DBFAD3; color: #001A2C; border-radius: 2px"
                     // document.querySelectorAll("input").style = "border-style:none"
-                    setInterval(function(){
-                        // document.querySelector("#aviso").remove()
-                        document.querySelector("#aviso").innerHTML = ""
-                        document.querySelector("#aviso").style = "background-color: #DBFAD300;"
-                    },10000)
+                    // setInterval(function(){
+                    //     // document.querySelector("#aviso").remove()
+                    //     document.querySelector("#aviso").innerHTML = ""
+                    //     document.querySelector("#aviso").style = "background-color: #DBFAD300;"
+                    // },10000)
                  })
                  .catch((err)=>console.log(err));
                  
-            }else{  
-                let arrayErros = []              
-                let nomeVazio = (nome == ""?arrayErros.push("nome"):false)
-                let emailVazio = (email == ""?arrayErros.push(" email"):false)
-                let numeroVazio = (numeroAssociado == "" || numeroAssociado.length <8 || numeroAssociado.length>8?arrayErros.push(" número de associado"):false)
+            }else{
+                let todosErros = []
+                let arrayErros = []   
+                let nrErrado = ""
+                let nomeVazio = (nome != ""?false:(arrayErros.push("nome"),todosErros.push("nome")))
+                let emailVazio = (email != ""?false:(arrayErros.push(" email"),todosErros.push(" email")))
+                let numeroVazio = (numeroAssociado!=""?false:(arrayErros.push(" número de associado"),todosErros.push(" número de associado")))
+                if(numeroAssociado!=""){
+                    let numLenErr = (numeroAssociado.length == 8? false: (nrErrado = " número de associado está errado", todosErros.push(" número de associado")))
+                }
                 
-
-                console.log(arrayErros);                
-
-                document.querySelector("#aviso").innerHTML = `⚠️ Falta preencher o campo ${arrayErros}!`
-                document.querySelector("#aviso").style = "background-color: #FF7F7F; color: #001A2C; border-radius: 2px"
-                               
+                Swal.fire({
+                    icon: "warning",
+                    title: "Atenção!",
+                    text: (arrayErros.length>0?`Falta preencher o campo ${arrayErros}!`:"") + (nrErrado!=""?` O ${nrErrado}, verifique o inserido.`:""),
+                    customClass:{
+                        popup: "alerta"
+                    },
+                    returnFocus: false,
+                    iconColor: "#FF9C00",
+                }).then((result)=>{
+                    if(result.isConfirmed){
+                        switch(todosErros[0]){
+                            case "nome":
+                                
+                                div.querySelector("#nome").focus()
+                                break
+                            case " email":
+                                document.querySelector("#email").focus()
+                                break
+                            case " número de associado":
+                                document.querySelector("#socio").focus()
+                                break
+                            
+                        }
+                    }
+                })
+                
+                // Swal.fire({
+                //     title: "Título",
+                //     text: "Mensagem",
+                //     customClass: {
+                //         popup: "meu-alerta"
+                //     }
+                //     });
+                // alert((arrayErros.length>0?`⚠️ Falta preencher o campo ${arrayErros}!`:"") + (nrErrado!=""?` O ${nrErrado}, verifique o inserido`:""))
+                
+               
+                // document.querySelector("#aviso").innerHTML = `⚠️ Falta preencher o campo ${arrayErros}!`
+                // document.querySelector("#aviso").style = "background-color: #FF7F7F; color: #001A2C; border-radius: 2px"
+                  
                 // setInterval(function(){
                 //     document.querySelector("#aviso").innerHTML = ""
                 //     document.querySelector("#aviso").style = "background-color: #FF7F7F00"
                 // },10000)
-            }   
+            }           
+               
         }
     </script>
 </body>

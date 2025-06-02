@@ -285,6 +285,19 @@ footer p{
 
 }
 
+.alerta{
+    font-family: Atkinson Hyperlegible Next Medium;
+    background-color: var(--cor-regiao);
+    color: var(--cor-letra2);
+}
+
+.alerta button,
+.alerta button:hover{
+    font-family: Atkinson Hyperlegible Next Medium;
+    background-color: #FFFCF2;
+    color: #001A2C;
+}
+
 @media only screen and (max-width:951px){
 
     #mobile{

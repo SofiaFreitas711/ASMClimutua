@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="geral.css">
     <link rel="stylesheet" href="./styles/tornarAssociado.css">
     <link rel="icon" type="image/x-icon" href="/images/icons/icon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <header>
@@ -245,6 +246,7 @@
             });
         })();
     </script>
+    <script src="sweetalert2.all.min.js"></script>
     <script>
         let idade
         let modalidade = "Auxílio Funeral 500€"
@@ -309,17 +311,32 @@
             let nome=document.querySelector("#nome").value
             let email=document.querySelector("#email").value
             let telemovel= document.querySelector("#telemovel").value
-            let dataNascimento = document.querySelector("#nascimento").value
-            let identificacao= document.querySelector("#cc").value
-            let nif= document.querySelector("#nif").value
-            let morada= document.querySelector("#morada").value
-            let codPostal= document.querySelector("#codPostal").value
-            let modalidade = document.querySelector("#modalidade").value
             let telemovelTamanho = telemovel.toString()
             telemovelTamanho= telemovelTamanho.length
+
+            let dataNascimento = document.querySelector("#nascimento").value
+
+            let identificacao= document.querySelector("#cc").value
+            let identificacaoTamanho = identificacao.toString()
+            identificacaoTamanho=identificacao.length
+
+            let nif= document.querySelector("#nif").value
+            let nifTamanho = nif.toString()
+            nifTamanho = nifTamanho.length
+
+            let morada= document.querySelector("#morada").value
+            let codPostal= document.querySelector("#codPostal").value
+            let codPostalTamanho = codPostal.toString()
+            codPostalTamanho = codPostalTamanho.length
+
+            let modalidade = document.querySelector("#modalidade").value
+
+            console.log(telemovel,identificacao,nif,codPostal);
+            
+            
             // console.log(telemovelTamanho, telemovelTamanho.length);
         
-            if(nome != "" && email !="" && telemovel!="" && telemovelTamanho != 9 && identificacao !="" && nif!="" && morada !="" && codPostal != "" && dataNascimento != ""){
+            if(nome != "" && email !="" && (telemovel!="" && telemovelTamanho == 9) && (identificacao !="" && identificacaoTamanho == 9) && (nif!="" && nifTamanho == 9) && morada !="" && (codPostal != "" && codPostalTamanho == 8) && dataNascimento != ""){
                 let params = {
                     nome:nome,
                     email:email,
@@ -334,7 +351,19 @@
     
                 const serviceID = "service_w1ezoyi"
                 const templateID = "template_baxo6xh"
-    
+                console.log("sucesso");
+                Swal.fire({
+                    icon: "success",
+                    title: "Enviado!",
+                    text: ("O seu pedido foi enviado com sucesso."),
+                    customClass:{
+                        popup: "alerta"
+                    },
+                    returnFocus: false,
+                    iconColor: "#FF9C00",
+                })
+
+                
                 emailjs
                  .send(serviceID,templateID,params)
                  .then((res)=>{
@@ -346,29 +375,89 @@
                     document.querySelector("#nif").value = "",
                     document.querySelector("#morada").value = "",
                     document.querySelector("#codPostal").value = "",
-                    document.querySelector("#modalidade").value = ""
+                    document.querySelector("#modalidade").value = "Auxílio Funeral 500€"
     
-                    document.querySelector("#aviso").innerHTML = `📬 Pedido enviado com sucesso. Após verificação dos dados por parte dos serviços administrativos, receberá um email a pedir o pagamento.`
-                    document.querySelector("#aviso").style = "background-color: #DBFAD3; color: #001A2C; border-radius: 2px"
-                    setInterval(function(){
-                        document.querySelector("#aviso").innerHTML = ""
-                        document.querySelector("#aviso").style = "background-color: #DBFAD300;"
-                    },10000)
+                    // document.querySelector("#aviso").innerHTML = `📬 Pedido enviado com sucesso. Após verificação dos dados por parte dos serviços administrativos, receberá um email a pedir o pagamento.`
+                    // document.querySelector("#aviso").style = "background-color: #DBFAD3; color: #001A2C; border-radius: 2px"
+                    // setInterval(function(){
+                    //     document.querySelector("#aviso").innerHTML = ""
+                    //     document.querySelector("#aviso").style = "background-color: #DBFAD300;"
+                    // },10000)
                  })
                  .catch((err)=>console.log(err));
             }else{
+                let todosErros = []
                 let arrayErros = []
-                let nomeVazio = (nome == ""?arrayErros.push("nome"):false)
-                let emailVazio = (email == ""?arrayErros.push(" email"):false)
-                let telemovelVazio = (telemovel == "" || telemovelTamanho != 9? arrayErros.push(" telemovel"):false)
-                let identificacaoVazio = (identificacao == ""?arrayErros.push(" número do CC ou BI"):false)
-                let nifVazio = (nif == ""?arrayErros.push(" NIF"):false)
-                let moradaVazio = (morada == ""? arrayErros.push(" morada"):false)
-                let codPostalVazio = (codPostal == ""? arrayErros.push(" código postal"):false)
-                let dataNascimentoVazio = (dataNascimento == ""? arrayErros.push(" data de nascimento"):false)
+                let nrErrado = []
+
+                let nomeVazio = (nome != ""?false:(arrayErros.push("nome"),todosErros.push("nome")))
+                let emailVazio = (email != ""?false:(arrayErros.push(" email"), todosErros.push(" email")))
+                let telemovelVazio = (telemovel != ""?false:(arrayErros.push(" telemovel"),todosErros.push(" telemovel")))
+                if(telemovel!=""){                                       
+                    let numErrado = (telemovelTamanho == 9? false: (nrErrado.push(" número de telemóvel está errado"), todosErros.push(" telemovel")))
+                }
+
+                let identificacaoVazio = (identificacao != ""?false:(arrayErros.push(" número do CC ou BI"), todosErros.push(" CC ou BI")))
+                if(identificacao != ""){
+                    let numErrado = (identificacaoTamanho == 9? false: (nrErrado.push(" número de CC ou BI está errado"), todosErros.push(" CC ou BI")))
+                }
+
+                let nifVazio = (nif != ""?false:(arrayErros.push(" NIF"), todosErros.push(" NIF")))
+                if(nif != ""){
+                    let numErrado = (nifTamanho == 9? false: (nrErrado.push(" NIF está errado"), todosErros.push(" NIF")))
+                }
+
+                let moradaVazio = (morada != ""? false:(arrayErros.push(" morada"), todosErros.push(" morada")))
+                let codPostalVazio = (codPostal != ""? false:(arrayErros.push(" código postal"),todosErros.push(" codigo postal")))
+                if(codPostal!=""){
+                    let numErrado = (codPostalTamanho == 8? false: (nrErrado.push(" código postal está errado"), todosErros.push(" codigo postal")))
+                }
+
+                let dataNascimentoVazio = (dataNascimento != ""? false:(arrayErros.push(" data de nascimento"), todosErros.push(" dataNascimento")))
                 
-                document.querySelector("#aviso").innerHTML = `⚠️ Falta preencher o campo ${arrayErros}!`
-                document.querySelector("#aviso").style = "background-color: #FF7F7F; color: #001A2C; border-radius: 2px"
+                // document.querySelector("#aviso").innerHTML = `⚠️ Falta preencher o campo ${arrayErros}!`
+                // document.querySelector("#aviso").style = "background-color: #FF7F7F; color: #001A2C; border-radius: 2px"
+
+                Swal.fire({
+                    icon: "warning",
+                    title: "Atenção!",
+                    text: (arrayErros.length>0?`Falta preencher o campo ${arrayErros}!`:"") + (nrErrado.length>0?` O ${nrErrado}, verifique o inserido.`:""),
+                    customClass:{
+                        popup: "alerta"
+                    },
+                    returnFocus: false,
+                    iconColor: "#FF9C00",
+                }).then((result)=>{
+                    if(result.isConfirmed){
+                        switch(todosErros[0]){
+                            case "nome":
+                                document.querySelector("#nome").focus()
+                                break
+                            case " email":
+                                document.querySelector("#email").focus()
+                                break
+                            case " telemovel":
+                                document.querySelector("#telemovel").focus()
+                                break
+                            case " CC ou BI":
+                                document.querySelector("#cc").focus()
+                                break
+                            case " NIF":
+                                document.querySelector("#nif").focus()
+                                break
+                            case " morada":
+                                document.querySelector("#morada").focus()
+                                break
+                            case " codigo postal":
+                                document.querySelector("#codPostal").focus()
+                                break
+                            case " dataNascimento":
+                                document.querySelector("#nascimento").focus()
+                                break
+
+                        }
+                    }
+                })
 
                 // setInterval(function(){
                 //     document.querySelector("#aviso").innerHTML = ""
