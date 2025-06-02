@@ -182,7 +182,7 @@
                 <br>
                 <label for="socio">Número de Sócio (Obrigatório, 8 dígitos)</label>
                 <br>
-                <input type="number" name="número de socio" id="socio">
+                <input type="text" name="número de socio" id="socio">
                 <br>
                 <label for="servico">Serviço (Obrigatório)</label>
                 <br>
@@ -305,7 +305,7 @@
             let nome = document.querySelector("#nome").value
             let email = document.querySelector("#email").value
             let numeroAssociado = document.querySelector("#socio").value
-            numeroAssociado = numeroAssociado.toString()
+            // numeroAssociado = numeroAssociado.toString()
             console.log(numeroAssociado.length);
 
             if(numeroAssociado=="" || numeroAssociado.length != 8){

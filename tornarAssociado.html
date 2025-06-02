@@ -151,11 +151,11 @@
                 <br>
                 <label for="cc">Número do CC ou BI (Obrigatório)</label>
                 <br>
-                <input type="number" name="número do cc ou bi" id="cc">
+                <input type="text" name="número do cc ou bi" id="cc">
                 <br>
                 <label for="nif">NIF (Obrigatório)</label>
                 <br>
-                <input type="number" name="NIF" id="nif">
+                <input type="text" name="NIF" id="nif">
                 <br>
                 <label for="morada">Morada (Obrigatório)</label>
                 <br>
@@ -317,17 +317,17 @@
             let dataNascimento = document.querySelector("#nascimento").value
 
             let identificacao= document.querySelector("#cc").value
-            let identificacaoTamanho = identificacao.toString()
-            identificacaoTamanho=identificacao.length
+            // let identificacaoTamanho = identificacao.toString()
+            let identificacaoTamanho=identificacao.length
 
             let nif= document.querySelector("#nif").value
-            let nifTamanho = nif.toString()
-            nifTamanho = nifTamanho.length
+            // let nifTamanho = nif.toString()
+            let nifTamanho = nif.length
 
             let morada= document.querySelector("#morada").value
             let codPostal= document.querySelector("#codPostal").value
-            let codPostalTamanho = codPostal.toString()
-            codPostalTamanho = codPostalTamanho.length
+            // let codPostalTamanho = codPostal.toString()
+            let codPostalTamanho = codPostal.length
 
             let modalidade = document.querySelector("#modalidade").value
 
