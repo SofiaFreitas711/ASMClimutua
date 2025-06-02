@@ -105,13 +105,18 @@ function irPagina(params1, params2){
     
 }
 
-function abrirMenuMobile(params1, element){
-    let botao = element    
-    let li = botao.closest("li")
-    let submenu = li.querySelector(".listaSubcategorias")
+function abrirMenuMobile(params1, params2,element){
+    let botao = element
+    console.log(botao);
+        
+    // let li = botao.closest("li")
+    // let submenu = li.querySelector(".listaSubcategorias")
     let area = params1
+    let submenu = document.querySelector(`#${params2}`)
 
-    let todosBotoes = document.querySelectorAll(".listaDetalhe > button")
+    console.log(submenu);
+    
+    let todosBotoes = document.querySelectorAll(".btnMenuExp")
     let todosSubmenus = document.querySelectorAll(".listaSubcategorias")
     let estavaAberto = submenu.classList.contains("aberto")
 
@@ -122,8 +127,11 @@ function abrirMenuMobile(params1, element){
     todosBotoes[1].setAttribute("aria-label", "Abrir o menu expansível associados")
 
     for(let btn of todosBotoes){
-        let seta = btn.querySelector("path")
+        let svg = btn.querySelector("svg")
+        let seta = svg.querySelector("path")
         seta.setAttribute("d","M19.5 8.25l-7.5 7.5-7.5-7.5")
+        console.log("fechar seta");
+        
     }
 
     for(let menu of todosSubmenus){       
