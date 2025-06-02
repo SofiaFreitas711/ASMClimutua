@@ -10,22 +10,16 @@
 </head>
 <body class="" id="normal">
     <header>
-        <div id="linkConteudo">
-            <a href="#main" tabindex="0">Ir para o conteúdo</a>
+        <div id="linkConteudo" tabindex="1">
+            <a href="#main">Ir para o conteúdo</a>
         </div>
         <nav id="desktop">
-            <a href="index.html" aria-label="Ir para a página inicial"><img src="./images/seccoes/Group 18.svg" alt="Logótipo da ASM Climútua" id="logo"></a>
+            <a href="index.html" aria-label="Ir para a página inicial" tabindex="2"><img src="./images/seccoes/Group 18.svg" alt="Logótipo da ASM Climútua" id="logo"></a>
             <ul class="listaNav">
                 <!-- <li  class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li> -->
                 
                     <li  class="listaDetalhe"><a href="servicos.html" class="listaTexto">Serviços</a>
-                        <ul class="listaSubcategorias" aria-hidden="true" id="menuServicosDesktop">
-                                <li><a href="#" onclick="irPagina('servicos',window.env.servicos[0].nome)">Apoio Jurídico Períciais Médico-Legais</a></li>
-                                <li><a href="#" onclick="irPagina('servicos',window.env.servicos[1].nome)">Especialidades</a></li>
-                                <li><a href="#" onclick="irPagina('servicos',window.env.servicos[2].nome)">Medicina Dentária</a></li>
-                                <li><a href="#" onclick="irPagina('servicos',window.env.servicos[3].nome)">Domicílios</a></li>
-                                <li><a href="#" onclick="irPagina('servicos',window.env.servicos[4].nome)">Exames</a></li>
-                            </ul>
+                        
                     </li>
                     <li style="list-style: none;">
                         <button class="btnMenuExp" style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2; margin-left: -15px;" aria-expanded="false" aria-label="Abrir o menu expansível serviços" aria-controls="menuServicosDesktop" onclick="abrirMenuDesktop('menuServicosDesktop', this, 'serviços')">
@@ -33,16 +27,17 @@
                                 <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
+                        <ul class="listaSubcategorias" aria-hidden="true" id="menuServicosDesktop">
+                                <li><a href="#" onclick="irPagina('servicos',window.env.servicos[0].nome)">Apoio Jurídico Períciais Médico-Legais</a></li>
+                                <li><a href="#" onclick="irPagina('servicos',window.env.servicos[1].nome)">Especialidades</a></li>
+                                <li><a href="#" onclick="irPagina('servicos',window.env.servicos[2].nome)">Medicina Dentária</a></li>
+                                <li><a href="#" onclick="irPagina('servicos',window.env.servicos[3].nome)">Domicílios</a></li>
+                                <li><a href="#" onclick="irPagina('servicos',window.env.servicos[4].nome)">Exames</a></li>
+                        </ul>
                     </li>                       
                 
                     <li  class="listaDetalhe"><a href="associados.html" class="listaTexto">Associados</a>
-                        <ul class="listaSubcategorias" aria-hidden="true" id="menuAssociadosDesktop">
-                            <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Benefícios</a></li>
-                            <li><a href="#" onclick="irPagina('associados',window.env.associados[1].nome)">Estatutos</a></li>
-                            <li><a href="#" onclick="irPagina('associados',window.env.associados[2].nome)">Protocolos</a></li>
-                            <li><a href="#" onclick="irPagina('associados',window.env.associados[3].nome)">Documentos Oficiais</a></li>
-                            <li><a href="tornarAssociado.html">Torne-se Associado</a></li>
-                        </ul>
+            
                     </li>
                     <li style="list-style: none;">
                         <button class="btnMenuExp" style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2; margin-left: -15px;" aria-expanded="false" aria-label="Abrir o menu expansível associados" aria-controls="menuAssociadosDesktop" onclick="abrirMenuDesktop('menuAssociadosDesktop', this, 'associados')">
@@ -50,6 +45,13 @@
                                 <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                             </svg>
                         </button>
+                        <ul class="listaSubcategorias" aria-hidden="true" id="menuAssociadosDesktop">
+                            <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Benefícios</a></li>
+                            <li><a href="#" onclick="irPagina('associados',window.env.associados[1].nome)">Estatutos</a></li>
+                            <li><a href="#" onclick="irPagina('associados',window.env.associados[2].nome)">Protocolos</a></li>
+                            <li><a href="#" onclick="irPagina('associados',window.env.associados[3].nome)">Documentos Oficiais</a></li>
+                            <li><a href="tornarAssociado.html">Torne-se Associado</a></li>
+                        </ul>
                     </li>
 
                 <li  class="listaDetalhe"><a href="atualidade.html" class="listaTexto">Atualidade</a></li>

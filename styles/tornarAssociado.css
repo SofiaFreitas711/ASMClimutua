@@ -125,15 +125,26 @@
         width: 75%;
     }
 
-    @media only screen and (max-width: 1100px){
-        body{
-            width: 100%;
-        }
+}
+
+@media only screen and (max-width: 951px){
+    body{
+        width: 100%;
+    }
+
+    .listaSubcategorias{
+        position: relative;
+        top: 0px; 
     
-        .listaSubcategorias{
-            position: relative;
-            top: 0px; 
-        
-        }
     }
 }
+
+@media only screen and (min-width: 952px) and (max-width:1100px){
+    .listaSubcategorias{
+        /* position: relative; */
+        top: 95px;
+        /* top: 0px;  */
+    
+    }
+}
+

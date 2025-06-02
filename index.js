@@ -1,3 +1,8 @@
+//dar foco ao primeiro elemento
+// let primeiroConteudo = document.querySelector("#linkConteudo")
+// primeiroConteudo = primeiroConteudo.querySelector("a")
+// primeiroConteudo.focus()
+
 // ver em que modo está a página quando inicia
 let todosBotoesNav = document.querySelectorAll(".botaoNav")
 let modo = localStorage.getItem("modo")
@@ -151,11 +156,17 @@ function abrirMenuMobile(params1, element){
 function abrirMenuDesktop(params1, params2, params3){
     let id = params1
     let menu = document.querySelector(`#${id}`)
-    let items = menu.querySelectorAll("a")
+    console.log(menu);
+    
+    // let items = menu.querySelectorAll("a")
+    // console.log(items[0]);
+    
     // menu.classList.toggle("aberto")
     // menu.setAttribute("aria-hidden", false)
     let botao = params2
     let area = params3
+
+    // botao.focus()
   
     let todosBotoes = document.querySelectorAll(".btnMenuExp")
     let todosSubmenus = document.querySelectorAll(".listaSubcategorias")
@@ -188,26 +199,34 @@ function abrirMenuDesktop(params1, params2, params3){
         
         let aberto = menu.classList.toggle("aberto")
         botao.setAttribute("aria-expanded", aberto? true: false)
-        items[0].focus()
-        for(let item of items){
-            item.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowDown') {
-                e.preventDefault();
-                items[(i + 1) % items.length].focus();
-                } else if (e.key === 'ArrowUp') {
-                e.preventDefault();
-                items[(i - 1 + items.length) % items.length].focus();
-                }
-            });
-        }
+        // items[0].querySelector("a").focus()
+        // console.log(items[0].querySelector("a"));
+        
+        // items[0].focus()
+        // items.forEach((item,i)=>{
+        //     // for(let item of items){
+        //         item.addEventListener('keydown', (e) => {
+        //             if (e.key === 'ArrowDown') {
+        //             e.preventDefault();
+        //             items[(i + 1) % items.length].focus();
+        //             } else if (e.key === 'ArrowUp') {
+        //             e.preventDefault();
+        //             items[(i - 1 + items.length) % items.length].focus();
+        //             }
+        //         });
+        //     // }
+        // })
+        
                 
         menu.setAttribute("aria-hidden", aberto?false:true)
         botao.setAttribute("aria-label", aberto? `Fechar o menu expansível ${area}`:`Abrir o menu espansível ${area}`)
 
+        // items[0].focus()
+
         let svg = botao.querySelector("svg")
         let path = svg.querySelector("path")            
 
-        path.setAttribute("d", aberto? "M4.5 15.75l7.5-7.5 7.5 7.5":"M19.5 8.25l-7.5 7.5-7.5-7.5")  
+        path.setAttribute("d", aberto? "M4.5 15.75l7.5-7.5 7.5 7.5":"M19.5 8.25l-7.5 7.5-7.5-7.5")
         
         setTimeout(function(){
             menu.classList.remove("aberto")
@@ -216,7 +235,7 @@ function abrirMenuDesktop(params1, params2, params3){
             botao.setAttribute("aria-label",`Abrir o menu espansível ${area}`)
             path.setAttribute("d","M19.5 8.25l-7.5 7.5-7.5-7.5")
         },20000)
-    }   
+    }
 }
 
 function menu(){
