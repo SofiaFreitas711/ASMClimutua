@@ -82,14 +82,16 @@
             </button>
             
             <ul class="listaNav">
-                <li  class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li>
-                <li  class="listaDetalhe">
-                    <a href="servicos.html" class="listaTexto">Serviços</a> 
-                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2; margin-left: 45px;" aria-expanded="false" aria-label="Abrir o menu expansível serviços" onclick="abrirMenuMobile('serviços',this)">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                        </svg>
-                    </button>
+                <li class="listaDetalhe"><a href="index.html" class="listaTexto">Página Inicial</a></li>
+                <li class="listaDetalhe">
+                    <span style="display: flex;">
+                        <a href="servicos.html" class="listaTexto">Serviços</a>
+                        <button class="btnMenuExp" style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2; margin-left: 45px;" aria-expanded="false" aria-label="Abrir o menu expansível serviços" onclick="abrirMenuMobile('serviços', 'menuServicos',this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button> 
+                    </span>
                     
                     <ul class="listaSubcategorias" aria-hidden="true" id="menuServicos">
                         <li><a href="#" onclick="irPagina('servicos',window.env.servicos[0].nome)">Apoio Jurídico Períciais Médico-Legais</a></li>
@@ -99,12 +101,23 @@
                         <li><a href="#" onclick="irPagina('servicos',window.env.servicos[4].nome)">Exames</a></li>
                     </ul>
                 </li>
-                <li  class="listaDetalhe"><a href="associados.html" class="listaTexto">Associados</a>
-                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2;margin-left: 45px;" aria-expanded="false" aria-label="Abrir o menu expansível associados" onclick="abrirMenuMobile('associados',this)">
+                <!-- <li class="listaDetalhe2">
+                    <button style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2; margin-left: 45px;" aria-expanded="false" aria-label="Abrir o menu expansível serviços" onclick="abrirMenuMobile('serviços',this)">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                         </svg>
                     </button>
+                </li> -->
+                <li  class="listaDetalhe">
+                    <span style="display: flex;">
+                        <a href="associados.html" class="listaTexto">Associados</a>
+                        <button class="btnMenuExp" style="line-height: 1;background-color:#003a6100;border-style: none;color: #FFFCF2;margin-left: 45px;" aria-expanded="false" aria-label="Abrir o menu expansível associados" onclick="abrirMenuMobile('associados', 'menuAssociados',this)">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                            </svg>
+                        </button>
+                    </span>
+                    
                     <ul class="listaSubcategorias" aria-hidden="true" id="menuAssociados">
                         <li><a href="#" onclick="irPagina('associados',window.env.associados[0].nome)">Benefícios</a></li>
                         <li><a href="#" onclick="irPagina('associados',window.env.associados[1].nome)">Estatutos</a></li>
