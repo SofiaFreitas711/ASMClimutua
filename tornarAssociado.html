@@ -349,7 +349,7 @@
             
             // console.log(telemovelTamanho, telemovelTamanho.length);
         
-            if(nome != "" && email !="" && (telemovel!="" && telemovelTamanho == 9) && (identificacao !="" && identificacaoTamanho == 9) && (nif!="" && nifTamanho == 9) && morada !="" && (codPostal != "" && codPostalTamanho == 8) && dataNascimento != ""){
+            if(nome != "" && email !="" && (telemovel!="" && telemovelTamanho == 9) && (identificacao !="" && identificacaoTamanho == 8) && (nif!="" && nifTamanho == 9) && morada !="" && (codPostal != "" && codPostalTamanho == 8) && dataNascimento != ""){
                 let params = {
                     nome:nome,
                     email:email,
@@ -412,7 +412,7 @@
 
                 let identificacaoVazio = (identificacao != ""?false:(arrayErros.push(" número do CC ou BI"), todosErros.push(" CC ou BI")))
                 if(identificacao != ""){
-                    let numErrado = (identificacaoTamanho == 9? false: (nrErrado.push(" número de CC ou BI está errado"), todosErros.push(" CC ou BI")))
+                    let numErrado = (identificacaoTamanho == 8? false: (nrErrado.push(" número de CC ou BI está errado"), todosErros.push(" CC ou BI")))
                 }
 
                 let nifVazio = (nif != ""?false:(arrayErros.push(" NIF"), todosErros.push(" NIF")))
