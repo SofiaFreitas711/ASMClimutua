@@ -209,27 +209,62 @@
         
         for(let i = 0; i < associados.length;i++){
             if(associados[i].nome == detalheAssociados){
-                document.querySelector("#associadoNome").innerHTML = `${detalheAssociados}`
-                for(let j=0; j<associados[i].condicoes.length;j++){
-                    if(associados[i].condicoes[j].doc == ""){
-                        document.querySelector(".seccao").innerHTML += `<button aria-expanded="false" aria-controls="resposta${j}" id="pergunta${j}" class="btnExpandir" onclick="abrirResposta('resposta${j}','pergunta${j}')"><h2>${associados[i].condicoes[j].titulo} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
-                                                                                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></h2> 
-                                                                        </button>
-                                                                        <hr>
-                                                                        <div id="resposta${j}" class="resposta">
-                                                                            <p>${associados[i].condicoes[j].texto}</p>
-                                                                        </div>
-                                                                        `   
-                    }else{
-                        document.querySelector(".seccao").innerHTML += `<button aria-expanded="false" aria-controls="resposta${j}" id="pergunta${j}" class="btnExpandir" onclick="abrirResposta('resposta${j}','pergunta${j}')"><h2>${associados[i].condicoes[j].titulo} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
-                                                                                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></h2> 
-                                                                        </button>
-                                                                        <hr>
-                                                                        <div id="resposta${j}" class="resposta">
-                                                                            <p>${associados[i].condicoes[j].texto}</p>
-                                                                            <p>Para mais detalhes consulte o documento <a target="_blank" href="${associados[i].condicoes[j].doc} aria-label="Abrir documento detalhado sobre ${associados[i].condicoes[j].titulo}"">aqui</a></p>
-                                                                        </div>`  
+                if(detalheAssociados == "Protocolos"){
+                    let condicao
+                    for(let j=0; j<associados[i].condicoes.length;j++){
+                        condicao = j
+                        if(associados[i].condicoes[j].doc == ""){
+                            document.querySelector(".seccao").innerHTML += `<button aria-expanded="false" aria-controls="resposta${j}" id="pergunta${j}" class="btnExpandir" onclick="abrirResposta('resposta${j}','pergunta${j}')"><h2>${associados[i].condicoes[j].titulo} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                                                                                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></h2> 
+                                                                            </button>
+                                                                            <hr>
+                                                                            <div id="resposta${j}" class="resposta">
+                                                                                <ul id="ul${j}"></ul>
+                                                                            </div>
+                                                                            `   
+                        }else{
+                            document.querySelector(".seccao").innerHTML += `<button aria-expanded="false" aria-controls="resposta${j}" id="pergunta${j}" class="btnExpandir" onclick="abrirResposta('resposta${j}','pergunta${j}')"><h2>${associados[i].condicoes[j].titulo} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                                                                                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></h2> 
+                                                                            </button>
+                                                                            <hr>
+                                                                            <div id="resposta${j}" class="resposta">
+                                                                                <ul></ul>
+                                                                                <p>Para mais detalhes consulte o documento <a target="_blank" href="${associados[i].condicoes[j].doc} aria-label="Abrir documento detalhado sobre ${associados[i].condicoes[j].titulo}"">aqui</a></p>
+                                                                            </div>`  
+                            
+                        }
                         
+                        for(let k=0; k<associados[i].condicoes[j].texto.length;k++){      
+                            let ul = document.querySelector(`#ul${j}`)                            
+                            ul.innerHTML += `<li>${associados[i].condicoes[j].texto[k]}</li>`
+                        }
+                    }
+
+                    
+    
+                }else{
+                    document.querySelector("#associadoNome").innerHTML = `${detalheAssociados}`
+                    for(let j=0; j<associados[i].condicoes.length;j++){
+                        if(associados[i].condicoes[j].doc == ""){
+                            document.querySelector(".seccao").innerHTML += `<button aria-expanded="false" aria-controls="resposta${j}" id="pergunta${j}" class="btnExpandir" onclick="abrirResposta('resposta${j}','pergunta${j}')"><h2>${associados[i].condicoes[j].titulo} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                                                                                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></h2> 
+                                                                            </button>
+                                                                            <hr>
+                                                                            <div id="resposta${j}" class="resposta">
+                                                                                <p>${associados[i].condicoes[j].texto}</p>
+                                                                            </div>
+                                                                            `   
+                        }else{
+                            document.querySelector(".seccao").innerHTML += `<button aria-expanded="false" aria-controls="resposta${j}" id="pergunta${j}" class="btnExpandir" onclick="abrirResposta('resposta${j}','pergunta${j}')"><h2>${associados[i].condicoes[j].titulo} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
+                                                                                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></h2> 
+                                                                            </button>
+                                                                            <hr>
+                                                                            <div id="resposta${j}" class="resposta">
+                                                                                <p>${associados[i].condicoes[j].texto}</p>
+                                                                                <p>Para mais detalhes consulte o documento <a target="_blank" href="${associados[i].condicoes[j].doc} aria-label="Abrir documento detalhado sobre ${associados[i].condicoes[j].titulo}"">aqui</a></p>
+                                                                            </div>`  
+                            
+                        }
                     }
                 }
                 
