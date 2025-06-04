@@ -210,9 +210,9 @@
         for(let i = 0; i < associados.length;i++){
             if(associados[i].nome == detalheAssociados){
                 if(detalheAssociados == "Protocolos"){
-                    let condicao
+                    document.querySelector("#associadoNome").innerHTML = `${detalheAssociados}`
                     for(let j=0; j<associados[i].condicoes.length;j++){
-                        condicao = j
+
                         if(associados[i].condicoes[j].doc == ""){
                             document.querySelector(".seccao").innerHTML += `<button aria-expanded="false" aria-controls="resposta${j}" id="pergunta${j}" class="btnExpandir" onclick="abrirResposta('resposta${j}','pergunta${j}')"><h2>${associados[i].condicoes[j].titulo} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6" width="15px" height="auto">
                                                                                     <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg></h2> 
