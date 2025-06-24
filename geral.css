@@ -204,6 +204,7 @@ main button{
     list-style-type: none;
     padding: 20px;
     transition: all 0.5s ease;
+    margin-left: -100px;
     
 }
 
@@ -350,7 +351,8 @@ footer p{
         position: relative;
         background-color: var(--cor-regiao);
         list-style-type: none;
-        padding: 20px;        
+        padding: 20px; 
+        margin-left: 0px;       
     }
 
     .listaSubcategorias #listaAssociados{
@@ -402,6 +404,10 @@ footer p{
 
     .linksFooter{
         display: block;
+    }
+
+    .listaSubcategorias{
+        margin-left: 0px;
     }
 }
 
