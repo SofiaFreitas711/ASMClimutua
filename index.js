@@ -2,6 +2,7 @@
 // let primeiroConteudo = document.querySelector("#linkConteudo")
 // primeiroConteudo = primeiroConteudo.querySelector("a")
 // primeiroConteudo.focus()
+console.log(window.innerWidth)
 
 // ver em que modo está a página quando inicia
 let todosBotoesNav = document.querySelectorAll(".botaoNav")
