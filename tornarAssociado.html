@@ -389,13 +389,7 @@
                     document.querySelector("#morada").value = "",
                     document.querySelector("#codPostal").value = "",
                     document.querySelector("#modalidade").value = "Auxílio Funeral 500€"
-    
-                    // document.querySelector("#aviso").innerHTML = `📬 Pedido enviado com sucesso. Após verificação dos dados por parte dos serviços administrativos, receberá um email a pedir o pagamento.`
-                    // document.querySelector("#aviso").style = "background-color: #DBFAD3; color: #001A2C; border-radius: 2px"
-                    // setInterval(function(){
-                    //     document.querySelector("#aviso").innerHTML = ""
-                    //     document.querySelector("#aviso").style = "background-color: #DBFAD300;"
-                    // },10000)
+
                  })
                  .catch((err)=>console.log(err));
             }else{
@@ -427,9 +421,7 @@
                 }
 
                 let dataNascimentoVazio = (dataNascimento != ""? false:(arrayErros.push(" data de nascimento"), todosErros.push(" dataNascimento")))
-                
-                // document.querySelector("#aviso").innerHTML = `⚠️ Falta preencher o campo ${arrayErros}!`
-                // document.querySelector("#aviso").style = "background-color: #FF7F7F; color: #001A2C; border-radius: 2px"
+
 
                 Swal.fire({
                     icon: "warning",
@@ -472,10 +464,6 @@
                     }
                 })
 
-                // setInterval(function(){
-                //     document.querySelector("#aviso").innerHTML = ""
-                //     document.querySelector("#aviso").style = "background-color: #FF7F7F00"
-                // },5000)
             }
              
         }

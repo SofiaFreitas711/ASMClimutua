@@ -318,21 +318,6 @@
             let nome = document.querySelector("#nome").value
             let email = document.querySelector("#email").value
             let numeroAssociado = document.querySelector("#socio").value
-            // numeroAssociado = numeroAssociado.toString()
-            console.log(numeroAssociado.length);
-
-            if(numeroAssociado=="" || numeroAssociado.length != 8){
-                console.log("erro"); 
-            }
-
-            console.log(nome);
-            
-
-            // if(nome != ""){
-            //     console.log("nome certo");
-                
-            // }
-            
 
             if(nome != "" && email != "" && (numeroAssociado!="" && numeroAssociado.length ==8)){
                 let params = {
@@ -357,11 +342,7 @@
                     returnFocus: false,
                     iconColor: "#FF9C00",
                 })
-
-
-                // console.log(params, "sucesso");
                 
-    
                 emailjs
                  .send(serviceID,templateID,params)
                  .then((res)=>{
@@ -371,17 +352,7 @@
                     document.querySelector("#servico").value = "Apoio Jurídico Períciais Médico-Legais"
                     document.querySelector("#especialidade").value = "Medicina Legal"
                     document.querySelector("#obs").value = ""
-    
-                    // document.querySelector("#form").innerHTML += `<p style="color:white" aria-live="assertive" id="aviso">Pedido enviado com sucesso</p>`
-                    // document.querySelector("#aviso").innerHTML = "📬 Pedido enviado com sucesso"
-                    // alert("Pedido enviado com sucesso")
-                    // document.querySelector("#aviso").style = "background-color: #DBFAD3; color: #001A2C; border-radius: 2px"
-                    // document.querySelectorAll("input").style = "border-style:none"
-                    // setInterval(function(){
-                    //     // document.querySelector("#aviso").remove()
-                    //     document.querySelector("#aviso").innerHTML = ""
-                    //     document.querySelector("#aviso").style = "background-color: #DBFAD300;"
-                    // },10000)
+
                  })
                  .catch((err)=>console.log(err));
                  
@@ -421,24 +392,7 @@
                         }
                     }
                 })
-                
-                // Swal.fire({
-                //     title: "Título",
-                //     text: "Mensagem",
-                //     customClass: {
-                //         popup: "meu-alerta"
-                //     }
-                //     });
-                // alert((arrayErros.length>0?`⚠️ Falta preencher o campo ${arrayErros}!`:"") + (nrErrado!=""?` O ${nrErrado}, verifique o inserido`:""))
-                
-               
-                // document.querySelector("#aviso").innerHTML = `⚠️ Falta preencher o campo ${arrayErros}!`
-                // document.querySelector("#aviso").style = "background-color: #FF7F7F; color: #001A2C; border-radius: 2px"
-                  
-                // setInterval(function(){
-                //     document.querySelector("#aviso").innerHTML = ""
-                //     document.querySelector("#aviso").style = "background-color: #FF7F7F00"
-                // },10000)
+
             }           
                
         }

@@ -1,9 +1,3 @@
-//dar foco ao primeiro elemento
-// let primeiroConteudo = document.querySelector("#linkConteudo")
-// primeiroConteudo = primeiroConteudo.querySelector("a")
-// primeiroConteudo.focus()
-console.log(window.innerWidth)
-
 // ver em que modo está a página quando inicia
 let todosBotoesNav = document.querySelectorAll(".botaoNav")
 let modo = localStorage.getItem("modo")
@@ -108,14 +102,9 @@ function irPagina(params1, params2){
 
 function abrirMenuMobile(params1, params2,element){
     let botao = element
-    console.log(botao);
         
-    // let li = botao.closest("li")
-    // let submenu = li.querySelector(".listaSubcategorias")
     let area = params1
     let submenu = document.querySelector(`#${params2}`)
-
-    console.log(submenu);
     
     let todosBotoes = document.querySelectorAll(".btnMenuExp")
     let todosSubmenus = document.querySelectorAll(".listaSubcategorias")
@@ -130,9 +119,7 @@ function abrirMenuMobile(params1, params2,element){
     for(let btn of todosBotoes){
         let svg = btn.querySelector("svg")
         let seta = svg.querySelector("path")
-        seta.setAttribute("d","M19.5 8.25l-7.5 7.5-7.5-7.5")
-        console.log("fechar seta");
-        
+        seta.setAttribute("d","M19.5 8.25l-7.5 7.5-7.5-7.5")  
     }
 
     for(let menu of todosSubmenus){       
@@ -165,13 +152,8 @@ function abrirMenuMobile(params1, params2,element){
 function abrirMenuDesktop(params1, params2, params3){
     let id = params1
     let menu = document.querySelector(`#${id}`)
-    console.log(menu);
+
     
-    // let items = menu.querySelectorAll("a")
-    // console.log(items[0]);
-    
-    // menu.classList.toggle("aberto")
-    // menu.setAttribute("aria-hidden", false)
     let botao = params2
     let area = params3
 
@@ -208,29 +190,9 @@ function abrirMenuDesktop(params1, params2, params3){
         
         let aberto = menu.classList.toggle("aberto")
         botao.setAttribute("aria-expanded", aberto? true: false)
-        // items[0].querySelector("a").focus()
-        // console.log(items[0].querySelector("a"));
-        
-        // items[0].focus()
-        // items.forEach((item,i)=>{
-        //     // for(let item of items){
-        //         item.addEventListener('keydown', (e) => {
-        //             if (e.key === 'ArrowDown') {
-        //             e.preventDefault();
-        //             items[(i + 1) % items.length].focus();
-        //             } else if (e.key === 'ArrowUp') {
-        //             e.preventDefault();
-        //             items[(i - 1 + items.length) % items.length].focus();
-        //             }
-        //         });
-        //     // }
-        // })
-        
-                
+          
         menu.setAttribute("aria-hidden", aberto?false:true)
         botao.setAttribute("aria-label", aberto? `Fechar o menu expansível ${area}`:`Abrir o menu espansível ${area}`)
-
-        // items[0].focus()
 
         let svg = botao.querySelector("svg")
         let path = svg.querySelector("path")            
@@ -262,7 +224,6 @@ function menu(){
 let w= window.innerWidth
 
 if(w>900 && w<1300){
-    console.log("trocar");
     let logo = document.querySelector("#logo")
     // logo.src= "./images/seccoes/logoAlternativo2.svg"
     logo.src= "./images/seccoes/logoAlternativo.svg"
